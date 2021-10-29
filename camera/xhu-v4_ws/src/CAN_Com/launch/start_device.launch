@@ -1,0 +1,9 @@
+<launch>
+
+    <node name="canalystii_ros_node" pkg="canalystii_ros_std_msgs_customized" type="canalystii_ros_node" output="screen">
+        <param name="can_msg_pub_topic" type="string" value="/received_can_msgs"/>
+        <param name="can_msg_sub_port0_topic_" type="string" value="/send_can_msgs_port0"/>
+        <param name="can_msg_sub_port1_topic_" type="string" value="/send_can_msgs_port1"/>
+    </node>
+
+</launch>

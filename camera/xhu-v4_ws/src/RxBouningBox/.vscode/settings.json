@@ -1,0 +1,10 @@
+{
+  "python.autoComplete.extraPaths": [
+    "/home/fsac/install_packages/autoware/1.10.0/autoware.ai/ros/devel/lib/python2.7/dist-packages",
+    "/opt/ros/kinetic/lib/python2.7/dist-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/home/fsac/install_packages/autoware/1.10.0/autoware.ai/ros/devel/lib/python2.7/dist-packages",
+    "/opt/ros/kinetic/lib/python2.7/dist-packages"
+  ]
+}

@@ -1,0 +1,8 @@
+prefix=/home/xhu-fsac/xhu-v4_ws/install
+
+Name: InerNavi
+Description: Description of InerNavi
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

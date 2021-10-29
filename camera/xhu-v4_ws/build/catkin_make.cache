@@ -1,0 +1,2 @@
+CAN_Com:InerNavi:RxBouningBox:darknet_ros/darknet_ros:darknet_ros/darknet_ros_msgs:usb_cam
+-DCATKIN_DEVEL_PREFIX=/home/xhu-fsac/xhu-v4_ws/devel -DCMAKE_INSTALL_PREFIX=/home/xhu-fsac/xhu-v4_ws/install -G Unix Makefiles

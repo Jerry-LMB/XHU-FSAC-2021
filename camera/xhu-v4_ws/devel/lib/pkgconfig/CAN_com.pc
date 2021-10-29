@@ -1,0 +1,8 @@
+prefix=/home/xhu-fsac/xhu-v4_ws/devel
+
+Name: CAN_com
+Description: Description of CAN_com
+Version: 1.0.1
+Cflags: -I/home/xhu-fsac/xhu-v4_ws/src/CAN_Com/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs

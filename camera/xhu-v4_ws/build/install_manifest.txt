@@ -1,0 +1,9 @@
+/home/xhu-fsac/xhu-v4_ws/install/_setup_util.py
+/home/xhu-fsac/xhu-v4_ws/install/env.sh
+/home/xhu-fsac/xhu-v4_ws/install/setup.bash
+/home/xhu-fsac/xhu-v4_ws/install/local_setup.bash
+/home/xhu-fsac/xhu-v4_ws/install/setup.sh
+/home/xhu-fsac/xhu-v4_ws/install/local_setup.sh
+/home/xhu-fsac/xhu-v4_ws/install/setup.zsh
+/home/xhu-fsac/xhu-v4_ws/install/local_setup.zsh
+/home/xhu-fsac/xhu-v4_ws/install/.rosinstall

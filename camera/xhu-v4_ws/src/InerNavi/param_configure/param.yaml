@@ -1,0 +1,3 @@
+#There are some params which will be loaded
+Port: /dev/ttyUSB1 #设备端口号
+Baudrate: 230400  #串口通讯波特率
