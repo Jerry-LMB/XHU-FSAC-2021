@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RTW Report - gpio.c</title>
+<style> .LN { font-style: italic; color: #888888 } </style>
+<style> .CT { font-style: italic; color: #117755 } </style>
+<style> .PP { font-style: bold;   color: #992211 } </style>
+<style> .KW { font-style: bold;   color: #112266 } </style>
+<style> .DT { font-style: bold;   color: #112266 } </style>
+<link rel="stylesheet" type="text/css" href="rtwreport.css"></link><script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script>
+<SCRIPT type="text/javascript" src="rtwannotate.js"></SCRIPT>
+</head>
+<body bgcolor="#eeeeee" text="#1122aa" onload="try {if (top) { if (top.rtwFileOnLoad) top.rtwFileOnLoad(window.document); else local_onload();}} catch(err) {};if (typeof rtwannotate === 'function') {rtwannotate('gpio_c_cov.xml');}">
+<p>
+<table border="0" cellspacing="0" cellpadding="6" width="100%%" height="100%%"><tr><td width="100%%" valign="top" bgcolor="#ffffff">
+<h4>File: <a href="../gpio.c" target="rtwreport_document_frame" id="linkToText_plain">gpio.c</a></h4>
+<pre id="RTWcode">
+<span><a class="LN" name="1">    1   </a><span class="CT">/*</span>
+</span><span><a class="LN" name="2">    2   </a><span class="CT"> * Code generated for Simulink model untitled.</span>
+</span><span><a class="LN" name="3">    3   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="4">    4   </a><span class="CT"> * FILE    : gpio.c</span>
+</span><span><a class="LN" name="5">    5   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="6">    6   </a><span class="CT"> * VERSION : 1.0</span>
+</span><span><a class="LN" name="7">    7   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="8">    8   </a><span class="CT"> * DATE    : Fri Jul 23 01:50:15 2021</span>
+</span><span><a class="LN" name="9">    9   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="10">   10   </a><span class="CT"> * Copyright 2011-2012 ECUCoder. All Rights Reserved.</span>
+</span><span><a class="LN" name="11">   11   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="12">   12   </a>
+</span><span><a class="LN" name="13">   13   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;gpio.h&quot;</font>
+</span><span><a class="LN" name="14">   14   </a><font color="#992211">#</font><span class="PP">if</span> 1
+</span><span><a class="LN" name="15">   15   </a>
+</span><span><a class="LN" name="16">   16   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="17">   17   </a><span class="CT"> * FUNCTION :    ec_gpio_read                                              *</span>
+</span><span><a class="LN" name="18">   18   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="19">   19   </a><span class="CT"> * DESCRIPTION : Read the value of the specified GPIO channel              *</span>
+</span><span><a class="LN" name="20">   20   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="21">   21   </a><span class="CT"> * PARAMETERS :  -ChannelNo: GPIO channel                                  *</span>
+</span><span><a class="LN" name="22">   22   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="23">   23   </a><span class="CT"> * RETURN :      None                                                      *</span>
+</span><span><a class="LN" name="24">   24   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="25">   25   </a>boolean <a name="fcn_ec_gpio_read">ec_gpio_read</a>(uint8 ChannelNo)
+</span><span><a class="LN" name="26">   26   </a><b>{</b>
+</span><span><a class="LN" name="27">   27   </a>  <span class="KW">return</span>(SIU.GPDI[ChannelNo].B.PDI);
+</span><span><a class="LN" name="28">   28   </a><b>}</b>
+</span><span><a class="LN" name="29">   29   </a>
+</span><span><a class="LN" name="30">   30   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="31">   31   </a><span class="CT"> * FUNCTION :    ec_gpio_write                                             *</span>
+</span><span><a class="LN" name="32">   32   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="33">   33   </a><span class="CT"> * DESCRIPTION : Set the specified level for the specified channel         *</span>
+</span><span><a class="LN" name="34">   34   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="35">   35   </a><span class="CT"> * PARAMETERS :  -ChannelNo: GPIO channel                                  *</span>
+</span><span><a class="LN" name="36">   36   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="37">   37   </a><span class="CT"> * RETURN :      None                                                      *</span>
+</span><span><a class="LN" name="38">   38   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="39">   39   </a><span class="DT">void</span> <a name="fcn_ec_gpio_write">ec_gpio_write</a>(uint8 ChannelNo, boolean Level)
+</span><span><a class="LN" name="40">   40   </a><b>{</b>
+</span><span><a class="LN" name="41">   41   </a>  SIU.GPDO[ChannelNo].B.PDO = Level;
+</span><span><a class="LN" name="42">   42   </a><b>}</b>
+</span><span><a class="LN" name="43">   43   </a>
+</span><span><a class="LN" name="44">   44   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="45">   45   </a>
+</span><span><a class="LN" name="46">   46   </a><span class="CT">/* File trailer for ECUCoder generated file gpio.c.</span>
+</span><span><a class="LN" name="47">   47   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="48">   48   </a><span class="CT"> * [EOF]</span>
+</span><span><a class="LN" name="49">   49   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="50">   50   </a>
+</span></pre>
+</td></tr></table>
+</p>
+</body>
+</html>

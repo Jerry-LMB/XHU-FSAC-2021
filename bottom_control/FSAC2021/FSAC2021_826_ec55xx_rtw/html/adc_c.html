@@ -1,0 +1,179 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RTW Report - adc.c</title>
+<style> .LN { font-style: italic; color: #888888 } </style>
+<style> .CT { font-style: italic; color: #117755 } </style>
+<style> .PP { font-style: bold;   color: #992211 } </style>
+<style> .KW { font-style: bold;   color: #112266 } </style>
+<style> .DT { font-style: bold;   color: #112266 } </style>
+<link rel="stylesheet" type="text/css" href="rtwreport.css"></link><script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script>
+<SCRIPT type="text/javascript" src="rtwannotate.js"></SCRIPT>
+</head>
+<body bgcolor="#eeeeee" text="#1122aa" onload="try {if (top) { if (top.rtwFileOnLoad) top.rtwFileOnLoad(window.document); else local_onload();}} catch(err) {};if (typeof rtwannotate === 'function') {rtwannotate('adc_c_cov.xml');}">
+<p>
+<table border="0" cellspacing="0" cellpadding="6" width="100%%" height="100%%"><tr><td width="100%%" valign="top" bgcolor="#ffffff">
+<h4>File: <a href="../adc.c" target="rtwreport_document_frame" id="linkToText_plain">adc.c</a></h4>
+<pre id="RTWcode">
+<span><a class="LN" name="1">    1   </a><span class="CT">/*</span>
+</span><span><a class="LN" name="2">    2   </a><span class="CT"> * Code generated for Simulink model FSAC2021_826.</span>
+</span><span><a class="LN" name="3">    3   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="4">    4   </a><span class="CT"> * FILE    : adc.c</span>
+</span><span><a class="LN" name="5">    5   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="6">    6   </a><span class="CT"> * VERSION : 1.165</span>
+</span><span><a class="LN" name="7">    7   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="8">    8   </a><span class="CT"> * DATE    : Tue Aug 31 17:30:52 2021</span>
+</span><span><a class="LN" name="9">    9   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="10">   10   </a><span class="CT"> * Copyright 2011-2012 ECUCoder. All Rights Reserved.</span>
+</span><span><a class="LN" name="11">   11   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="12">   12   </a>
+</span><span><a class="LN" name="13">   13   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;adc.h&quot;</font>
+</span><span><a class="LN" name="14">   14   </a><font color="#992211">#</font><span class="PP">if</span> 1
+</span><span><a class="LN" name="15">   15   </a>
+</span><span><a class="LN" name="16">   16   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="17">   17   </a><span class="CT"> * FUNCTION :    ec_adc_init                                               *</span>
+</span><span><a class="LN" name="18">   18   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="19">   19   </a><span class="CT"> * DESCRIPTION : Initialize the on-chip ADC moudule                        *</span>
+</span><span><a class="LN" name="20">   20   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="21">   21   </a><span class="CT"> * PARAMETERS :  None                                                      *</span>
+</span><span><a class="LN" name="22">   22   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="23">   23   </a><span class="CT"> * RETURN :      None                                                      *</span>
+</span><span><a class="LN" name="24">   24   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="25">   25   </a><span class="DT">void</span> <a name="fcn_ec_adc_init">ec_adc_init</a>(<span class="DT">void</span>)
+</span><span><a class="LN" name="26">   26   </a><b>{</b>
+</span><span><a class="LN" name="27">   27   </a>  uint8 i;
+</span><span><a class="LN" name="28">   28   </a>  uint32 RES_25 = 0;
+</span><span><a class="LN" name="29">   29   </a>  uint32 RES_75 = 0;
+</span><span><a class="LN" name="30">   30   </a>  uint32 ADC0_GCC = 0;
+</span><span><a class="LN" name="31">   31   </a>  uint32 ADC0_OCC = 0;
+</span><span><a class="LN" name="32">   32   </a>
+</span><span><a class="LN" name="33">   33   </a>  <span class="CT">//float32 ADC0_GCC_f = 0;</span>
+</span><span><a class="LN" name="34">   34   </a>  <span class="CT">//float32 ADC0_OCC_f = 0;</span>
+</span><span><a class="LN" name="35">   35   </a>  <a href="adc_h.html#type_ADC_CC" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ADC_CC');" target="_self"><font color="#1122aa">ADC_CC</font></a> ADC0_CC;
+</span><span><a class="LN" name="36">   36   </a>  <a href="adc_h.html#type_ADC_WC" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ADC_WC');" target="_self"><font color="#1122aa">ADC_WC</font></a> ADC0_WC;                      <span class="CT">/* Define one ADC write command */</span>
+</span><span><a class="LN" name="37">   37   </a>  <a href="adc_h.html#type_ADC_CR" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ADC_CR');" target="_self"><font color="#1122aa">ADC_CR</font></a> ADC0_CR;
+</span><span><a class="LN" name="38">   38   </a>  ADC0_WC.Word = 0;                    <span class="CT">/* Clear the ADC command before give it value */</span>
+</span><span><a class="LN" name="39">   39   </a>  ADC0_CR.B.ADC_EN = 1;                <span class="CT">/* Enable ADC module */</span>
+</span><span><a class="LN" name="40">   40   </a>  ADC0_CR.B.ADC_CLK_PS = SystemCLK_16; <span class="CT">/* ADC clock = system clock/16 */</span>
+</span><span><a class="LN" name="41">   41   </a>  ADC0_CR.B.ADC_EMUX = 0;              <span class="CT">/* External multiplexer disabled */</span>
+</span><span><a class="LN" name="42">   42   </a>  ADC0_WC.B.EOQ = 1;                   <span class="CT">/* Make the command with the flag of EOQ */</span>
+</span><span><a class="LN" name="43">   43   </a>  ADC0_WC.B.PAUSE = 0;                 <span class="CT">/* The command do not have pause flag */</span>
+</span><span><a class="LN" name="44">   44   </a>  ADC0_WC.B.EB = 0;                    <span class="CT">/* The ADC command is sent to on-chip ADC */</span>
+</span><span><a class="LN" name="45">   45   </a>  ADC0_WC.B.BN = 0;                    <span class="CT">/* The command is sent to ADC0 */</span>
+</span><span><a class="LN" name="46">   46   </a>  ADC0_WC.B.RW = 0;                    <span class="CT">/* Write on-chip ADC */</span>
+</span><span><a class="LN" name="47">   47   </a>  ADC0_WC.B.ADC_REG_HByte = (uint32)((ADC0_CR.R &amp; 0xff00)&gt;&gt;8);
+</span><span><a class="LN" name="48">   48   </a>  ADC0_WC.B.ADC_REG_LByte = (uint32)((ADC0_CR.R &amp; 0x00ff));
+</span><span><a class="LN" name="49">   49   </a>  ADC0_WC.B.ADC_REG_ADDRESS = 1;
+</span><span><a class="LN" name="50">   50   </a>  <span class="KW">for</span> (i=0; i&lt;6; i++)                  <span class="CT">/* Disable all RFDE interrupts */</span>
+</span><span><a class="LN" name="51">   51   </a>  <b>{</b>
+</span><span><a class="LN" name="52">   52   </a>    EQADC.IDCR[i].B.RFDE = 0;
+</span><span><a class="LN" name="53">   53   </a>    EQADC.IDCR[i].B.RFDS = 0;
+</span><span><a class="LN" name="54">   54   </a>  <b>}</b>
+</span><span><a class="LN" name="55">   55   </a>
+</span><span><a class="LN" name="56">   56   </a>  EQADC.CFPR[0].R = ADC0_WC.Word;      <span class="CT">/* Push ADC write command to CFIFO0 */</span>
+</span><span><a class="LN" name="57">   57   </a>  EQADC.CFCR[0].B.MODE = SWT_SS;       <span class="CT">/* Software trigger, single scan CFIFOn */</span>
+</span><span><a class="LN" name="58">   58   </a>  EQADC.CFCR[0].B.SSE = SS_ENABLE;     <span class="CT">/* CFIFOn single-scan enable */</span>
+</span><span><a class="LN" name="59">   59   </a>  <span class="KW">while</span> (EQADC.FISR[0].B.EOQF != 1) <b>{</b>
+</span><span><a class="LN" name="60">   60   </a>  <b>}</b>                                    <span class="CT">/* Wait for end of queue flag */</span>
+</span><span><a class="LN" name="61">   61   </a>
+</span><span><a class="LN" name="62">   62   </a>  EQADC.FISR[0].B.EOQF = 1;            <span class="CT">/* Clear end of queue flag */</span>
+</span><span><a class="LN" name="63">   63   </a>  ADC0_CC.Word = 0;
+</span><span><a class="LN" name="64">   64   </a>  ADC0_CC.B.EOQ = 1;
+</span><span><a class="LN" name="65">   65   </a>  ADC0_CC.B.PAUSE = 0;
+</span><span><a class="LN" name="66">   66   </a>  ADC0_CC.B.EB = 0;
+</span><span><a class="LN" name="67">   67   </a>  ADC0_CC.B.BN = 0;
+</span><span><a class="LN" name="68">   68   </a>  ADC0_CC.B.CAL = 0;
+</span><span><a class="LN" name="69">   69   </a>  ADC0_CC.B.MSG_TAG = 0b0000;
+</span><span><a class="LN" name="70">   70   </a>  ADC0_CC.B.LST = LST8;
+</span><span><a class="LN" name="71">   71   </a>  ADC0_CC.B.TSR = 0;
+</span><span><a class="LN" name="72">   72   </a>  ADC0_CC.B.FMT = 0;
+</span><span><a class="LN" name="73">   73   </a>  ADC0_CC.B.CHANNEL_NO = 44;
+</span><span><a class="LN" name="74">   74   </a>  EQADC.CFPR[0].R = ADC0_CC.Word;
+</span><span><a class="LN" name="75">   75   </a>  EQADC.CFCR[0].B.SSE = SS_ENABLE;
+</span><span><a class="LN" name="76">   76   </a>  EQADC.CFCR[0].B.MODE = SWT_SS;
+</span><span><a class="LN" name="77">   77   </a>  <span class="KW">while</span> (EQADC.FISR[0].B.RFDF != 1) <b>{</b>
+</span><span><a class="LN" name="78">   78   </a>  <b>}</b>
+</span><span><a class="LN" name="79">   79   </a>
+</span><span><a class="LN" name="80">   80   </a>  RES_25 = EQADC.RFPR[0].B.RFPOP;
+</span><span><a class="LN" name="81">   81   </a>  EQADC.FISR[0].B.RFDF = 1;
+</span><span><a class="LN" name="82">   82   </a>  EQADC.FISR[0].B.EOQF = 1;
+</span><span><a class="LN" name="83">   83   </a>  ADC0_CC.Word = 0;
+</span><span><a class="LN" name="84">   84   </a>  ADC0_CC.B.EOQ = 1;
+</span><span><a class="LN" name="85">   85   </a>  ADC0_CC.B.PAUSE = 0;
+</span><span><a class="LN" name="86">   86   </a>  ADC0_CC.B.EB = 0;
+</span><span><a class="LN" name="87">   87   </a>  ADC0_CC.B.BN = 0;
+</span><span><a class="LN" name="88">   88   </a>  ADC0_CC.B.CAL = 0;
+</span><span><a class="LN" name="89">   89   </a>  ADC0_CC.B.MSG_TAG = 0b0000;
+</span><span><a class="LN" name="90">   90   </a>  ADC0_CC.B.LST = LST8;
+</span><span><a class="LN" name="91">   91   </a>  ADC0_CC.B.TSR = 0;
+</span><span><a class="LN" name="92">   92   </a>  ADC0_CC.B.FMT = 0;
+</span><span><a class="LN" name="93">   93   </a>  ADC0_CC.B.CHANNEL_NO = 43;
+</span><span><a class="LN" name="94">   94   </a>  EQADC.CFPR[0].R = ADC0_CC.Word;
+</span><span><a class="LN" name="95">   95   </a>  EQADC.CFCR[0].B.SSE = SS_ENABLE;
+</span><span><a class="LN" name="96">   96   </a>  EQADC.CFCR[0].B.MODE = SWT_SS;
+</span><span><a class="LN" name="97">   97   </a>  <span class="KW">while</span> (EQADC.FISR[0].B.RFDF != 1) <b>{</b>
+</span><span><a class="LN" name="98">   98   </a>  <b>}</b>
+</span><span><a class="LN" name="99">   99   </a>
+</span><span><a class="LN" name="100">  100   </a>  RES_75 = EQADC.RFPR[0].B.RFPOP;
+</span><span><a class="LN" name="101">  101   </a>  EQADC.FISR[0].B.RFDF = 1;
+</span><span><a class="LN" name="102">  102   </a>  EQADC.FISR[0].B.EOQF = 1;
+</span><span><a class="LN" name="103">  103   </a>  <a href="adc_h.html#var_ADC0_GCC_f" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ADC0_GCC_f');" target="_self"><font color="#1122aa">ADC0_GCC_f</font></a> = (<span class="DT">float</span>)(12288-4096)/(RES_75 - RES_25);
+</span><span><a class="LN" name="104">  104   </a>  <a href="adc_h.html#var_ADC0_OCC_f" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ADC0_OCC_f');" target="_self"><font color="#1122aa">ADC0_OCC_f</font></a> = 12288-<a href="adc_h.html#var_ADC0_GCC_f" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ADC0_GCC_f');" target="_self"><font color="#1122aa">ADC0_GCC_f</font></a>*RES_75-2;
+</span><span><a class="LN" name="105">  105   </a>
+</span><span><a class="LN" name="106">  106   </a>  <span class="CT">//ADC0_GCC_f = 16384*ADC0_GCC_f;</span>
+</span><span><a class="LN" name="107">  107   </a>  ADC0_GCC = (uint32)<a href="adc_h.html#var_ADC0_GCC_f" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ADC0_GCC_f');" target="_self"><font color="#1122aa">ADC0_GCC_f</font></a>;
+</span><span><a class="LN" name="108">  108   </a>  ADC0_GCC = (uint32)<a href="adc_h.html#var_ADC0_OCC_f" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ADC0_OCC_f');" target="_self"><font color="#1122aa">ADC0_OCC_f</font></a>;
+</span><span><a class="LN" name="109">  109   </a><b>}</b>
+</span><span><a class="LN" name="110">  110   </a>
+</span><span><a class="LN" name="111">  111   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="112">  112   </a><span class="CT"> * FUNCTION :    ec_adc_readresult                                         *</span>
+</span><span><a class="LN" name="113">  113   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="114">  114   </a><span class="CT"> * DESCRIPTION : Start one ADC channel's conversion and get it's           *</span>
+</span><span><a class="LN" name="115">  115   </a><span class="CT"> *               conversion result                                         *</span>
+</span><span><a class="LN" name="116">  116   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="117">  117   </a><span class="CT"> * PARAMETERS :  -Chn: ADC0 channel, range from 0 to 39                    *</span>
+</span><span><a class="LN" name="118">  118   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="119">  119   </a><span class="CT"> * RETURN :      -resultinmv: the ADC conversion result                    *</span>
+</span><span><a class="LN" name="120">  120   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="121">  121   </a>uint32 <a name="fcn_ec_adc_readresult">ec_adc_readresult</a>(uint8 Chn)
+</span><span><a class="LN" name="122">  122   </a><b>{</b>
+</span><span><a class="LN" name="123">  123   </a>  float32 result = 0;
+</span><span><a class="LN" name="124">  124   </a>  uint32 resultinmv = 0;
+</span><span><a class="LN" name="125">  125   </a>  <a href="adc_h.html#type_ADC_CC" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_ADC_CC');" target="_self"><font color="#1122aa">ADC_CC</font></a> ADC0_CC;
+</span><span><a class="LN" name="126">  126   </a>  ADC0_CC.Word = 0;
+</span><span><a class="LN" name="127">  127   </a>  ADC0_CC.B.EOQ = 1;
+</span><span><a class="LN" name="128">  128   </a>  ADC0_CC.B.PAUSE = 0;
+</span><span><a class="LN" name="129">  129   </a>  ADC0_CC.B.EB = 0;
+</span><span><a class="LN" name="130">  130   </a>  ADC0_CC.B.BN = 0;
+</span><span><a class="LN" name="131">  131   </a>  ADC0_CC.B.CAL = 0;
+</span><span><a class="LN" name="132">  132   </a>  ADC0_CC.B.MSG_TAG = 0b0000;
+</span><span><a class="LN" name="133">  133   </a>  ADC0_CC.B.LST = LST8;
+</span><span><a class="LN" name="134">  134   </a>  ADC0_CC.B.TSR = 0;
+</span><span><a class="LN" name="135">  135   </a>  ADC0_CC.B.FMT = 0;
+</span><span><a class="LN" name="136">  136   </a>  ADC0_CC.B.CHANNEL_NO = Chn;
+</span><span><a class="LN" name="137">  137   </a>  EQADC.CFPR[0].R = ADC0_CC.Word;
+</span><span><a class="LN" name="138">  138   </a>  EQADC.CFCR[0].B.SSE = SS_ENABLE;
+</span><span><a class="LN" name="139">  139   </a>  EQADC.CFCR[0].B.MODE = SWT_SS;
+</span><span><a class="LN" name="140">  140   </a>  <span class="KW">while</span> (EQADC.FISR[0].B.RFDF != 1) <b>{</b>
+</span><span><a class="LN" name="141">  141   </a>  <b>}</b>
+</span><span><a class="LN" name="142">  142   </a>
+</span><span><a class="LN" name="143">  143   </a>  result = EQADC.RFPR[0].B.RFPOP;
+</span><span><a class="LN" name="144">  144   </a>  result = result*<a href="adc_h.html#var_ADC0_GCC_f" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ADC0_GCC_f');" target="_self"><font color="#1122aa">ADC0_GCC_f</font></a>+<a href="adc_h.html#var_ADC0_OCC_f" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ADC0_OCC_f');" target="_self"><font color="#1122aa">ADC0_OCC_f</font></a>+2;
+</span><span><a class="LN" name="145">  145   </a>  resultinmv = 5000*result/0x3FFC;
+</span><span><a class="LN" name="146">  146   </a>  EQADC.FISR[0].B.RFDF = 1;
+</span><span><a class="LN" name="147">  147   </a>  EQADC.FISR[0].B.EOQF = 1;
+</span><span><a class="LN" name="148">  148   </a>  <span class="KW">return</span> resultinmv;
+</span><span><a class="LN" name="149">  149   </a><b>}</b>
+</span><span><a class="LN" name="150">  150   </a>
+</span><span><a class="LN" name="151">  151   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="152">  152   </a>
+</span><span><a class="LN" name="153">  153   </a><span class="CT">/* File trailer for ECUCoder generated file adc.c.</span>
+</span><span><a class="LN" name="154">  154   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="155">  155   </a><span class="CT"> * [EOF]</span>
+</span><span><a class="LN" name="156">  156   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="157">  157   </a>
+</span></pre>
+</td></tr></table>
+</p>
+</body>
+</html>

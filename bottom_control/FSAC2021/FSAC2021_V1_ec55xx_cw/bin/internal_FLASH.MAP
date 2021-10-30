@@ -1,0 +1,1546 @@
+Link map of __start
+  1] __start (func,global) found in Runtime.PPCEABI.S.UC.a __start.o
+   2] __init_registers (func,weak) found in Runtime.PPCEABI.S.UC.a __start.o
+    3] _stack_addr found as linker generated symbol
+    3] _SDA2_BASE_ found as linker generated symbol
+    3] _SDA_BASE_ found as linker generated symbol
+   2] __init_hardware (func,global) found in __ppc_eabi_init.o 
+    3] usr_init (func,global) found in MPC55xx_init.o 
+     4] INIT_Derivative (func,global) found in MPC5554_HWInit.o 
+      5] L2SRAM_LOCATION found as linker generated symbol
+     4] INIT_ExternalBusAndMemory (func,global) found in MPC5554_HWInit.o 
+      5] __initSIUExtBusInterface (func,global) found in MPC5554_HWInit.o 
+       6] InitPCRs (func,global) found in MPC5554_HWInit.o 
+      5] __initEBIChipSelects (func,global) found in MPC5554_HWInit.o 
+      5] __initMMUExternalMemory (func,global) found in MPC5554_HWInit.o 
+     4] EXCEP_InitExceptionHandlers (func,global) found in Exceptions.o 
+      5] EXCEPTION_HANDLERS found as linker generated symbol
+      5] EXCEP_DefaultExceptionHandler (func,global) found in Exceptions.o 
+     4] INTC_InitINTCInterrupts (func,global) found in IntcInterrupts.o 
+      5] INTC_INTCInterruptHandler (func,global) found in IntcInterrupts.o 
+      5] INTCInterruptsHandlerTable (object,global) found in IntcInterrupts.o 
+   2] __init_data (func,weak) found in Runtime.PPCEABI.S.UC.a __start.o
+    3] _rom_copy_info (object,global) found in Linker Generated Symbol File 
+    3] __copy_rom_section (func,global) found in Runtime.PPCEABI.S.UC.a __start.o
+     4] memcpy (func,global) found in Runtime.PPCEABI.S.UC.a __mem.o
+     4] __flush_cache (func,global) found in __ppc_eabi_init.o 
+    3] _bss_init_info (object,global) found in Linker Generated Symbol File 
+    3] __init_bss_section (func,global) found in Runtime.PPCEABI.S.UC.a __start.o
+     4] memset (func,global) found in Runtime.PPCEABI.S.UC.a __mem.o
+      5] __fill_mem (func,global) found in Runtime.PPCEABI.S.UC.a __mem.o
+   2] __init_user (func,global) found in __ppc_eabi_init.o 
+    3] FlashConfig (func,global) found in __ppc_eabi_init.o 
+     4] @22 (object,local) found in __ppc_eabi_init.o 
+   2] main (func,global) found in main.o 
+    3] ec_cpu_init (func,global) found in cpu.o 
+    3] ec_interrupts_init (func,global) found in interrupts.o 
+    3] ec_interrupts_allintreg (func,global) found in interrupts.o 
+     4] ISR_Rti_CH23 (func,global) found in FSAC2021_V1.o 
+      5] ECUCoderModelBaseCounter (object,global) found in main.o 
+      5] rate_monotonic_scheduler (func,local) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_M (object,global) found in FSAC2021_V1.o 
+        7] FSAC2021_V1_M_ (object,global) found in FSAC2021_V1.o 
+     4] INTC_InstallINTCInterruptHandler (func,global) found in IntcInterrupts.o 
+    3] Pad_ConfigurationPB (object,global) found in pcr.o 
+     4] PcrCfgReg (object,global) found in pcr.o 
+    3] ec_pad_init (func,global) found in siu.o 
+    3] ec_adc_init (func,global) found in adc.o 
+     4] ADC0_GCC_f (object,global) found in adc.o 
+     4] ADC0_OCC_f (object,global) found in adc.o 
+    3] my_etpu_config (object,global) found in main.o 
+    3] etpu_code (object,global) found in main.o 
+    3] etpu_globals (object,global) found in main.o 
+    3] fs_etpu_init (func,global) found in etpu_util.o 
+     4] eTPU (object,global) found in main.o 
+     4] fs_etpu_code_start (object,global) found in main.o 
+     4] fs_memcpy32 (func,global) found in etpu_util.o 
+     4] fs_memset32 (func,global) found in etpu_util.o 
+     4] fs_etpu_data_ram_start (object,global) found in main.o 
+     4] fs_free_param (object,global) found in main.o 
+    3] CANINIT (object,global) found in can_cfg.o 
+    3] ec_cana_init (func,global) found in can.o 
+    3] ec_canb_init (func,global) found in can.o 
+    3] ec_canc_init (func,global) found in can.o 
+    3] ec_spia_init (func,global) found in spi.o 
+    3] FSAC2021_V1_initialize (func,global) found in FSAC2021_V1.o 
+     4] ec_buffer_init (func,global) found in can.o 
+     4] fs_etpu_ppa_p_init (func,global) found in etpu_ppa.o 
+      5] fs_etpu_disable (func,global) found in etpu_util.o 
+      5] fs_etpu_malloc (func,global) found in etpu_util.o 
+       6] fs_etpu_data_ram_end (object,global) found in main.o 
+      5] fs_etpu_data_ram (func,global) found in etpu_util.o 
+     4] FSAC2021_V1_B (object,global) found in FSAC2021_V1.o 
+     4] FSAC2021_V1_DW (object,global) found in FSAC2021_V1.o 
+     4] FSA_Light_Subsystem2_Start (func,global) found in FSAC2021_V1.o 
+     4] ec_bufint_init (func,global) found in can.o 
+      5] @132 (object,local) found in can.o 
+     4] ISR_FlexCAN_2_MB1 (func,global) found in FSAC2021_V1.o 
+      5] ec_can_receive (func,global) found in can.o 
+       6] ec_can_applrxindication (func,global) found in can_hook.o 
+        7] CCP_CRO_Indication (func,global) found in can_ccp.o 
+         8] ccpRxData (object,global) found in can_ccp.o 
+         8] ccp (object,global) found in ccp.o 
+      5] @906 (object,local) found in FSAC2021_V1.o 
+      5] @909 (object,local) found in FSAC2021_V1.o 
+      5] ssdConfig (object,global) found in flash_app.o 
+      5] pFlashErase (object,global) found in flash_app.o 
+       6] FlashErase_C (object,global) found in flash_array.o 
+      5] pFlashProgram (object,global) found in flash_app.o 
+       6] FlashProgram_C (object,global) found in flash_array.o 
+      5] ec_can_transmit (func,global) found in can.o 
+      5] ec_cpu_reset (func,global) found in cpu.o 
+     4] ccpInit (func,global) found in ccp.o 
+      5] ccpCanInit (func,global) found in can_ccp.o 
+     4] ISR_FlexCAN_2_MB0 (func,global) found in FSAC2021_V1.o 
+     4] ISR_FlexCAN_2_MB8 (func,global) found in FSAC2021_V1.o 
+      5] ec_can_appltxconfirmation (func,global) found in can_hook.o 
+       6] CCP_DTO_Confirmation (func,global) found in can_ccp.o 
+        7] ccpSendCallBack (func,global) found in ccp.o 
+         8] ccpSendCrm (func,global) found in ccp.o 
+          9] ccpSend (func,global) found in can_ccp.o 
+           10] ccpTxData (object,local) found in can_ccp.o 
+     4] ec_rti_init (func,global) found in rti.o 
+     4] FSAC2021_V1_LPF_Init (func,global) found in FSAC2021_V1.o 
+     4] FSAC2021_V1_Chart1_Enable (func,global) found in FSAC2021_V1.o 
+    3] CCP_FlashInit (func,global) found in flash_app.o 
+     4] pFlashInit (object,global) found in flash_app.o 
+      5] FlashInit_C (object,global) found in flash_array.o 
+     4] pGetLock (object,global) found in flash_app.o 
+      5] GetLock_C (object,global) found in flash_array.o 
+     4] pSetLock (object,global) found in flash_app.o 
+      5] SetLock_C (object,global) found in flash_array.o 
+    3] fs_timer_start (func,global) found in etpu_util.o 
+    3] rt_OneStep (func,global) found in main.o 
+     4] ECUCoderOverrunFlags (object,local) found in main.o 
+     4] FSAC2021_V1_SetEventsForThisBaseStep (func,global) found in FSAC2021_V1.o 
+     4] FSAC2021_V1_step (func,global) found in FSAC2021_V1.o 
+      5] @2260 (object,local) found in FSAC2021_V1.o 
+      5] FSAC2021_V1_step0 (func,global) found in FSAC2021_V1.o 
+      5] FSAC2021_V1_step1 (func,global) found in FSAC2021_V1.o 
+       6] ccpBackground (func,global) found in ccp.o 
+        7] ccpCommand (func,global) found in ccp.o 
+         8] ccpStopAllDaq (func,local) found in ccp.o 
+         8] @348 (object,local) found in ccp.o 
+         8] ccpStationId (object,global) found in ccp.o 
+         8] ccpGetPointer (func,global) found in can_ccp.o 
+         8] ccpWriteMTA (func,local) found in ccp.o 
+          9] ccpCheckWriteAccess (func,global) found in can_ccp.o 
+         8] ccpReadMTA (func,local) found in ccp.o 
+         8] ccpStopDaq (func,local) found in ccp.o 
+         8] ccpClearDaqList (func,local) found in ccp.o 
+          9] ccpQueueInit (func,global) found in ccp.o 
+         8] ccpPrepareDaq (func,local) found in ccp.o 
+         8] ccpStartDaq (func,local) found in ccp.o 
+         8] ccpStartAllPreparedDaq (func,local) found in ccp.o 
+        7] ccpUserBackground (func,global) found in can_ccp.o 
+        7] CRC16CCITTtab (object,global) found in ccp.o 
+      5] FSAC2021_V1_step2 (func,global) found in FSAC2021_V1.o 
+       6] ccpDaq (func,global) found in ccp.o 
+        7] ccpSampleAndTransmitDtm (func,local) found in ccp.o 
+         8] ccpQueueWrite (func,global) found in ccp.o 
+      5] FSAC2021_V1_step3 (func,global) found in FSAC2021_V1.o 
+       6] strsr_node (object,global) found in FSAC2021_V1.o 
+       6] Steer_sensor_angle (object,global) found in FSAC2021_V1.o 
+       6] brake_node (object,global) found in FSAC2021_V1.o 
+       6] _f_ftod (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+        7] f_unpack_1 (func,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+        7] d_coerce_result (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+         8] _d_mul (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] d_unpack_2 (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+           10] d_unpack_1 (func,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] __SoftFPSCR (object,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] d_result_is_zero (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] d_double_result_and_exit (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] d_result_is_INF (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] d_x_is_NaN (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] d_y_is_NaN (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] d_result_is_Invalid (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] d_both_NaNs (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] d_result_is_x (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+       6] RES__ok (object,global) found in FSAC2021_V1.o 
+       6] RES_Value (object,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_ConstB (object,global) found in FSAC2021_V1_data.o 
+       6] Read_BCU (object,global) found in FSAC2021_V1.o 
+       6] ec_tle6232_diag (func,global) found in FSAC2021_V1.o 
+        7] @862 (object,local) found in FSAC2021_V1.o 
+        7] ec_spi_masterwriteread (func,global) found in spi.o 
+         8] ec_spi_delay (func,global) found in spi.o 
+        7] TLE6232DIA (object,global) found in FSAC2021_V1.o 
+      5] FSAC2021_V1_step4 (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_Whl_Spd_Hz2RPM (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_LPF (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V_Whl_Spd_Hz2RPM2 (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_Round (func,global) found in FSAC2021_V1.o 
+        7] rt_roundf_snf (func,global) found in FSAC2021_V1.o 
+         8] fabs (func,global) found in MSL_C.PPCEABI.bare.S.UC.a s_fabs.o
+         8] _d_dtof (notype,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] _f_qtof (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+           10] f_coerce_result (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+            11] _f_mul (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+             12] f_unpack_2 (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+             12] f_result_is_zero (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+             12] f_result_is_INF (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+             12] f_x_is_NaN (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+             12] f_y_is_NaN (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+             12] f_result_is_Invalid (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+             12] f_both_NaNs (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+             12] f_result_is_x (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+         8] floor (func,global) found in MSL_C.PPCEABI.bare.S.UC.a s_floor.o
+          9] _d_add (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+           10] d_result_is_number_x (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] _d_fgt (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+           10] d_compare (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+            11] _d_for (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+             12] compare_dispatch (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+         8] ceil (func,global) found in MSL_C.PPCEABI.bare.S.UC.a s_ceil.o
+        7] Vel_spd (object,global) found in FSAC2021_V1.o 
+       6] _d_utod (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+        7] d_itod_common (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+         8] _d_itod (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] d_Xtod_common (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+           10] _d_lltod (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+            11] d_lltod_common (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+            11] d_lltod_go_coerce (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+       6] _d_flt (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+      5] FSAC2021_V1_step5 (func,global) found in FSAC2021_V1.o 
+       6] Voltage (object,global) found in FSAC2021_V1.o 
+       6] Motor_Spd (object,global) found in FSAC2021_V1.o 
+       6] ASSI_state (object,global) found in FSAC2021_V1.o 
+       6] Vspd (object,global) found in FSAC2021_V1.o 
+       6] _d_dtou (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+        7] d_toshortX_common (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+         8] _d_dtoi (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+          9] Xtoshort_common (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+           10] _f_ftoi (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+            11] Xtolong_common (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+       6] _d_div (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+        7] divu_l_r3_r4_r5 (func,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+       6] rt_roundd_snf (func,global) found in FSAC2021_V1.o 
+        7] _d_fge (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+        7] _d_sub (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+         8] d_add_common (notype,local) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+       6] To_AMI_OK (object,global) found in FSAC2021_V1.o 
+      5] FSAC2021_V1_step6 (func,global) found in FSAC2021_V1.o 
+       6] Brk_Enable_Flag (object,global) found in FSAC2021_V1.o 
+       6] RES_EBS (object,global) found in FSAC2021_V1.o 
+       6] AMI_State (object,global) found in FSAC2021_V1.o 
+       6] EBS_Sensor_light (object,global) found in FSAC2021_V1.o 
+       6] EBS_light (object,global) found in FSAC2021_V1.o 
+       6] pulses (object,global) found in FSAC2021_V1.o 
+       6] ACC (object,global) found in FSAC2021_V1.o 
+       6] Back_Angle (object,global) found in FSAC2021_V1.o 
+       6] Str (object,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_MOTEC_CONTROL (func,global) found in FSAC2021_V1.o 
+        7] ldexp (func,global) found in MSL_C.PPCEABI.bare.S.UC.a s_ldexp.o
+         8] __fpclassifyd (func,global) found in MSL_C.PPCEABI.bare.S.UC.a math_api.o
+         8] _d_feq (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+         8] copysign (func,global) found in MSL_C.PPCEABI.bare.S.UC.a s_copysign.o
+       6] enflag (object,global) found in FSAC2021_V1.o 
+       6] ec_etpu_get_ppa_freq (func,global) found in etpu_ppa.o 
+        7] fs_etpu_get_chan_local_24 (func,global) found in etpu_util.o 
+         8] fs_etpu_data_ram_ext (object,global) found in main.o 
+       6] FSAC2021_V1_Angle2Pulses (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_Angle2Pulses_p (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_Angle2Pulses_b (func,global) found in FSAC2021_V1.o 
+       6] Read_compare_OutVolt (object,global) found in FSAC2021_V1.o 
+       6] Compare_Voltage (object,global) found in FSAC2021_V1.o 
+       6] TS_Flag (object,global) found in FSAC2021_V1.o 
+       6] _d_fle (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+       6] EBS_Status (object,global) found in FSAC2021_V1.o 
+       6] MODE (object,global) found in FSAC2021_V1.o 
+       6] enable (object,global) found in FSAC2021_V1.o 
+       6] ec_gpio_read (func,global) found in gpio.o 
+       6] LVMS_Read (object,global) found in FSAC2021_V1.o 
+       6] HVMS_Read (object,global) found in FSAC2021_V1.o 
+       6] ASMS_Read (object,global) found in FSAC2021_V1.o 
+       6] On_Out_Switch (object,global) found in FSAC2021_V1.o 
+       6] START (object,global) found in FSAC2021_V1.o 
+       6] On_IN_Switch (object,global) found in FSAC2021_V1.o 
+       6] HV_LIGHT (object,global) found in FSAC2021_V1.o 
+       6] EBS_Rel_Switch (object,global) found in FSAC2021_V1.o 
+       6] ec_adc_readresult (func,global) found in adc.o 
+       6] Read_Lft_Acc_Disp (object,global) found in FSAC2021_V1.o 
+       6] Read_Right_Acc_Disp1 (object,global) found in FSAC2021_V1.o 
+       6] Read_EBS_Gas_Prs1 (object,global) found in FSAC2021_V1.o 
+       6] Read_EBS_Gas_Prs2 (object,global) found in FSAC2021_V1.o 
+       6] Read_liquid_presuress (object,global) found in FSAC2021_V1.o 
+       6] motor_node (object,global) found in FSAC2021_V1.o 
+       6] AMI (object,global) found in FSAC2021_V1.o 
+       6] AMI_HEART (object,global) found in FSAC2021_V1.o 
+       6] light_blue (object,global) found in FSAC2021_V1.o 
+       6] ec_gpio_write (func,global) found in gpio.o 
+       6] Buzzer_pin (object,global) found in FSAC2021_V1.o 
+       6] Stafe_Relay_pin (object,global) found in FSAC2021_V1.o 
+       6] _d_fne (func,global) found in Runtime.PPCEABI.S.UC.a ppcsfpe.o
+       6] V48_relay (object,global) found in FSAC2021_V1.o 
+       6] R2D_Voltage (object,global) found in FSAC2021_V1.o 
+       6] IMD (object,global) found in FSAC2021_V1.o 
+       6] EBS (object,global) found in FSAC2021_V1.o 
+       6] BMS_LIGHT (object,global) found in FSAC2021_V1.o 
+       6] brake_light (object,global) found in FSAC2021_V1.o 
+       6] To_MOTOR_OK (object,global) found in FSAC2021_V1.o 
+       6] Metoc_Move (object,global) found in FSAC2021_V1.o 
+       6] MNT_SEND (object,global) found in FSAC2021_V1.o 
+       6] ENCODER_SEND (object,global) found in FSAC2021_V1.o 
+       6] BUC_Enable_Flag (object,global) found in FSAC2021_V1.o 
+       6] read_speed (object,global) found in FSAC2021_V1.o 
+       6] ASMS_VALUE (object,global) found in FSAC2021_V1.o 
+      5] FSAC2021_V1_step7 (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_Chart1 (func,global) found in FSAC2021_V1.o 
+       6] error_left (object,global) found in FSAC2021_V1.o 
+       6] error_right (object,global) found in FSAC2021_V1.o 
+       6] sensor_erroe (object,global) found in FSAC2021_V1.o 
+       6] error_liquid (object,global) found in FSAC2021_V1.o 
+       6] error_gas1 (object,global) found in FSAC2021_V1.o 
+       6] error_gas2 (object,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_Chart4_Enable (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_Chart4 (func,global) found in FSAC2021_V1.o 
+        7] motor (object,global) found in FSAC2021_V1.o 
+       6] Node_Lost (object,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_Chart4_Disable (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_Subsystem (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V_Chart1_n_Enable (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V1_Chart1_b (func,global) found in FSAC2021_V1.o 
+       6] res_go (object,global) found in FSAC2021_V1.o 
+       6] res_ebs_value (object,global) found in FSAC2021_V1.o 
+       6] FSAC2021__Chart1_n_Disable (func,global) found in FSAC2021_V1.o 
+       6] bms_node (object,global) found in FSAC2021_V1.o 
+       6] Steer_Status (object,global) found in FSAC2021_V1.o 
+      5] FSAC2021_V1_step8 (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021_V_Light_Subsystem (func,global) found in FSAC2021_V1.o 
+        7] FSAC2021_V1_ON (func,global) found in FSAC2021_V1.o 
+        7] FSAC2021_V1_OFF (func,global) found in FSAC2021_V1.o 
+        7] FSAC2021_V1_BLINK (func,global) found in FSAC2021_V1.o 
+        7] blue (object,global) found in FSAC2021_V1.o 
+       6] FSAC2021__Light_Subsystem1 (func,global) found in FSAC2021_V1.o 
+       6] FSAC2021__Light_Subsystem2 (func,global) found in FSAC2021_V1.o 
+      5] FSAC2021_V1_step9 (func,global) found in FSAC2021_V1.o 
+       6] motec_node (object,global) found in FSAC2021_V1.o 
+   2] exit (func,weak) found in __ppc_eabi_init.o 
+    3] _ExitProcess (func,weak) found in __ppc_eabi_init.o 
+  1] bam_rchw (object,global) found in MPC55xx_init.o 
+  1] bam_resetvector (object,global) found in MPC55xx_init.o 
+  1] diagFlashData (object,global) found in ccp_data.o 
+  1] ccpFlashData (object,global) found in ccp_data.o 
+  1] @14 (object,local) found in siu.o 
+   2] @13 (object,local) found in siu.o 
+  1] @146 (object,local) found in flash_app.o 
+   2] @145 (object,local) found in flash_app.o 
+  1] @13 (object,local) found in IntcInterrupts.o 
+   2] @12 (object,local) found in IntcInterrupts.o 
+  1] @6 (object,local) found in Exceptions.o 
+   2] @5 (object,local) found in Exceptions.o 
+  1] @56 (object,local) found in interrupts.o 
+   2] @55 (object,local) found in interrupts.o 
+  1] @35 (object,local) found in adc.o 
+   2] @34 (object,local) found in adc.o 
+  1] @50 (object,local) found in adc.o 
+   2] @49 (object,local) found in adc.o 
+  1] @31 (object,local) found in spi.o 
+   2] @30 (object,local) found in spi.o 
+  1] @61 (object,local) found in spi.o 
+   2] @60 (object,local) found in spi.o 
+  1] @47 (object,local) found in can_ccp.o 
+   2] @46 (object,local) found in can_ccp.o 
+  1] @57 (object,local) found in can_ccp.o 
+   2] @56 (object,local) found in can_ccp.o 
+  1] @67 (object,local) found in can_ccp.o 
+   2] @66 (object,local) found in can_ccp.o 
+  1] @41 (object,local) found in ccp.o 
+   2] @40 (object,local) found in ccp.o 
+  1] @69 (object,local) found in ccp.o 
+   2] @68 (object,local) found in ccp.o 
+  1] @97 (object,local) found in ccp.o 
+   2] @96 (object,local) found in ccp.o 
+  1] @130 (object,local) found in ccp.o 
+   2] @129 (object,local) found in ccp.o 
+  1] @147 (object,local) found in ccp.o 
+   2] @146 (object,local) found in ccp.o 
+  1] @159 (object,local) found in ccp.o 
+   2] @158 (object,local) found in ccp.o 
+  1] @193 (object,local) found in ccp.o 
+   2] @192 (object,local) found in ccp.o 
+  1] @221 (object,local) found in ccp.o 
+   2] @220 (object,local) found in ccp.o 
+  1] @241 (object,local) found in ccp.o 
+   2] @240 (object,local) found in ccp.o 
+  1] @350 (object,local) found in ccp.o 
+   2] @349 (object,local) found in ccp.o 
+  1] @364 (object,local) found in ccp.o 
+   2] @363 (object,local) found in ccp.o 
+  1] @377 (object,local) found in ccp.o 
+   2] @376 (object,local) found in ccp.o 
+  1] @45 (object,local) found in can_hook.o 
+   2] @44 (object,local) found in can_hook.o 
+  1] @57 (object,local) found in can_hook.o 
+   2] @56 (object,local) found in can_hook.o 
+  1] @51 (object,local) found in can.o 
+   2] @50 (object,local) found in can.o 
+  1] @70 (object,local) found in can.o 
+   2] @69 (object,local) found in can.o 
+  1] @89 (object,local) found in can.o 
+   2] @88 (object,local) found in can.o 
+  1] @175 (object,local) found in can.o 
+   2] @174 (object,local) found in can.o 
+  1] @235 (object,local) found in can.o 
+   2] @234 (object,local) found in can.o 
+  1] @126 (object,local) found in etpu_util.o 
+   2] @125 (object,local) found in etpu_util.o 
+  1] @225 (object,local) found in etpu_util.o 
+   2] @224 (object,local) found in etpu_util.o 
+  1] @363 (object,local) found in etpu_util.o 
+   2] @362 (object,local) found in etpu_util.o 
+  1] @378 (object,local) found in etpu_util.o 
+   2] @377 (object,local) found in etpu_util.o 
+  1] @854 (object,local) found in main.o 
+   2] @853 (object,local) found in main.o 
+  1] @872 (object,local) found in main.o 
+   2] @871 (object,local) found in main.o 
+  1] @128 (object,local) found in etpu_ppa.o 
+   2] @127 (object,local) found in etpu_ppa.o 
+  1] @185 (object,local) found in etpu_ppa.o 
+   2] @184 (object,local) found in etpu_ppa.o 
+  1] @889 (object,local) found in FSAC2021_V1.o 
+   2] @888 (object,local) found in FSAC2021_V1.o 
+  1] @895 (object,local) found in FSAC2021_V1.o 
+   2] @894 (object,local) found in FSAC2021_V1.o 
+  1] @932 (object,local) found in FSAC2021_V1.o 
+   2] @931 (object,local) found in FSAC2021_V1.o 
+  1] @941 (object,local) found in FSAC2021_V1.o 
+   2] @940 (object,local) found in FSAC2021_V1.o 
+  1] @947 (object,local) found in FSAC2021_V1.o 
+   2] @946 (object,local) found in FSAC2021_V1.o 
+  1] @1009 (object,local) found in FSAC2021_V1.o 
+   2] @1008 (object,local) found in FSAC2021_V1.o 
+  1] @1016 (object,local) found in FSAC2021_V1.o 
+   2] @1015 (object,local) found in FSAC2021_V1.o 
+  1] @1025 (object,local) found in FSAC2021_V1.o 
+   2] @1024 (object,local) found in FSAC2021_V1.o 
+  1] @1034 (object,local) found in FSAC2021_V1.o 
+   2] @1033 (object,local) found in FSAC2021_V1.o 
+  1] @1116 (object,local) found in FSAC2021_V1.o 
+   2] @1115 (object,local) found in FSAC2021_V1.o 
+  1] @1126 (object,local) found in FSAC2021_V1.o 
+   2] @1125 (object,local) found in FSAC2021_V1.o 
+  1] @1135 (object,local) found in FSAC2021_V1.o 
+   2] @1134 (object,local) found in FSAC2021_V1.o 
+  1] @1144 (object,local) found in FSAC2021_V1.o 
+   2] @1143 (object,local) found in FSAC2021_V1.o 
+  1] @1277 (object,local) found in FSAC2021_V1.o 
+   2] @1276 (object,local) found in FSAC2021_V1.o 
+  1] @1305 (object,local) found in FSAC2021_V1.o 
+   2] @1304 (object,local) found in FSAC2021_V1.o 
+  1] @1320 (object,local) found in FSAC2021_V1.o 
+   2] @1319 (object,local) found in FSAC2021_V1.o 
+  1] @1337 (object,local) found in FSAC2021_V1.o 
+   2] @1336 (object,local) found in FSAC2021_V1.o 
+  1] @1438 (object,local) found in FSAC2021_V1.o 
+   2] @1437 (object,local) found in FSAC2021_V1.o 
+  1] @1455 (object,local) found in FSAC2021_V1.o 
+   2] @1454 (object,local) found in FSAC2021_V1.o 
+  1] @1461 (object,local) found in FSAC2021_V1.o 
+   2] @1460 (object,local) found in FSAC2021_V1.o 
+  1] @1469 (object,local) found in FSAC2021_V1.o 
+   2] @1468 (object,local) found in FSAC2021_V1.o 
+  1] @1475 (object,local) found in FSAC2021_V1.o 
+   2] @1474 (object,local) found in FSAC2021_V1.o 
+  1] @1518 (object,local) found in FSAC2021_V1.o 
+   2] @1517 (object,local) found in FSAC2021_V1.o 
+  1] @1548 (object,local) found in FSAC2021_V1.o 
+   2] @1547 (object,local) found in FSAC2021_V1.o 
+  1] @1579 (object,local) found in FSAC2021_V1.o 
+   2] @1578 (object,local) found in FSAC2021_V1.o 
+  1] @1979 (object,local) found in FSAC2021_V1.o 
+   2] @1978 (object,local) found in FSAC2021_V1.o 
+  1] @2221 (object,local) found in FSAC2021_V1.o 
+   2] @2220 (object,local) found in FSAC2021_V1.o 
+  1] @2233 (object,local) found in FSAC2021_V1.o 
+   2] @2232 (object,local) found in FSAC2021_V1.o 
+  1] @2242 (object,local) found in FSAC2021_V1.o 
+   2] @2241 (object,local) found in FSAC2021_V1.o 
+  1] @2262 (object,local) found in FSAC2021_V1.o 
+   2] @2261 (object,local) found in FSAC2021_V1.o 
+  1] @2268 (object,local) found in FSAC2021_V1.o 
+   2] @2267 (object,local) found in FSAC2021_V1.o 
+  1] __init_cpp_exceptions_reference (object,global) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+   2] __init_cpp_exceptions (func,global) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+    3] fragmentID (object,local) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+    3] __exception_info_constants (func,weak) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+     4] _eti_init_info (object,global) found in Linker Generated Symbol File 
+    3] __register_fragment (func,global) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+     4] fragmentinfo (object,local) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  1] __fini_cpp_exceptions_reference (object,global) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+   2] __fini_cpp_exceptions (func,global) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+    3] __unregister_fragment (func,global) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  1] _ctors (notype,global) found in Linker Generated Symbol File 
+  1] _ctors$99 (object,global) found in Linker Generated Symbol File 
+  1] _dtors (notype,global) found in Linker Generated Symbol File 
+  1] _dtors$99 (object,global) found in Linker Generated Symbol File 
+    3] .text (section,local) found in MPC5554_HWInit.o 
+    3] .text.34 (notype,local) found in MPC5554_HWInit.o 
+    3] .init (section,local) found in MPC55xx_init.o 
+    3] .init.13 (notype,local) found in MPC55xx_init.o 
+    3] .text (section,local) found in siu.o 
+    3] .text.22 (notype,local) found in siu.o 
+    3] .text (section,local) found in flash_app.o 
+    3] .text.234 (notype,local) found in flash_app.o 
+    3] .text (section,local) found in interrupts.o 
+    3] .text.61 (notype,local) found in interrupts.o 
+    3] .text (section,local) found in adc.o 
+    3] .text.61 (notype,local) found in adc.o 
+    3] .text (section,local) found in spi.o 
+    3] .text.77 (notype,local) found in spi.o 
+    3] .text (section,local) found in rti.o 
+    3] .text.28 (notype,local) found in rti.o 
+    3] .text (section,local) found in cpu.o 
+    3] .text.19 (notype,local) found in cpu.o 
+    3] .text (section,local) found in gpio.o 
+    3] .text.19 (notype,local) found in gpio.o 
+    3] .text (section,local) found in can_ccp.o 
+    3] .text.105 (notype,local) found in can_ccp.o 
+    3] .text (section,local) found in ccp.o 
+    3] .text.413 (notype,local) found in ccp.o 
+    3] .text (section,local) found in can_hook.o 
+    3] .text.63 (notype,local) found in can_hook.o 
+    3] .text (section,local) found in can.o 
+    3] .text.279 (notype,local) found in can.o 
+    3] .text (section,local) found in etpu_util.o 
+    3] .text.612 (notype,local) found in etpu_util.o 
+    3] .text (section,local) found in main.o 
+    3] .text.983 (notype,local) found in main.o 
+    3] .text (section,local) found in etpu_ppa.o 
+    3] .text.293 (notype,local) found in etpu_ppa.o 
+    3] .text (section,local) found in FSAC2021_V1.o 
+    3] .text.2413 (notype,local) found in FSAC2021_V1.o 
+    3] .init (section,local) found in Runtime.PPCEABI.S.UC.a __start.o
+    3] .init.104 (notype,local) found in Runtime.PPCEABI.S.UC.a __start.o
+    3] .text (section,local) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+    3] .text.1332 (notype,local) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+    3] .text (section,local) found in MSL_C.PPCEABI.bare.S.UC.a math_api.o
+    3] .text.556 (notype,local) found in MSL_C.PPCEABI.bare.S.UC.a math_api.o
+    3] .text (section,local) found in MSL_C.PPCEABI.bare.S.UC.a s_ceil.o
+    3] .text.516 (notype,local) found in MSL_C.PPCEABI.bare.S.UC.a s_ceil.o
+    3] .text (section,local) found in MSL_C.PPCEABI.bare.S.UC.a s_copysign.o
+    3] .text.470 (notype,local) found in MSL_C.PPCEABI.bare.S.UC.a s_copysign.o
+    3] .text (section,local) found in MSL_C.PPCEABI.bare.S.UC.a s_floor.o
+    3] .text.516 (notype,local) found in MSL_C.PPCEABI.bare.S.UC.a s_floor.o
+    3] .text (section,local) found in MSL_C.PPCEABI.bare.S.UC.a s_ldexp.o
+    3] .text.493 (notype,local) found in MSL_C.PPCEABI.bare.S.UC.a s_ldexp.o
+    3] .text (section,local) found in MSL_C.PPCEABI.bare.S.UC.a s_fabs.o
+    3] .text.469 (notype,local) found in MSL_C.PPCEABI.bare.S.UC.a s_fabs.o
+    3] .text (section,local) found in etpu_ic.o 
+    3] .text.334 (notype,local) found in etpu_ic.o 
+
+
+.__bam_bootarea section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000008 00020000 00000420  1 .__bam_bootarea 	MPC55xx_init.o 
+  00000000 000004 00020000 00000420  4 bam_rchw 	MPC55xx_init.o 
+  00000004 000004 00020004 00000424  4 bam_resetvector 	MPC55xx_init.o 
+
+
+.init section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000050 00020020 00000428  1 .init 	__ppc_eabi_init.o 
+  00000000 00001c 00020020 00000428  4 __init_hardware 	__ppc_eabi_init.o 
+  0000001c 000034 0002003c 00000444  4 __flush_cache 	__ppc_eabi_init.o 
+  00000050 00001c 00020070 00000478  1 .init 	MPC55xx_init.o 
+  00000050 00001c 00020070 00000478  4 usr_init 	MPC55xx_init.o 
+  0000006c 000000 0002008c 00000494  1 .init.13 	MPC55xx_init.o 
+  0000006c 000184 0002008c 00000494  1 .init 	Runtime.PPCEABI.S.UC.a __start.o
+  0000006c 000068 0002008c 00000494  4 __start 	Runtime.PPCEABI.S.UC.a __start.o
+  000000d4 000054 000200f4 000004fc  4 __copy_rom_section 	Runtime.PPCEABI.S.UC.a __start.o
+  00000128 000018 00020148 00000550  4 __init_bss_section 	Runtime.PPCEABI.S.UC.a __start.o
+  00000140 00001c 00020160 00000568  4 __init_registers 	Runtime.PPCEABI.S.UC.a __start.o
+  0000015c 000094 0002017c 00000584  4 __init_data 	Runtime.PPCEABI.S.UC.a __start.o
+  000001f0 000000 00020210 00000618  1 .init.104 	Runtime.PPCEABI.S.UC.a __start.o
+  000001f0 000134 00020210 00000618  1 .init 	Runtime.PPCEABI.S.UC.a __mem.o
+  000001f0 000050 00020210 00000618  4 memcpy 	Runtime.PPCEABI.S.UC.a __mem.o
+  00000240 0000b4 00020260 00000668  4 __fill_mem 	Runtime.PPCEABI.S.UC.a __mem.o
+  000002f4 000030 00020314 0000071c  4 memset 	Runtime.PPCEABI.S.UC.a __mem.o
+  00000324 000014 00020344 0000074c  1 .init 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000324 000014 00020344 0000074c  4 __exception_info_constants 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  UNUSED   000050 ........ ........    __find_exception_addresses Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000338 0000d4 00020358 00000760  1 .init 	Linker Generated Symbol File 
+  00000338 0000b4 00020358 00000760  4 _rom_copy_info 	Linker Generated Symbol File 
+  000003ec 000020 0002040c 00000814  4 _bss_init_info 	Linker Generated Symbol File 
+
+
+.init_vle section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.__exception_handlers section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 0000cc 00021000 00000840  1 .__exception_handlers 	IntcInterrupts.o 
+  00000000 0000cc 00021000 00000840 16 INTC_INTCInterruptHandler 	IntcInterrupts.o 
+  000000cc 000004 000210d0 00000910 16 *fill*
+  000000d0 000004 000210d0 00000910  1 .__exception_handlers 	Exceptions.o 
+  000000d0 000004 000210d0 00000910 16 EXCEP_DefaultExceptionHandler 	Exceptions.o 
+
+
+.text section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 00009c 00022000 00000914  1 .text 	__ppc_eabi_init.o 
+  00000000 000058 00022000 00000914  4 FlashConfig 	__ppc_eabi_init.o 
+  00000058 000020 00022058 0000096c  4 __init_user 	__ppc_eabi_init.o 
+  00000078 000020 00022078 0000098c  4 exit 	__ppc_eabi_init.o 
+  00000098 000004 00022098 000009ac  4 _ExitProcess 	__ppc_eabi_init.o 
+  0000009c 0000e0 0002209c 000009b0  1 .text 	MPC5554_HWInit.o 
+  0000009c 000020 0002209c 000009b0  4 INIT_Derivative 	MPC5554_HWInit.o 
+  000000bc 000018 000220bc 000009d0  4 INIT_ExternalBusAndMemory 	MPC5554_HWInit.o 
+  000000d4 000014 000220d4 000009e8  4 InitPCRs 	MPC5554_HWInit.o 
+  000000e8 000084 000220e8 000009fc  4 __initSIUExtBusInterface 	MPC5554_HWInit.o 
+  0000016c 000004 0002216c 00000a80  4 __initEBIChipSelects 	MPC5554_HWInit.o 
+  UNUSED   000018 ........ ........    WriteMMUTableEntry MPC5554_HWInit.o 
+  00000170 00000c 00022170 00000a84  4 __initMMUExternalMemory 	MPC5554_HWInit.o 
+  0000017c 000000 0002217c 00000a90  1 .text.34 	MPC5554_HWInit.o 
+  0000017c 000054 0002217c 00000a90  1 .text 	siu.o 
+  0000017c 000054 0002217c 00000a90  4 ec_pad_init 	siu.o 
+  000001d0 000000 000221d0 00000ae4  1 .text.22 	siu.o 
+  000001d0 000120 000221d0 00000ae4  1 .text 	flash_app.o 
+  UNUSED   0000c0 ........ ........    Fls_Init flash_app.o 
+  000001d0 000120 000221d0 00000ae4  4 CCP_FlashInit 	flash_app.o 
+  UNUSED   0000bc ........ ........    Fls_Read flash_app.o 
+  000002f0 000000 000222f0 00000c04  1 .text.234 	flash_app.o 
+  000002f0 000060 000222f0 00000c04  1 .text 	IntcInterrupts.o 
+  000002f0 000030 000222f0 00000c04  4 INTC_InstallINTCInterruptHandler 	IntcInterrupts.o 
+  00000320 000030 00022320 00000c34  4 INTC_InitINTCInterrupts 	IntcInterrupts.o 
+  00000350 000064 00022350 00000c64  1 .text 	Exceptions.o 
+  00000350 000064 00022350 00000c64  4 EXCEP_InitExceptionHandlers 	Exceptions.o 
+  000003b4 000070 000223b4 00000cc8  1 .text 	interrupts.o 
+  000003b4 000040 000223b4 00000cc8  4 ec_interrupts_init 	interrupts.o 
+  000003f4 000030 000223f4 00000d08  4 ec_interrupts_allintreg 	interrupts.o 
+  00000424 000000 00022424 00000d38  1 .text.61 	interrupts.o 
+  00000424 0005c8 00022424 00000d38  1 .text 	adc.o 
+  00000424 000430 00022424 00000d38  4 ec_adc_init 	adc.o 
+  00000854 000198 00022854 00001168  4 ec_adc_readresult 	adc.o 
+  000009ec 000000 000229ec 00001300  1 .text.61 	adc.o 
+  000009ec 00040c 000229ec 00001300  1 .text 	spi.o 
+  000009ec 000068 000229ec 00001300  4 ec_spi_delay 	spi.o 
+  00000a54 0001d0 00022a54 00001368  4 ec_spia_init 	spi.o 
+  00000c24 0001d4 00022c24 00001538  4 ec_spi_masterwriteread 	spi.o 
+  UNUSED   000088 ........ ........    ec_spi_slavereadwrite spi.o 
+  00000df8 000000 00022df8 0000170c  1 .text.77 	spi.o 
+  00000df8 000114 00022df8 0000170c  1 .text 	rti.o 
+  00000df8 000114 00022df8 0000170c  4 ec_rti_init 	rti.o 
+  UNUSED   0000b0 ........ ........    ec_pit_init rti.o 
+  00000f0c 000000 00022f0c 00001820  1 .text.28 	rti.o 
+  00000f0c 000080 00022f0c 00001820  1 .text 	cpu.o 
+  00000f0c 000068 00022f0c 00001820  4 ec_cpu_init 	cpu.o 
+  00000f74 000018 00022f74 00001888  4 ec_cpu_reset 	cpu.o 
+  00000f8c 000000 00022f8c 000018a0  1 .text.19 	cpu.o 
+  00000f8c 000034 00022f8c 000018a0  1 .text 	gpio.o 
+  00000f8c 000018 00022f8c 000018a0  4 ec_gpio_read 	gpio.o 
+  00000fa4 00001c 00022fa4 000018b8  4 ec_gpio_write 	gpio.o 
+  00000fc0 000000 00022fc0 000018d4  1 .text.19 	gpio.o 
+  00000fc0 000224 00022fc0 000018d4  1 .text 	can_ccp.o 
+  00000fc0 000004 00022fc0 000018d4  4 ccpCanInit 	can_ccp.o 
+  00000fc4 000074 00022fc4 000018d8  4 CCP_CRO_Indication 	can_ccp.o 
+  00001038 000020 00023038 0000194c  4 CCP_DTO_Confirmation 	can_ccp.o 
+  00001058 0000d0 00023058 0000196c  4 ccpSend 	can_ccp.o 
+  00001128 000080 00023128 00001a3c  4 ccpUserBackground 	can_ccp.o 
+  000011a8 000008 000231a8 00001abc  4 ccpGetPointer 	can_ccp.o 
+  000011b0 000034 000231b0 00001ac4  4 ccpCheckWriteAccess 	can_ccp.o 
+  000011e4 000000 000231e4 00001af8  1 .text.105 	can_ccp.o 
+  000011e4 001280 000231e4 00001af8  1 .text 	ccp.o 
+  000011e4 00006c 000231e4 00001af8  4 ccpSendCrm 	ccp.o 
+  00001250 000024 00023250 00001b64  4 ccpQueueInit 	ccp.o 
+  00001274 000078 00023274 00001b88  4 ccpQueueWrite 	ccp.o 
+  000012ec 0000f0 000232ec 00001c00  4 ccpWriteMTA 	ccp.o 
+  000013dc 00005c 000233dc 00001cf0  4 ccpReadMTA 	ccp.o 
+  00001438 00009c 00023438 00001d4c  4 ccpClearDaqList 	ccp.o 
+  000014d4 0000ac 000234d4 00001de8  4 ccpPrepareDaq 	ccp.o 
+  00001580 00004c 00023580 00001e94  4 ccpStartDaq 	ccp.o 
+  000015cc 00007c 000235cc 00001ee0  4 ccpStartAllPreparedDaq 	ccp.o 
+  00001648 00008c 00023648 00001f5c  4 ccpStopDaq 	ccp.o 
+  000016d4 00005c 000236d4 00001fe8  4 ccpStopAllDaq 	ccp.o 
+  00001730 000170 00023730 00002044  4 ccpSampleAndTransmitDtm 	ccp.o 
+  000018a0 00015c 000238a0 000021b4  4 ccpDaq 	ccp.o 
+  000019fc 000160 000239fc 00002310  4 ccpBackground 	ccp.o 
+  00001b5c 000790 00023b5c 00002470  4 ccpCommand 	ccp.o 
+  000022ec 000124 000242ec 00002c00  4 ccpSendCallBack 	ccp.o 
+  00002410 000054 00024410 00002d24  4 ccpInit 	ccp.o 
+  00002464 000000 00024464 00002d78  1 .text.413 	ccp.o 
+  00002464 000088 00024464 00002d78  1 .text 	can_hook.o 
+  00002464 000048 00024464 00002d78  4 ec_can_applrxindication 	can_hook.o 
+  000024ac 000040 000244ac 00002dc0  4 ec_can_appltxconfirmation 	can_hook.o 
+  000024ec 000000 000244ec 00002e00  1 .text.63 	can_hook.o 
+  000024ec 000f1c 000244ec 00002e00  1 .text 	can.o 
+  000024ec 000244 000244ec 00002e00  4 ec_cana_init 	can.o 
+  00002730 000244 00024730 00003044  4 ec_canb_init 	can.o 
+  00002974 000244 00024974 00003288  4 ec_canc_init 	can.o 
+  00002bb8 0000d4 00024bb8 000034cc  4 ec_buffer_init 	can.o 
+  00002c8c 00026c 00024c8c 000035a0  4 ec_bufint_init 	can.o 
+  UNUSED   000098 ........ ........    ec_can_disableinterrupts can.o 
+  UNUSED   000064 ........ ........    ec_can_enableinterrupts can.o 
+  00002ef8 0002b8 00024ef8 0000380c  4 ec_can_receive 	can.o 
+  UNUSED   000144 ........ ........    ec_can_receiveall can.o 
+  000031b0 000258 000251b0 00003ac4  4 ec_can_transmit 	can.o 
+  UNUSED   000204 ........ ........    ec_remote_transmit can.o 
+  00003408 000000 00025408 00003d1c  1 .text.279 	can.o 
+  00003408 000000 00025408 00003d1c  1 .text 	etpu_ic.o 
+  UNUSED   000118 ........ ........    fs_etpu_ic_init etpu_ic.o 
+  UNUSED   000100 ........ ........    fs_etpu_ic_init_ram etpu_ic.o 
+  UNUSED   000134 ........ ........    fs_etpu_ic_init_link etpu_ic.o 
+  UNUSED   00011c ........ ........    fs_etpu_ic_init_link_ram etpu_ic.o 
+  UNUSED   00002c ........ ........    fs_etpu_ic_read_trans_count etpu_ic.o 
+  UNUSED   00002c ........ ........    fs_etpu_ic_read_final_time etpu_ic.o 
+  UNUSED   00002c ........ ........    fs_etpu_ic_read_last_time etpu_ic.o 
+  00003408 000000 00025408 00003d1c  1 .text.334 	etpu_ic.o 
+  00003408 000334 00025408 00003d1c  1 .text 	etpu_util.o 
+  00003408 0001c8 00025408 00003d1c  4 fs_etpu_init 	etpu_util.o 
+  UNUSED   000138 ........ ........    fs_etpu2_init etpu_util.o 
+  UNUSED   0000dc ........ ........    fs_etpu_chan_init etpu_util.o 
+  000035d0 000028 000255d0 00003ee4  4 fs_etpu_data_ram 	etpu_util.o 
+  UNUSED   00001c ........ ........    fs_etpu_set_hsr etpu_util.o 
+  UNUSED   00001c ........ ........    fs_etpu_get_hsr etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_enable etpu_util.o 
+  000035f8 000024 000255f8 00003f0c  4 fs_etpu_disable 	etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_interrupt_enable etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_interrupt_disable etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_dma_enable etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_dma_disable etpu_util.o 
+  0000361c 000018 0002561c 00003f30  4 fs_timer_start 	etpu_util.o 
+  00003634 000054 00025634 00003f48  4 fs_etpu_malloc 	etpu_util.o 
+  UNUSED   0000a0 ........ ........    fs_etpu_malloc2 etpu_util.o 
+  UNUSED   00002c ........ ........    fs_etpu_set_chan_local_32 etpu_util.o 
+  UNUSED   000030 ........ ........    fs_etpu_set_chan_local_24 etpu_util.o 
+  UNUSED   00002c ........ ........    fs_etpu_set_chan_local_16 etpu_util.o 
+  UNUSED   00002c ........ ........    fs_etpu_set_chan_local_8 etpu_util.o 
+  UNUSED   00002c ........ ........    fs_etpu_get_chan_local_32 etpu_util.o 
+  UNUSED   000030 ........ ........    fs_etpu_get_chan_local_24s etpu_util.o 
+  00003688 000034 00025688 00003f9c  4 fs_etpu_get_chan_local_24 	etpu_util.o 
+  UNUSED   00002c ........ ........    fs_etpu_get_chan_local_16 etpu_util.o 
+  UNUSED   00002c ........ ........    fs_etpu_get_chan_local_8 etpu_util.o 
+  UNUSED   00000c ........ ........    fs_etpu_set_global_32 etpu_util.o 
+  UNUSED   000010 ........ ........    fs_etpu_set_global_24 etpu_util.o 
+  UNUSED   00000c ........ ........    fs_etpu_set_global_16 etpu_util.o 
+  UNUSED   00000c ........ ........    fs_etpu_set_global_8 etpu_util.o 
+  UNUSED   00000c ........ ........    fs_etpu_get_global32 etpu_util.o 
+  UNUSED   000010 ........ ........    fs_etpu_get_global_24s etpu_util.o 
+  UNUSED   000014 ........ ........    fs_etpu_get_global_24 etpu_util.o 
+  UNUSED   00000c ........ ........    fs_etpu_get_global_16 etpu_util.o 
+  UNUSED   00000c ........ ........    fs_etpu_get_global_8 etpu_util.o 
+  000036bc 00004c 000256bc 00003fd0  4 fs_memcpy32 	etpu_util.o 
+  00003708 000034 00025708 0000401c  4 fs_memset32 	etpu_util.o 
+  UNUSED   000020 ........ ........    fs_etpu_get_chan_interrupt_flag etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_clear_chan_interrupt_flag etpu_util.o 
+  UNUSED   000020 ........ ........    fs_etpu_get_chan_dma_flag etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_clear_chan_dma_flag etpu_util.o 
+  UNUSED   000018 ........ ........    fs_etpu_get_global_exceptions etpu_util.o 
+  UNUSED   000018 ........ ........    fs_etpu_clear_global_exceptions etpu_util.o 
+  UNUSED   000148 ........ ........    fs_etpu_coherent_read_24 etpu_util.o 
+  UNUSED   000140 ........ ........    fs_etpu_coherent_read_32 etpu_util.o 
+  UNUSED   000140 ........ ........    fs_etpu_coherent_write_24 etpu_util.o 
+  UNUSED   000138 ........ ........    fs_etpu_coherent_write_32 etpu_util.o 
+  0000373c 000000 0002573c 00004050  1 .text.612 	etpu_util.o 
+  0000373c 000204 0002573c 00004050  1 .text 	main.o 
+  0000373c 0000d8 0002573c 00004050  4 rt_OneStep 	main.o 
+  00003814 00012c 00025814 00004128  4 main 	main.o 
+  00003940 000000 00025940 00004254  1 .text.983 	main.o 
+  00003940 000148 00025940 00004254  1 .text 	etpu_ppa.o 
+  00003940 000100 00025940 00004254  4 fs_etpu_ppa_p_init 	etpu_ppa.o 
+  UNUSED   000130 ........ ........    fs_etpu_ppa_init etpu_ppa.o 
+  UNUSED   00009c ........ ........    fs_etpu_ppa_get_accumulation etpu_ppa.o 
+  UNUSED   00005c ........ ........    fs_etpu_ppa_get_immediate etpu_ppa.o 
+  00003a40 000048 00025a40 00004354  4 ec_etpu_get_ppa_freq 	etpu_ppa.o 
+  00003a88 000000 00025a88 0000439c  1 .text.293 	etpu_ppa.o 
+  00003a88 009a54 00025a88 0000439c  1 .text 	FSAC2021_V1.o 
+  00003a88 000130 00025a88 0000439c  4 ec_tle6232_diag 	FSAC2021_V1.o 
+  00003bb8 000040 00025bb8 000044cc  4 ISR_Rti_CH23 	FSAC2021_V1.o 
+  00003bf8 000318 00025bf8 0000450c  4 ISR_FlexCAN_2_MB1 	FSAC2021_V1.o 
+  00003f10 000184 00025f10 00004824  4 ISR_FlexCAN_2_MB0 	FSAC2021_V1.o 
+  00004094 00003c 00026094 000049a8  4 ISR_FlexCAN_2_MB8 	FSAC2021_V1.o 
+  000040d0 000100 000260d0 000049e4  4 FSAC2021_V1_SetEventsForThisBaseStep 	FSAC2021_V1.o 
+  000041d0 000220 000261d0 00004ae4  4 rate_monotonic_scheduler 	FSAC2021_V1.o 
+  000043f0 00000c 000263f0 00004d04  4 FSAC2021_V1_LPF_Init 	FSAC2021_V1.o 
+  000043fc 000028 000263fc 00004d10  4 FSAC2021_V1_LPF 	FSAC2021_V1.o 
+  00004424 0000b0 00026424 00004d38  4 rt_roundf_snf 	FSAC2021_V1.o 
+  000044d4 00004c 000264d4 00004de8  4 FSAC2021_V1_Round 	FSAC2021_V1.o 
+  00004520 000048 00026520 00004e34  4 FSAC2021_V1_Whl_Spd_Hz2RPM 	FSAC2021_V1.o 
+  00004568 000048 00026568 00004e7c  4 FSAC2021_V_Whl_Spd_Hz2RPM2 	FSAC2021_V1.o 
+  000045b0 0003c8 000265b0 00004ec4  4 FSAC2021_V1_MOTEC_CONTROL 	FSAC2021_V1.o 
+  00004978 000048 00026978 0000528c  4 FSAC2021_V1_Angle2Pulses 	FSAC2021_V1.o 
+  000049c0 000078 000269c0 000052d4  4 FSAC2021_V1_Angle2Pulses_p 	FSAC2021_V1.o 
+  00004a38 000074 00026a38 0000534c  4 FSAC2021_V1_Angle2Pulses_b 	FSAC2021_V1.o 
+  00004aac 000014 00026aac 000053c0  4 FSAC2021_V1_Chart1_Enable 	FSAC2021_V1.o 
+  UNUSED   000058 ........ ........    FSAC2021_V1_Chart1_Disable FSAC2021_V1.o 
+  00004ac0 000154 00026ac0 000053d4  4 FSAC2021_V1_Chart1 	FSAC2021_V1.o 
+  00004c14 000014 00026c14 00005528  4 FSAC2021_V1_Chart4_Enable 	FSAC2021_V1.o 
+  00004c28 000058 00026c28 0000553c  4 FSAC2021_V1_Chart4_Disable 	FSAC2021_V1.o 
+  00004c80 000154 00026c80 00005594  4 FSAC2021_V1_Chart4 	FSAC2021_V1.o 
+  00004dd4 000014 00026dd4 000056e8  4 FSAC2021_V_Chart1_n_Enable 	FSAC2021_V1.o 
+  00004de8 000058 00026de8 000056fc  4 FSAC2021__Chart1_n_Disable 	FSAC2021_V1.o 
+  00004e40 0001b8 00026e40 00005754  4 FSAC2021_V1_Chart1_b 	FSAC2021_V1.o 
+  00004ff8 000028 00026ff8 0000590c  4 FSAC2021_V1_Subsystem 	FSAC2021_V1.o 
+  00005020 00000c 00027020 00005934  4 FSAC2021_V1_ON 	FSAC2021_V1.o 
+  0000502c 00000c 0002702c 00005940  4 FSAC2021_V1_OFF 	FSAC2021_V1.o 
+  00005038 00002c 00027038 0000594c  4 FSAC2021_V1_BLINK 	FSAC2021_V1.o 
+  00005064 000070 00027064 00005978  4 FSAC2021_V_Light_Subsystem 	FSAC2021_V1.o 
+  000050d4 00007c 000270d4 000059e8  4 FSAC2021__Light_Subsystem1 	FSAC2021_V1.o 
+  UNUSED   000114 ........ ........    F_Light_Subsystem2_Disable FSAC2021_V1.o 
+  00005150 00000c 00027150 00005a64  4 FSA_Light_Subsystem2_Start 	FSAC2021_V1.o 
+  0000515c 000478 0002715c 00005a70  4 FSAC2021__Light_Subsystem2 	FSAC2021_V1.o 
+  000055d4 000118 000275d4 00005ee8  4 rt_roundd_snf 	FSAC2021_V1.o 
+  000056ec 000020 000276ec 00006000  4 FSAC2021_V1_step0 	FSAC2021_V1.o 
+  0000570c 00004c 0002770c 00006020  4 FSAC2021_V1_step1 	FSAC2021_V1.o 
+  00005758 000028 00027758 0000606c  4 FSAC2021_V1_step2 	FSAC2021_V1.o 
+  00005780 00093c 00027780 00006094  4 FSAC2021_V1_step3 	FSAC2021_V1.o 
+  000060bc 0003ac 000280bc 000069d0  4 FSAC2021_V1_step4 	FSAC2021_V1.o 
+  00006468 0003b4 00028468 00006d7c  4 FSAC2021_V1_step5 	FSAC2021_V1.o 
+  0000681c 004ce8 0002881c 00007130  4 FSAC2021_V1_step6 	FSAC2021_V1.o 
+  0000b504 001730 0002d504 0000be18  4 FSAC2021_V1_step7 	FSAC2021_V1.o 
+  0000cc34 00015c 0002ec34 0000d548  4 FSAC2021_V1_step8 	FSAC2021_V1.o 
+  0000cd90 0000a0 0002ed90 0000d6a4  4 FSAC2021_V1_step9 	FSAC2021_V1.o 
+  0000ce30 000090 0002ee30 0000d744  4 FSAC2021_V1_step 	FSAC2021_V1.o 
+  0000cec0 00061c 0002eec0 0000d7d4  4 FSAC2021_V1_initialize 	FSAC2021_V1.o 
+  0000d4dc 000000 0002f4dc 0000ddf0  1 .text.2413 	FSAC2021_V1.o 
+  0000d4dc 000060 0002f4dc 0000ddf0  1 .text 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  0000d4dc 000034 0002f4dc 0000ddf0  4 __register_fragment 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  0000d510 00002c 0002f510 0000de24  4 __unregister_fragment 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   0000a4 ........ ........    ExPPC_FindExceptionFragment__FPcP12FragmentInfo Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   0001b0 ........ ........    ExPPC_FindExceptionRecord__FPcP15MWExceptionInfo Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000008 ........ ........    ExPPC_PopR31__FPcP15MWExceptionInfo Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000020 ........ ........    ExPPC_CurrentAction__FPC14ActionIterator Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000254 ........ ........    ExPPC_NextAction__FP14ActionIterator Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000198 ........ ........    ExPPC_PopStackFrame__FP12ThrowContextP15MWExceptionInfo Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   0009c4 ........ ........    ExPPC_UnwindStack__FP12ThrowContextP15MWExceptionInfoPv Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000088 ........ ........    ExPPC_IsInSpecification__FPcP16ex_specification Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000100 ........ ........    __unexpected Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000040 ........ ........    __dt__Q23std13bad_exceptionFv Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00002c ........ ........    ExPPC_LongJump__FP12ThrowContextPvPv Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000080 ........ ........    ExPPC_HandleUnexpected__FP12ThrowContextP15MWExceptionInfoP16ex_specification Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000364 ........ ........    ExPPC_ThrowHandler__FP12ThrowContext Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00006c ........ ........    __throw Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00002c ........ ........    __end__catch Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   0000d4 ........ ........    __uncaught_exception_helper__FP12ThrowContext Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00003c ........ ........    __uncaught_exception Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    what__Q23std13bad_exceptionCFv Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  0000d53c 000000 0002f53c 0000de50  1 .text.1332 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  0000d53c 000078 0002f53c 0000de50  1 .text 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  0000d53c 000044 0002f53c 0000de50  4 __init_cpp_exceptions 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  0000d580 000034 0002f580 0000de94  4 __fini_cpp_exceptions 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  0000d5b4 00110c 0002f5b4 0000dec8  1 .text 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000024 ........ ........    _fp_round Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000014 ........ ........    _fp_get_fpscr Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000018 ........ ........    _fp_set_fpscr Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_utof Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000034 ........ ........    _f_itof Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000000 ........ ........    f_itof_common Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000000 ........ ........    f_itof_go_coerce Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_ulltof Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000048 ........ ........    _f_lltof Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000000 ........ ........    f_lltof_common Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d5b4 000058 0002f5b4 0000dec8  4 _f_qtof 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d5bc 000000 0002f5bc 0000ded0    _d_dtof (entry of _f_qtof) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d60c 000008 0002f60c 0000df20  4 _d_utod 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d614 000018 0002f614 0000df28  4 _d_itod 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d620 000000 0002f620 0000df34    d_itod_common (entry of _d_itod) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _d_ulltod Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d62c 00005c 0002f62c 0000df40  4 _d_lltod 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d63c 000000 0002f63c 0000df50    d_Xtod_common (entry of _d_lltod) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d63c 000000 0002f63c 0000df50    d_lltod_common (entry of _d_lltod) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d67c 000000 0002f67c 0000df90    d_lltod_go_coerce (entry of _d_lltod) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d688 000050 0002f688 0000df9c  4 _f_ftod 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000000 ........ ........    _f_ftoq Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_ftoll Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   00000c ........ ........    _f_ftoull Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000000 ........ ........    f_tolongX_common Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_ftou Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d6d8 00010c 0002f6d8 0000dfec  4 _f_ftoi 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000000 ........ ........    f_toshortX_common Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000000 ........ ........    f_toX_common Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d700 000000 0002f700 0000e014    Xtoshort_common (entry of _f_ftoi) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _d_dtoll Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   00000c ........ ........    _d_dtoull Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000000 ........ ........    d_tolongX_common Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d7e4 000008 0002f7e4 0000e0f8  4 _d_dtou 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d7ec 000140 0002f7ec 0000e100  4 _d_dtoi 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d7f0 000000 0002f7f0 0000e104    d_toshortX_common (entry of _d_dtoi) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000000 ........ ........    d_toX_common Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d80c 000000 0002f80c 0000e120    Xtolong_common (entry of _d_dtoi) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   00000c ........ ........    _d_dtoq Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000010 ........ ........    _d_qtod Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_cmp Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_cmpe Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_feq Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_fne Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_flt Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_fle Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_fgt Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_fge Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_fun Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000060 ........ ........    _f_for Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000000 ........ ........    f_compare Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _d_cmp Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _d_cmpe Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d92c 000008 0002f92c 0000e240  4 _d_feq 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d934 000008 0002f934 0000e248  4 _d_fne 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d93c 000008 0002f93c 0000e250  4 _d_flt 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d944 000008 0002f944 0000e258  4 _d_fle 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d94c 000008 0002f94c 0000e260  4 _d_fgt 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d954 000008 0002f954 0000e268  4 _d_fge 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _d_fun Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d95c 0001a8 0002f95c 0000e270  4 _d_for 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d960 000000 0002f960 0000e274    d_compare (entry of _d_for) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000d9e0 000000 0002f9e0 0000e2f4    compare_dispatch (entry of _d_for) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000000 ........ ........    f_compare_un Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_neg Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _d_neg Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000db04 000240 0002fb04 0000e418  4 _f_mul 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000db40 000000 0002fb40 0000e454    f_coerce_result (entry of _f_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000dc6c 000000 0002fc6c 0000e580    f_result_is_INF (entry of _f_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000dcec 000000 0002fcec 0000e600    f_result_is_zero (entry of _f_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000dd00 000000 0002fd00 0000e614    f_both_NaNs (entry of _f_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000dd08 000000 0002fd08 0000e61c    f_x_is_NaN (entry of _f_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000dd10 000000 0002fd10 0000e624    f_result_is_Invalid (entry of _f_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000dd30 000000 0002fd30 0000e644    f_y_is_NaN (entry of _f_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000dd3c 000000 0002fd3c 0000e650    f_result_is_x (entry of _f_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   0000ac ........ ........    _f_div Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000008 ........ ........    _f_sub Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000198 ........ ........    _f_add Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  UNUSED   000000 ........ ........    f_add_common Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000dd44 000008 0002fd44 0000e658  4 _d_sub 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000dd4c 000230 0002fd4c 0000e660  4 _d_add 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000dd50 000000 0002fd50 0000e664    d_add_common (entry of _d_add) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000df7c 0002ec 0002ff7c 0000e890  4 _d_mul 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000dff8 000000 0002fff8 0000e90c    d_coerce_result (entry of _d_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e078 000000 00030078 0000e98c    d_double_result_and_exit (entry of _d_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e15c 000000 0003015c 0000ea70    d_result_is_INF (entry of _d_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e1e0 000000 000301e0 0000eaf4    d_result_is_zero (entry of _d_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e1f4 000000 000301f4 0000eb08    d_both_NaNs (entry of _d_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e1fc 000000 000301fc 0000eb10    d_x_is_NaN (entry of _d_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e204 000000 00030204 0000eb18    d_result_is_Invalid (entry of _d_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e224 000000 00030224 0000eb38    d_y_is_NaN (entry of _d_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e244 000000 00030244 0000eb58    d_result_is_x (entry of _d_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e248 000000 00030248 0000eb5c    d_result_is_number_x (entry of _d_mul) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e268 0000c8 00030268 0000eb7c  4 divu_l_r3_r4_r5 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e330 000164 00030330 0000ec44  4 _d_div 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e494 0000d4 00030494 0000eda8  4 f_unpack_1 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e49c 000000 0003049c 0000edb0    f_unpack_2 (entry of f_unpack_1) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e568 000158 00030568 0000ee7c  4 d_unpack_1 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e570 000000 00030570 0000ee84    d_unpack_2 (entry of d_unpack_1) 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  0000e6c0 000074 000306c0 0000efd4  1 .text 	MSL_C.PPCEABI.bare.S.UC.a math_api.o
+  UNUSED   000058 ........ ........    __msl_generic_count_bits32 MSL_C.PPCEABI.bare.S.UC.a math_api.o
+  UNUSED   0000a8 ........ ........    __msl_generic_count_bits64 MSL_C.PPCEABI.bare.S.UC.a math_api.o
+  UNUSED   0000c0 ........ ........    __msl_relation MSL_C.PPCEABI.bare.S.UC.a math_api.o
+  UNUSED   000008 ........ ........    __signbitf MSL_C.PPCEABI.bare.S.UC.a math_api.o
+  UNUSED   000050 ........ ........    __fpclassifyf MSL_C.PPCEABI.bare.S.UC.a math_api.o
+  UNUSED   000018 ........ ........    __signbitd MSL_C.PPCEABI.bare.S.UC.a math_api.o
+  0000e6c0 000074 000306c0 0000efd4  4 __fpclassifyd 	MSL_C.PPCEABI.bare.S.UC.a math_api.o
+  0000e734 000000 00030734 0000f048  1 .text.556 	MSL_C.PPCEABI.bare.S.UC.a math_api.o
+  0000e734 0001cc 00030734 0000f048  1 .text 	MSL_C.PPCEABI.bare.S.UC.a s_ceil.o
+  0000e734 0001cc 00030734 0000f048  4 ceil 	MSL_C.PPCEABI.bare.S.UC.a s_ceil.o
+  0000e900 000000 00030900 0000f214  1 .text.516 	MSL_C.PPCEABI.bare.S.UC.a s_ceil.o
+  0000e900 000028 00030900 0000f214  1 .text 	MSL_C.PPCEABI.bare.S.UC.a s_copysign.o
+  0000e900 000028 00030900 0000f214  4 copysign 	MSL_C.PPCEABI.bare.S.UC.a s_copysign.o
+  0000e928 000000 00030928 0000f23c  1 .text.470 	MSL_C.PPCEABI.bare.S.UC.a s_copysign.o
+  0000e928 0001d0 00030928 0000f23c  1 .text 	MSL_C.PPCEABI.bare.S.UC.a s_floor.o
+  0000e928 0001d0 00030928 0000f23c  4 floor 	MSL_C.PPCEABI.bare.S.UC.a s_floor.o
+  0000eaf8 000000 00030af8 0000f40c  1 .text.516 	MSL_C.PPCEABI.bare.S.UC.a s_floor.o
+  0000eaf8 0001fc 00030af8 0000f40c  1 .text 	MSL_C.PPCEABI.bare.S.UC.a s_ldexp.o
+  0000eaf8 0001fc 00030af8 0000f40c  4 ldexp 	MSL_C.PPCEABI.bare.S.UC.a s_ldexp.o
+  0000ecf4 000000 00030cf4 0000f608  1 .text.493 	MSL_C.PPCEABI.bare.S.UC.a s_ldexp.o
+  0000ecf4 000018 00030cf4 0000f608  1 .text 	MSL_C.PPCEABI.bare.S.UC.a s_fabs.o
+  0000ecf4 000018 00030cf4 0000f608  4 fabs 	MSL_C.PPCEABI.bare.S.UC.a s_fabs.o
+  0000ed0c 000000 00030d0c 0000f620  1 .text.469 	MSL_C.PPCEABI.bare.S.UC.a s_fabs.o
+
+
+.text_vle section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.rodata section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 00000c 00030d10 0000f620  1 .rodata 	__ppc_eabi_init.o 
+  00000000 00000c 00030d10 0000f620  4 @22 	__ppc_eabi_init.o 
+  0000000c 000004 00030d20 0000f630  8 *fill*
+  00000010 0006d8 00030d20 0000f630  1 .rodata 	flash_array.o 
+  UNUSED   00014c ........ ........    BlankCheck_C flash_array.o 
+  UNUSED   00012c ........ ........    CheckSum_C flash_array.o 
+  00000010 000184 00030d20 0000f630  4 FlashErase_C 	flash_array.o 
+  00000198 000130 00030ea8 0000f7b8  8 FlashInit_C 	flash_array.o 
+  000002c8 000240 00030fd8 0000f8e8  8 FlashProgram_C 	flash_array.o 
+  UNUSED   0000b8 ........ ........    FlashResume_C flash_array.o 
+  UNUSED   00011c ........ ........    FlashSuspend_C flash_array.o 
+  00000508 0000e0 00031218 0000fb28  8 GetLock_C 	flash_array.o 
+  UNUSED   000044 ........ ........    GetWaitState_C flash_array.o 
+  UNUSED   000170 ........ ........    ProgramVerify_C flash_array.o 
+  UNUSED   000060 ........ ........    RWECheck_C flash_array.o 
+  000005e8 000100 000312f8 0000fc08  8 SetLock_C 	flash_array.o 
+  UNUSED   00005c ........ ........    SetWaitState_C flash_array.o 
+  000006e8 001840 000313f8 0000fd08  1 .rodata 	main.o 
+  000006e8 000040 000313f8 0000fd08  8 etpu_globals 	main.o 
+  00000728 001800 00031438 0000fd48  8 etpu_code 	main.o 
+  00001f28 000018 00032c38 00011548  1 .rodata 	FSAC2021_V1_data.o 
+  00001f28 000018 00032c38 00011548  8 FSAC2021_V1_ConstB 	FSAC2021_V1_data.o 
+
+
+.ctors section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000000 00032c50 00011560  1 .ctors$00 	Linker Generated Symbol File 
+  00000000 000000 00032c50 00011560  4 _ctors 	Linker Generated Symbol File 
+  00000000 000004 00032c50 00011560  1 .ctors$10 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000000 000004 00032c50 00011560  4 __init_cpp_exceptions_reference 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000004 000004 00032c54 00011564  1 .ctors$99 	Linker Generated Symbol File 
+  00000004 000004 00032c54 00011564  4 _ctors$99 	Linker Generated Symbol File 
+
+
+.dtors section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000000 00032c58 00011568  1 .dtors$00 	Linker Generated Symbol File 
+  00000000 000000 00032c58 00011568  4 _dtors 	Linker Generated Symbol File 
+  00000000 000004 00032c58 00011568  1 .dtors$15 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000000 000004 00032c58 00011568  4 __fini_cpp_exceptions_reference 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000004 000004 00032c5c 0001156c  1 .dtors$99 	Linker Generated Symbol File 
+  00000004 000004 00032c5c 0001156c  4 _dtors$99 	Linker Generated Symbol File 
+
+
+extab section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000008 00032c60 00011570  1 extab 	siu.o 
+  00000000 000008 00032c60 00011570  4 @13 	siu.o 
+  00000008 000008 00032c68 00011578  1 extab 	flash_app.o 
+  00000008 000008 00032c68 00011578  4 @145 	flash_app.o 
+  UNUSED   000008 ........ ........    @176 flash_app.o 
+  00000010 000008 00032c70 00011580  1 extab 	IntcInterrupts.o 
+  00000010 000008 00032c70 00011580  4 @12 	IntcInterrupts.o 
+  00000018 000008 00032c78 00011588  1 extab 	Exceptions.o 
+  00000018 000008 00032c78 00011588  4 @5 	Exceptions.o 
+  00000020 000008 00032c80 00011590  1 extab 	interrupts.o 
+  00000020 000008 00032c80 00011590  4 @55 	interrupts.o 
+  00000028 000010 00032c88 00011598  1 extab 	adc.o 
+  00000028 000008 00032c88 00011598  4 @34 	adc.o 
+  00000030 000008 00032c90 000115a0  4 @49 	adc.o 
+  00000038 000010 00032c98 000115a8  1 extab 	spi.o 
+  00000038 000008 00032c98 000115a8  4 @30 	spi.o 
+  00000040 000008 00032ca0 000115b0  4 @60 	spi.o 
+  UNUSED   000008 ........ ........    @69 spi.o 
+  00000048 000018 00032ca8 000115b8  1 extab 	can_ccp.o 
+  00000048 000008 00032ca8 000115b8  4 @46 	can_ccp.o 
+  00000050 000008 00032cb0 000115c0  4 @56 	can_ccp.o 
+  00000058 000008 00032cb8 000115c8  4 @66 	can_ccp.o 
+  00000060 000060 00032cc0 000115d0  1 extab 	ccp.o 
+  00000060 000008 00032cc0 000115d0  4 @40 	ccp.o 
+  00000068 000008 00032cc8 000115d8  4 @68 	ccp.o 
+  00000070 000008 00032cd0 000115e0  4 @96 	ccp.o 
+  00000078 000008 00032cd8 000115e8  4 @129 	ccp.o 
+  00000080 000008 00032ce0 000115f0  4 @146 	ccp.o 
+  00000088 000008 00032ce8 000115f8  4 @158 	ccp.o 
+  00000090 000008 00032cf0 00011600  4 @192 	ccp.o 
+  00000098 000008 00032cf8 00011608  4 @220 	ccp.o 
+  000000a0 000008 00032d00 00011610  4 @240 	ccp.o 
+  000000a8 000008 00032d08 00011618  4 @349 	ccp.o 
+  000000b0 000008 00032d10 00011620  4 @363 	ccp.o 
+  000000b8 000008 00032d18 00011628  4 @376 	ccp.o 
+  000000c0 000010 00032d20 00011630  1 extab 	can_hook.o 
+  000000c0 000008 00032d20 00011630  4 @44 	can_hook.o 
+  000000c8 000008 00032d28 00011638  4 @56 	can_hook.o 
+  000000d0 000028 00032d30 00011640  1 extab 	can.o 
+  000000d0 000008 00032d30 00011640  4 @50 	can.o 
+  000000d8 000008 00032d38 00011648  4 @69 	can.o 
+  000000e0 000008 00032d40 00011650  4 @88 	can.o 
+  000000e8 000008 00032d48 00011658  4 @174 	can.o 
+  UNUSED   000008 ........ ........    @199 can.o 
+  000000f0 000008 00032d50 00011660  4 @234 	can.o 
+  UNUSED   000008 ........ ........    @261 can.o 
+  000000f8 000020 00032d58 00011668  1 extab 	etpu_util.o 
+  000000f8 000008 00032d58 00011668  4 @125 	etpu_util.o 
+  UNUSED   000008 ........ ........    @144 etpu_util.o 
+  UNUSED   000008 ........ ........    @162 etpu_util.o 
+  00000100 000008 00032d60 00011670  4 @224 	etpu_util.o 
+  UNUSED   000008 ........ ........    @239 etpu_util.o 
+  00000108 000008 00032d68 00011678  4 @362 	etpu_util.o 
+  00000110 000008 00032d70 00011680  4 @377 	etpu_util.o 
+  UNUSED   000008 ........ ........    @425 etpu_util.o 
+  UNUSED   000008 ........ ........    @445 etpu_util.o 
+  UNUSED   000008 ........ ........    @465 etpu_util.o 
+  UNUSED   000008 ........ ........    @485 etpu_util.o 
+  00000118 000010 00032d78 00011688  1 extab 	main.o 
+  00000118 000008 00032d78 00011688  4 @853 	main.o 
+  00000120 000008 00032d80 00011690  4 @871 	main.o 
+  00000128 000010 00032d88 00011698  1 extab 	etpu_ppa.o 
+  00000128 000008 00032d88 00011698  4 @127 	etpu_ppa.o 
+  UNUSED   000008 ........ ........    @146 etpu_ppa.o 
+  UNUSED   000008 ........ ........    @162 etpu_ppa.o 
+  UNUSED   000008 ........ ........    @176 etpu_ppa.o 
+  00000130 000008 00032d90 000116a0  4 @184 	etpu_ppa.o 
+  00000138 0000f8 00032d98 000116a8  1 extab 	FSAC2021_V1.o 
+  00000138 000008 00032d98 000116a8  4 @888 	FSAC2021_V1.o 
+  00000140 000008 00032da0 000116b0  4 @894 	FSAC2021_V1.o 
+  00000148 000008 00032da8 000116b8  4 @931 	FSAC2021_V1.o 
+  00000150 000008 00032db0 000116c0  4 @940 	FSAC2021_V1.o 
+  00000158 000008 00032db8 000116c8  4 @946 	FSAC2021_V1.o 
+  00000160 000008 00032dc0 000116d0  4 @1008 	FSAC2021_V1.o 
+  00000168 000008 00032dc8 000116d8  4 @1015 	FSAC2021_V1.o 
+  00000170 000008 00032dd0 000116e0  4 @1024 	FSAC2021_V1.o 
+  00000178 000008 00032dd8 000116e8  4 @1033 	FSAC2021_V1.o 
+  00000180 000008 00032de0 000116f0  4 @1115 	FSAC2021_V1.o 
+  00000188 000008 00032de8 000116f8  4 @1125 	FSAC2021_V1.o 
+  00000190 000008 00032df0 00011700  4 @1134 	FSAC2021_V1.o 
+  00000198 000008 00032df8 00011708  4 @1143 	FSAC2021_V1.o 
+  000001a0 000008 00032e00 00011710  4 @1276 	FSAC2021_V1.o 
+  000001a8 000008 00032e08 00011718  4 @1304 	FSAC2021_V1.o 
+  000001b0 000008 00032e10 00011720  4 @1319 	FSAC2021_V1.o 
+  000001b8 000008 00032e18 00011728  4 @1336 	FSAC2021_V1.o 
+  000001c0 000008 00032e20 00011730  4 @1437 	FSAC2021_V1.o 
+  000001c8 000008 00032e28 00011738  4 @1454 	FSAC2021_V1.o 
+  000001d0 000008 00032e30 00011740  4 @1460 	FSAC2021_V1.o 
+  000001d8 000008 00032e38 00011748  4 @1468 	FSAC2021_V1.o 
+  000001e0 000008 00032e40 00011750  4 @1474 	FSAC2021_V1.o 
+  000001e8 000008 00032e48 00011758  4 @1517 	FSAC2021_V1.o 
+  000001f0 000008 00032e50 00011760  4 @1547 	FSAC2021_V1.o 
+  000001f8 000008 00032e58 00011768  4 @1578 	FSAC2021_V1.o 
+  00000200 000008 00032e60 00011770  4 @1978 	FSAC2021_V1.o 
+  00000208 000008 00032e68 00011778  4 @2220 	FSAC2021_V1.o 
+  00000210 000008 00032e70 00011780  4 @2232 	FSAC2021_V1.o 
+  00000218 000008 00032e78 00011788  4 @2241 	FSAC2021_V1.o 
+  00000220 000008 00032e80 00011790  4 @2261 	FSAC2021_V1.o 
+  00000228 000008 00032e88 00011798  4 @2267 	FSAC2021_V1.o 
+
+
+extabindex section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.diagData_flash section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 001000 001c0000 00011b18  1 .diagData_flash 	ccp_data.o 
+  00000000 001000 001c0000 00011b18  8 diagFlashData 	ccp_data.o 
+
+
+.ccpData_flash section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000224 001e0000 00012b18  1 .ccpData_flash 	ccp_data.o 
+  00000000 000224 001e0000 00012b18  4 ccpFlashData 	ccp_data.o 
+
+
+.__uninitialized_intc_handlertable section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 001340 40000000 00012d40  1 .__uninitialized_intc_handlertable 	IntcInterrupts.o 
+  00000000 001340 40000000 00012d40  8 INTCInterruptsHandlerTable 	IntcInterrupts.o 
+
+
+.data section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 0001ce 40001340 00012d40  1 .data 	pcr.o 
+  00000000 0001ce 40001340 00012d40  4 PcrCfgReg 	pcr.o 
+  000001ce 000002 40001510 00012f10  8 *fill*
+  000001d0 000028 40001510 00012f10  1 .data 	flash_app.o 
+  000001d0 000028 40001510 00012f10  8 ssdConfig 	flash_app.o 
+  000001f8 000290 40001538 00012f38  1 .data 	ccp.o 
+  000001f8 000200 40001538 00012f38  8 CRC16CCITTtab 	ccp.o 
+  000003f8 000090 40001738 00013138  4 @348 	ccp.o 
+  00000488 000040 400017c8 000131c8  1 .data 	can.o 
+  00000488 000040 400017c8 000131c8  4 @132 	can.o 
+  000004c8 000300 40001808 00013208  1 .data 	can_cfg.o 
+  000004c8 000300 40001808 00013208  8 CANINIT 	can_cfg.o 
+  000007c8 000028 40001b08 00013508  1 .data 	main.o 
+  000007c8 000028 40001b08 00013508  8 my_etpu_config 	main.o 
+  000007f0 000040 40001b30 00013530  1 .data 	FSAC2021_V1.o 
+  000007f0 000018 40001b30 00013530  8 TLE6232DIA 	FSAC2021_V1.o 
+  00000808 000028 40001b48 00013548  4 @2260 	FSAC2021_V1.o 
+
+
+.sdata section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000014 40001b70 00013570  1 .sdata 	flash_app.o 
+  00000000 000004 40001b70 00013570  4 pFlashInit 	flash_app.o 
+  00000004 000004 40001b74 00013574  4 pFlashErase 	flash_app.o 
+  UNUSED   000004 ........ ........    pBlankCheck flash_app.o 
+  00000008 000004 40001b78 00013578  4 pFlashProgram 	flash_app.o 
+  UNUSED   000004 ........ ........    pProgramVerify flash_app.o 
+  UNUSED   000004 ........ ........    pCheckSum flash_app.o 
+  0000000c 000004 40001b7c 0001357c  4 pGetLock 	flash_app.o 
+  00000010 000004 40001b80 00013580  4 pSetLock 	flash_app.o 
+  UNUSED   000004 ........ ........    pFlashSuspend flash_app.o 
+  UNUSED   000004 ........ ........    pFlashResume flash_app.o 
+  00000014 000004 40001b88 00013588  8 *fill*
+  00000018 000005 40001b88 00013588  1 .sdata 	ccp.o 
+  00000018 000005 40001b88 00013588  4 ccpStationId 	ccp.o 
+  0000001d 000003 40001b90 00013590  8 *fill*
+  00000020 000014 40001b90 00013590  1 .sdata 	main.o 
+  00000020 000004 40001b90 00013590  4 eTPU 	main.o 
+  00000024 000004 40001b94 00013594  4 fs_etpu_code_start 	main.o 
+  00000028 000004 40001b98 00013598  4 fs_etpu_data_ram_start 	main.o 
+  0000002c 000004 40001b9c 0001359c  4 fs_etpu_data_ram_end 	main.o 
+  00000030 000004 40001ba0 000135a0  4 fs_etpu_data_ram_ext 	main.o 
+  00000034 000004 40001ba8 000135a8  8 *fill*
+  00000038 000004 40001ba8 000135a8  1 .sdata 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000038 000004 40001ba8 000135a8  4 fragmentID 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+
+
+.sbss section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000008 40001bb0 000135b0  1 .sbss 	adc.o 
+  00000000 000004 40001bb0 000135b0  4 ADC0_GCC_f 	adc.o 
+  00000004 000004 40001bb4 000135b4  4 ADC0_OCC_f 	adc.o 
+  00000008 000010 40001bb8 000135b8  1 .sbss 	can_ccp.o 
+  00000008 000008 40001bb8 000135b8  8 ccpRxData 	can_ccp.o 
+  00000010 000008 40001bc0 000135c0  8 ccpTxData 	can_ccp.o 
+  00000018 000008 40001bc8 000135c8  1 .sbss 	main.o 
+  00000018 000001 40001bc8 000135c8  1 ECUCoderModelBaseCounter 	main.o 
+  UNUSED   000002 ........ ........    AfterRunFlags main.o 
+  0000001c 000004 40001bcc 000135cc  4 fs_free_param 	main.o 
+  00000020 0000c4 40001bd0 000135d0  1 .sbss 	FSAC2021_V1.o 
+  00000020 000001 40001bd0 000135d0  1 strsr_node 	FSAC2021_V1.o 
+  00000021 000001 40001bd1 000135d1  1 sensor_erroe 	FSAC2021_V1.o 
+  00000022 000001 40001bd2 000135d2  1 res_go 	FSAC2021_V1.o 
+  00000023 000001 40001bd3 000135d3  1 res_ebs_value 	FSAC2021_V1.o 
+  00000024 000001 40001bd4 000135d4  1 read_speed 	FSAC2021_V1.o 
+  00000028 000008 40001bd8 000135d8  8 pulses 	FSAC2021_V1.o 
+  00000030 000001 40001be0 000135e0  1 motor_node 	FSAC2021_V1.o 
+  00000031 000001 40001be1 000135e1  1 motor 	FSAC2021_V1.o 
+  00000032 000001 40001be2 000135e2  1 motec_node 	FSAC2021_V1.o 
+  00000033 000001 40001be3 000135e3  1 light_blue 	FSAC2021_V1.o 
+  UNUSED   000008 ........ ........    flag FSAC2021_V1.o 
+  00000034 000001 40001be4 000135e4  1 error_right 	FSAC2021_V1.o 
+  00000035 000001 40001be5 000135e5  1 error_liquid 	FSAC2021_V1.o 
+  00000036 000001 40001be6 000135e6  1 error_left 	FSAC2021_V1.o 
+  00000037 000001 40001be7 000135e7  1 error_gas2 	FSAC2021_V1.o 
+  00000038 000001 40001be8 000135e8  1 error_gas1 	FSAC2021_V1.o 
+  00000040 000008 40001bf0 000135f0  8 enflag 	FSAC2021_V1.o 
+  00000048 000001 40001bf8 000135f8  1 enable 	FSAC2021_V1.o 
+  00000049 000001 40001bf9 000135f9  1 brake_node 	FSAC2021_V1.o 
+  0000004a 000001 40001bfa 000135fa  1 brake_light 	FSAC2021_V1.o 
+  0000004b 000001 40001bfb 000135fb  1 bms_node 	FSAC2021_V1.o 
+  0000004c 000001 40001bfc 000135fc  1 blue 	FSAC2021_V1.o 
+  00000050 000004 40001c00 00013600  4 Vspd 	FSAC2021_V1.o 
+  00000058 000008 40001c08 00013608  8 Voltage 	FSAC2021_V1.o 
+  00000060 000004 40001c10 00013610  4 Vel_spd 	FSAC2021_V1.o 
+  00000064 000001 40001c14 00013614  1 V48_relay 	FSAC2021_V1.o 
+  00000065 000001 40001c15 00013615  1 To_MOTOR_OK 	FSAC2021_V1.o 
+  00000066 000001 40001c16 00013616  1 To_AMI_OK 	FSAC2021_V1.o 
+  00000067 000001 40001c17 00013617  1 TS_Flag 	FSAC2021_V1.o 
+  00000068 000001 40001c18 00013618  1 Str 	FSAC2021_V1.o 
+  0000006c 000004 40001c1c 0001361c  4 Steer_sensor_angle 	FSAC2021_V1.o 
+  00000070 000001 40001c20 00013620  1 Steer_Status 	FSAC2021_V1.o 
+  00000071 000001 40001c21 00013621  1 Stafe_Relay_pin 	FSAC2021_V1.o 
+  00000072 000001 40001c22 00013622  1 START 	FSAC2021_V1.o 
+  00000074 000002 40001c24 00013624  2 Read_liquid_presuress 	FSAC2021_V1.o 
+  00000078 000004 40001c28 00013628  4 Read_compare_OutVolt 	FSAC2021_V1.o 
+  0000007c 000002 40001c2c 0001362c  2 Read_Right_Acc_Disp1 	FSAC2021_V1.o 
+  0000007e 000002 40001c2e 0001362e  2 Read_Lft_Acc_Disp 	FSAC2021_V1.o 
+  00000080 000002 40001c30 00013630  2 Read_EBS_Gas_Prs2 	FSAC2021_V1.o 
+  00000082 000002 40001c32 00013632  2 Read_EBS_Gas_Prs1 	FSAC2021_V1.o 
+  00000084 000001 40001c34 00013634  1 Read_BCU 	FSAC2021_V1.o 
+  00000085 000001 40001c35 00013635  1 RES__ok 	FSAC2021_V1.o 
+  00000088 000004 40001c38 00013638  4 RES_Value 	FSAC2021_V1.o 
+  0000008c 000001 40001c3c 0001363c  1 RES_EBS 	FSAC2021_V1.o 
+  0000008d 000001 40001c3d 0001363d  1 R2D_Voltage 	FSAC2021_V1.o 
+  0000008e 000001 40001c3e 0001363e  1 On_Out_Switch 	FSAC2021_V1.o 
+  0000008f 000001 40001c3f 0001363f  1 On_IN_Switch 	FSAC2021_V1.o 
+  00000090 000001 40001c40 00013640  1 Node_Lost 	FSAC2021_V1.o 
+  00000094 000004 40001c44 00013644  4 Motor_Spd 	FSAC2021_V1.o 
+  00000098 000001 40001c48 00013648  1 Metoc_Move 	FSAC2021_V1.o 
+  000000a0 000008 40001c50 00013650  8 MODE 	FSAC2021_V1.o 
+  000000a8 000001 40001c58 00013658  1 MNT_SEND 	FSAC2021_V1.o 
+  000000a9 000001 40001c59 00013659  1 LVMS_Read 	FSAC2021_V1.o 
+  000000aa 000001 40001c5a 0001365a  1 IMD 	FSAC2021_V1.o 
+  000000ab 000001 40001c5b 0001365b  1 HV_LIGHT 	FSAC2021_V1.o 
+  000000ac 000001 40001c5c 0001365c  1 HVMS_Read 	FSAC2021_V1.o 
+  000000ad 000001 40001c5d 0001365d  1 ENCODER_SEND 	FSAC2021_V1.o 
+  000000ae 000001 40001c5e 0001365e  1 EBS_light 	FSAC2021_V1.o 
+  000000af 000001 40001c5f 0001365f  1 EBS_Status 	FSAC2021_V1.o 
+  000000b0 000001 40001c60 00013660  1 EBS_Sensor_light 	FSAC2021_V1.o 
+  000000b1 000001 40001c61 00013661  1 EBS_Rel_Switch 	FSAC2021_V1.o 
+  000000b2 000001 40001c62 00013662  1 EBS 	FSAC2021_V1.o 
+  000000b3 000001 40001c63 00013663  1 Compare_Voltage 	FSAC2021_V1.o 
+  000000b4 000001 40001c64 00013664  1 Buzzer_pin 	FSAC2021_V1.o 
+  000000b5 000001 40001c65 00013665  1 Brk_Enable_Flag 	FSAC2021_V1.o 
+  000000b8 000004 40001c68 00013668  4 Back_Angle 	FSAC2021_V1.o 
+  000000bc 000001 40001c6c 0001366c  1 BUC_Enable_Flag 	FSAC2021_V1.o 
+  000000bd 000001 40001c6d 0001366d  1 BMS_LIGHT 	FSAC2021_V1.o 
+  000000be 000001 40001c6e 0001366e  1 ASSI_state 	FSAC2021_V1.o 
+  000000bf 000001 40001c6f 0001366f  1 ASMS_VALUE 	FSAC2021_V1.o 
+  000000c0 000001 40001c70 00013670  1 ASMS_Read 	FSAC2021_V1.o 
+  000000c8 000008 40001c78 00013678  8 AMI_State 	FSAC2021_V1.o 
+  000000d0 000001 40001c80 00013680  1 AMI_HEART 	FSAC2021_V1.o 
+  000000d8 000008 40001c88 00013688  8 AMI 	FSAC2021_V1.o 
+  000000e0 000004 40001c90 00013690  4 ACC 	FSAC2021_V1.o 
+
+
+.sdata2 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000008 40001c98 000135b0  1 .sdata2 	pcr.o 
+  00000000 000008 40001c98 000135b0  8 Pad_ConfigurationPB 	pcr.o 
+  00000008 000018 40001ca0 000135b8  1 .sdata2 	FSAC2021_V1.o 
+  00000008 000004 40001ca0 000135b8  4 FSAC2021_V1_M 	FSAC2021_V1.o 
+  0000000c 000002 40001ca4 000135bc  4 @862 	FSAC2021_V1.o 
+  00000010 000004 40001ca8 000135c0  4 @906 	FSAC2021_V1.o 
+  00000018 000008 40001cb0 000135c8  8 @909 	FSAC2021_V1.o 
+
+
+.sbss2 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.bss section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 002220 40001cb8 000135d0  1 .bss 	ccp.o 
+  00000000 002220 40001cb8 000135d0  8 ccp 	ccp.o 
+  00002220 00000a 40003ed8 000157f0  1 .bss 	main.o 
+  00002220 00000a 40003ed8 000157f0  4 ECUCoderOverrunFlags 	main.o 
+  0000222a 000006 40003ee8 00015800  8 *fill*
+  00002230 0004c0 40003ee8 00015800  1 .bss 	FSAC2021_V1.o 
+  00002230 000024 40003ee8 00015800  4 FSAC2021_V1_M_ 	FSAC2021_V1.o 
+  00002258 0001d8 40003f10 00015828  8 FSAC2021_V1_DW 	FSAC2021_V1.o 
+  00002430 0002c0 400040e8 00015a00  8 FSAC2021_V1_B 	FSAC2021_V1.o 
+  000026f0 00000c 400043a8 00015cc0  1 .bss 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  000026f0 00000c 400043a8 00015cc0  4 fragmentinfo 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  000026fc 000004 400043b8 00015cd0  8 *fill*
+  00002700 000004 400043b8 00015cd0  1 .bss 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+  00002700 000004 400043b8 00015cd0  4 __SoftFPSCR 	Runtime.PPCEABI.S.UC.a ppcsfpe.o
+
+
+extabindex section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 00000c 00032e90 00011b18  4 @14 	siu.o 
+  0000000c 00000c 00032e9c 00011b18  4 @146 	flash_app.o 
+  00000018 00000c 00032ea8 00011b18  4 @56 	interrupts.o 
+  00000024 00000c 00032eb4 00011b18  4 @35 	adc.o 
+  00000030 00000c 00032ec0 00011b18  4 @50 	adc.o 
+  0000003c 00000c 00032ecc 00011b18  4 @31 	spi.o 
+  00000048 00000c 00032ed8 00011b18  4 @61 	spi.o 
+  00000054 00000c 00032ee4 00011b18  4 @47 	can_ccp.o 
+  00000060 00000c 00032ef0 00011b18  4 @57 	can_ccp.o 
+  0000006c 00000c 00032efc 00011b18  4 @67 	can_ccp.o 
+  00000078 00000c 00032f08 00011b18  4 @41 	ccp.o 
+  00000084 00000c 00032f14 00011b18  4 @69 	ccp.o 
+  00000090 00000c 00032f20 00011b18  4 @97 	ccp.o 
+  0000009c 00000c 00032f2c 00011b18  4 @130 	ccp.o 
+  000000a8 00000c 00032f38 00011b18  4 @147 	ccp.o 
+  000000b4 00000c 00032f44 00011b18  4 @159 	ccp.o 
+  000000c0 00000c 00032f50 00011b18  4 @193 	ccp.o 
+  000000cc 00000c 00032f5c 00011b18  4 @221 	ccp.o 
+  000000d8 00000c 00032f68 00011b18  4 @241 	ccp.o 
+  000000e4 00000c 00032f74 00011b18  4 @350 	ccp.o 
+  000000f0 00000c 00032f80 00011b18  4 @364 	ccp.o 
+  000000fc 00000c 00032f8c 00011b18  4 @377 	ccp.o 
+  00000108 00000c 00032f98 00011b18  4 @45 	can_hook.o 
+  00000114 00000c 00032fa4 00011b18  4 @57 	can_hook.o 
+  00000120 00000c 00032fb0 00011b18  4 @51 	can.o 
+  0000012c 00000c 00032fbc 00011b18  4 @70 	can.o 
+  00000138 00000c 00032fc8 00011b18  4 @89 	can.o 
+  00000144 00000c 00032fd4 00011b18  4 @175 	can.o 
+  00000150 00000c 00032fe0 00011b18  4 @235 	can.o 
+  0000015c 00000c 00032fec 00011b18  4 @126 	etpu_util.o 
+  00000168 00000c 00032ff8 00011b18  4 @225 	etpu_util.o 
+  00000174 00000c 00033004 00011b18  4 @363 	etpu_util.o 
+  00000180 00000c 00033010 00011b18  4 @378 	etpu_util.o 
+  0000018c 00000c 0003301c 00011b18  4 @854 	main.o 
+  00000198 00000c 00033028 00011b18  4 @872 	main.o 
+  000001a4 00000c 00033034 00011b18  4 @128 	etpu_ppa.o 
+  000001b0 00000c 00033040 00011b18  4 @185 	etpu_ppa.o 
+  000001bc 00000c 0003304c 00011b18  4 @889 	FSAC2021_V1.o 
+  000001c8 00000c 00033058 00011b18  4 @895 	FSAC2021_V1.o 
+  000001d4 00000c 00033064 00011b18  4 @932 	FSAC2021_V1.o 
+  000001e0 00000c 00033070 00011b18  4 @941 	FSAC2021_V1.o 
+  000001ec 00000c 0003307c 00011b18  4 @947 	FSAC2021_V1.o 
+  000001f8 00000c 00033088 00011b18  4 @1009 	FSAC2021_V1.o 
+  00000204 00000c 00033094 00011b18  4 @1016 	FSAC2021_V1.o 
+  00000210 00000c 000330a0 00011b18  4 @1025 	FSAC2021_V1.o 
+  0000021c 00000c 000330ac 00011b18  4 @1034 	FSAC2021_V1.o 
+  00000228 00000c 000330b8 00011b18  4 @1116 	FSAC2021_V1.o 
+  00000234 00000c 000330c4 00011b18  4 @1126 	FSAC2021_V1.o 
+  00000240 00000c 000330d0 00011b18  4 @1135 	FSAC2021_V1.o 
+  0000024c 00000c 000330dc 00011b18  4 @1144 	FSAC2021_V1.o 
+  00000258 00000c 000330e8 00011b18  4 @1277 	FSAC2021_V1.o 
+  00000264 00000c 000330f4 00011b18  4 @1305 	FSAC2021_V1.o 
+  00000270 00000c 00033100 00011b18  4 @1320 	FSAC2021_V1.o 
+  0000027c 00000c 0003310c 00011b18  4 @1337 	FSAC2021_V1.o 
+  00000288 00000c 00033118 00011b18  4 @1438 	FSAC2021_V1.o 
+  00000294 00000c 00033124 00011b18  4 @1455 	FSAC2021_V1.o 
+  000002a0 00000c 00033130 00011b18  4 @1461 	FSAC2021_V1.o 
+  000002ac 00000c 0003313c 00011b18  4 @1469 	FSAC2021_V1.o 
+  000002b8 00000c 00033148 00011b18  4 @1475 	FSAC2021_V1.o 
+  000002c4 00000c 00033154 00011b18  4 @1518 	FSAC2021_V1.o 
+  000002d0 00000c 00033160 00011b18  4 @1548 	FSAC2021_V1.o 
+  000002dc 00000c 0003316c 00011b18  4 @1579 	FSAC2021_V1.o 
+  000002e8 00000c 00033178 00011b18  4 @1979 	FSAC2021_V1.o 
+  000002f4 00000c 00033184 00011b18  4 @2221 	FSAC2021_V1.o 
+  00000300 00000c 00033190 00011b18  4 @2233 	FSAC2021_V1.o 
+  0000030c 00000c 0003319c 00011b18  4 @2242 	FSAC2021_V1.o 
+  00000318 00000c 000331a8 00011b18  4 @2262 	FSAC2021_V1.o 
+  00000324 00000c 000331b4 00011b18  4 @2268 	FSAC2021_V1.o 
+  00000330 00000c 000331c0 00011b18  4 @13 	IntcInterrupts.o 
+  0000033c 00000c 000331cc 00011b18  4 @6 	Exceptions.o 
+  00000348 000030 000331d8 00011b18  4 _eti_init_info 	Linker Generated Symbol File 
+  UNUSED   00000c ........ ........    @177 flash_app.o 
+  UNUSED   00000c ........ ........    @70 spi.o 
+  UNUSED   00000c ........ ........    @200 can.o 
+  UNUSED   00000c ........ ........    @262 can.o 
+  UNUSED   00000c ........ ........    @146 etpu_ic.o 
+  UNUSED   00000c ........ ........    @163 etpu_ic.o 
+  UNUSED   00000c ........ ........    @184 etpu_ic.o 
+  UNUSED   00000c ........ ........    @203 etpu_ic.o 
+  UNUSED   00000c ........ ........    @210 etpu_ic.o 
+  UNUSED   00000c ........ ........    @217 etpu_ic.o 
+  UNUSED   00000c ........ ........    @224 etpu_ic.o 
+  UNUSED   00000c ........ ........    @145 etpu_util.o 
+  UNUSED   00000c ........ ........    @163 etpu_util.o 
+  UNUSED   00000c ........ ........    @240 etpu_util.o 
+  UNUSED   00000c ........ ........    @426 etpu_util.o 
+  UNUSED   00000c ........ ........    @446 etpu_util.o 
+  UNUSED   00000c ........ ........    @466 etpu_util.o 
+  UNUSED   00000c ........ ........    @486 etpu_util.o 
+  UNUSED   00000c ........ ........    @147 etpu_ppa.o 
+  UNUSED   00000c ........ ........    @163 etpu_ppa.o 
+  UNUSED   00000c ........ ........    @177 etpu_ppa.o 
+  UNUSED   00000c ........ ........    @214 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @290 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @380 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @436 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @910 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @931 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @971 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @987 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @1006 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @1150 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @1222 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @1229 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+
+
+Memory map:
+                       Starting Size     File     ROM      RAM Buffer  S-Record
+                       address           Offset   Address  Address     Line
+       .__bam_bootarea 00020000 00000008 00000420 00020000 00020000          2
+                 .init 00020020 0000040c 00000428 00020020 00020020          3
+             .init_vle 0002042c 00000000 00000834 0002042c 0002042c          0
+  .__exception_handlers 00021000 000000d4 00000840 00021000 00021000         55
+                 .text 00022000 0000ed0c 00000914 00022000 00022000         66
+             .text_vle 00030d0c 00000000 00010000 00030d0c 00030d0c          0
+               .rodata 00030d10 00001f40 0000f620 00030d10 00030d10       3101
+                .ctors 00032c50 00000008 00011560 00032c50 00032c50       3501
+                .dtors 00032c58 00000008 00011568 00032c58 00032c58       3502
+                 extab 00032c60 00000230 00011570 00032c60 00032c60       3503
+            extabindex 00032e90 00000378 000117a0 00032e90 00032e90       3531
+       .diagData_flash 001c0000 00001000 00011b18 001c0000 001c0000       3686
+        .ccpData_flash 001e0000 00000224 00012b18 001e0000 001e0000       3891
+  .__uninitialized_intc_handlertable 40000000 00001340 00012d40 00033210 00033210          0
+                 .data 40001340 00000830 00012d40 00033210 00033210       3576
+                .sdata 40001b70 0000003c 00013570 00033a40 00033a40       3681
+                 .sbss 40001bb0 000000e4 000135b0 00033a80 00033a80          0
+               .sdata2 40001c98 00000020 000135b0 00033a80 00033a80       3684
+                .sbss2 40001cb8 00000000 000135d0 00033aa0 00033aa0          0
+                  .bss 40001cb8 00002704 000135d0 00033aa0 00033aa0          0
+      .PPC.EMB.apuinfo 00020160 00000000 00033730 00053c00 00053c00          0
+         .debug_abbrev          000001a9 000135d0
+           .debug_info          00010664 00013779
+           .debug_line          00008b63 00023ddd
+            .debug_loc          00001b90 0002c940
+       .debug_pubnames          00001504 0002e4d0
+
+
+Linker generated symbols:
+       EXCEPTION_HANDLERS 00021000
+          L2SRAM_LOCATION 40000000
+        _f___bam_bootarea 00020000
+    _f___bam_bootarea_rom 00020000
+        _e___bam_bootarea 00020008
+                  _f_init 00020020
+              _f_init_rom 00020020
+                  _e_init 0002042c
+              _f_init_vle 0002042c
+          _f_init_vle_rom 0002042c
+              _e_init_vle 0002042c
+  _f___exception_handlers 00021000
+_f___exception_handlers_rom 00021000
+  _e___exception_handlers 000210d4
+                  _f_text 00022000
+              _f_text_rom 00022000
+                  _e_text 00030d0c
+              _f_text_vle 00030d0c
+          _f_text_vle_rom 00030d0c
+              _e_text_vle 00030d0c
+                _f_rodata 00030d10
+            _f_rodata_rom 00030d10
+                _e_rodata 00032c50
+                 _f_ctors 00032c50
+             _f_ctors_rom 00032c50
+                 _e_ctors 00032c58
+                 _f_dtors 00032c58
+             _f_dtors_rom 00032c58
+                 _e_dtors 00032c60
+                  _fextab 00032c60
+              _fextab_rom 00032c60
+                  _eextab 00032e90
+             _fextabindex 00032e90
+         _fextabindex_rom 00032e90
+             _eextabindex 00033208
+        _f_diagData_flash 001c0000
+    _f_diagData_flash_rom 001c0000
+        _e_diagData_flash 001c1000
+         _f_ccpData_flash 001e0000
+     _f_ccpData_flash_rom 001e0000
+         _e_ccpData_flash 001e0224
+_f___uninitialized_intc_handlertable 40000000
+_e___uninitialized_intc_handlertable 40001340
+                  _f_data 40001340
+              _f_data_rom 00033210
+                  _e_data 40001b70
+                 _f_sdata 40001b70
+             _f_sdata_rom 00033a40
+                 _e_sdata 40001bac
+                  _f_sbss 40001bb0
+                  _e_sbss 40001c94
+                _f_sdata2 40001c98
+            _f_sdata2_rom 00033a80
+                _e_sdata2 40001cb8
+                 _f_sbss2 40001cb8
+                 _e_sbss2 40001cb8
+                   _f_bss 40001cb8
+                   _e_bss 400043bc
+              _stack_addr 40010000
+               _stack_end 4000c000
+               _heap_addr 4000a000
+                _heap_end 4000c000
+             _nbfunctions 000000a5
+           SIZEOF_HEADERS 00000420
+               _SDA_BASE_ 40009b70
+              _SDA2_BASE_ 40009c98
+           _ABS_SDA_BASE_ 40009b70
+          _ABS_SDA2_BASE_ 40009c98

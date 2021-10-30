@@ -1,0 +1,134 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RTW Report - ccppar.h</title>
+<style> .LN { font-style: italic; color: #888888 } </style>
+<style> .CT { font-style: italic; color: #117755 } </style>
+<style> .PP { font-style: bold;   color: #992211 } </style>
+<style> .KW { font-style: bold;   color: #112266 } </style>
+<style> .DT { font-style: bold;   color: #112266 } </style>
+<link rel="stylesheet" type="text/css" href="rtwreport.css"></link><script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script>
+<SCRIPT type="text/javascript" src="rtwannotate.js"></SCRIPT>
+</head>
+<body bgcolor="#eeeeee" text="#1122aa" onload="try {if (top) { if (top.rtwFileOnLoad) top.rtwFileOnLoad(window.document); else local_onload();}} catch(err) {};if (typeof rtwannotate === 'function') {rtwannotate('ccppar_h_cov.xml');}">
+<p>
+<table border="0" cellspacing="0" cellpadding="6" width="100%%" height="100%%"><tr><td width="100%%" valign="top" bgcolor="#ffffff">
+<h4>File: <a href="../ccppar.h" target="rtwreport_document_frame" id="linkToText_plain">ccppar.h</a></h4>
+<pre id="RTWcode">
+<span><a class="LN" name="1">    1   </a><span class="CT">/*</span>
+</span><span><a class="LN" name="2">    2   </a><span class="CT"> * Code generated for Simulink model FSAC2021_826.</span>
+</span><span><a class="LN" name="3">    3   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="4">    4   </a><span class="CT"> * FILE    : ccppar.h</span>
+</span><span><a class="LN" name="5">    5   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="6">    6   </a><span class="CT"> * VERSION : 1.165</span>
+</span><span><a class="LN" name="7">    7   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="8">    8   </a><span class="CT"> * DATE    : Tue Aug 31 17:30:52 2021</span>
+</span><span><a class="LN" name="9">    9   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="10">   10   </a><span class="CT"> * Copyright 2011-2012 ECUCoder. All Rights Reserved.</span>
+</span><span><a class="LN" name="11">   11   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="12">   12   </a>
+</span><span><a class="LN" name="13">   13   </a><font color="#992211">#</font><span class="PP">ifndef</span> RTW_HEADER_ccppar_h_
+</span><span><a class="LN" name="14">   14   </a><font color="#992211">#</font><span class="PP">define</span> RTW_HEADER_ccppar_h_
+</span><span><a class="LN" name="15">   15   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;can.h&quot;</font>
+</span><span><a class="LN" name="16">   16   </a><font color="#992211">#</font><span class="PP">define</span> C_ENABLE_CCP
+</span><span><a class="LN" name="17">   17   </a><font color="#992211">#</font><span class="PP">define</span> V_ENABLE_USE_DUMMY_STATEMENT
+</span><span><a class="LN" name="18">   18   </a><font color="#992211">#</font><span class="PP">define</span> CCP_BYTE                       uint8
+</span><span><a class="LN" name="19">   19   </a><font color="#992211">#</font><span class="PP">define</span> CCP_WORD                       uint16
+</span><span><a class="LN" name="20">   20   </a><font color="#992211">#</font><span class="PP">define</span> CCP_DWORD                      uint32
+</span><span><a class="LN" name="21">   21   </a><font color="#992211">#</font><span class="PP">define</span> CCP_BYTEPTR                    uint8*
+</span><span><a class="LN" name="22">   22   </a><font color="#992211">#</font><span class="PP">define</span> CCP_MOTOROLA
+</span><span><a class="LN" name="23">   23   </a>
+</span><span><a class="LN" name="24">   24   </a><span class="CT">/* Check for pending CCP commands in ccpBackground() */</span>
+</span><span><a class="LN" name="25">   25   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CMD_NOT_IN_INTERRUPT
+</span><span><a class="LN" name="26">   26   </a>
+</span><span><a class="LN" name="27">   27   </a><span class="CT">/* Enable EEPROM Read/Write Access */</span>
+</span><span><a class="LN" name="28">   28   </a><span class="CT">/** #define CCP_WRITE_EEPROM **/</span>
+</span><span><a class="LN" name="29">   29   </a><span class="CT">/** #define CCP_READ_EEPROM **/</span>
+</span><span><a class="LN" name="30">   30   </a>
+</span><span><a class="LN" name="31">   31   </a><span class="CT">/* Implement the memory checksum feature */</span>
+</span><span><a class="LN" name="32">   32   </a><span class="CT">/* The checksum will be calculated in ccpBackground() */</span>
+</span><span><a class="LN" name="33">   33   </a><span class="CT">/* This may be implementation specific */</span>
+</span><span><a class="LN" name="34">   34   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CHECKSUM
+</span><span><a class="LN" name="35">   35   </a>
+</span><span><a class="LN" name="36">   36   </a><span class="CT">/*CPUTYPE will determine CHECKSUM size's max range*/</span>
+</span><span><a class="LN" name="37">   37   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CPUTYPE_32BIT
+</span><span><a class="LN" name="38">   38   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CHECKSUM_TYPE              CCP_WORD
+</span><span><a class="LN" name="39">   39   </a>
+</span><span><a class="LN" name="40">   40   </a><span class="CT">/* Use a 16 bit CRC algorithm */</span>
+</span><span><a class="LN" name="41">   41   </a><span class="CT">/* Note:</span>
+</span><span><a class="LN" name="42">   42   </a><span class="CT">   This will need additional 512 byte of ROM</span>
+</span><span><a class="LN" name="43">   43   </a><span class="CT">   CCP_CHECKSUM_TYPE has to be WORD !</span>
+</span><span><a class="LN" name="44">   44   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="45">   45   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CHECKSUM_CCITT                                       <span class="CT">/****/</span>
+</span><span><a class="LN" name="46">   46   </a>
+</span><span><a class="LN" name="47">   47   </a><span class="CT">/* Use GET_SEED and UNLOCK */</span>
+</span><span><a class="LN" name="48">   48   </a><span class="CT">/**#define CCP_SEED_KEY**/</span>
+</span><span><a class="LN" name="49">   49   </a>
+</span><span><a class="LN" name="50">   50   </a><span class="CT">/* Enable Memory Write Protection */</span>
+</span><span><a class="LN" name="51">   51   </a><font color="#992211">#</font><span class="PP">define</span> CCP_WRITE_PROTECTION                                     <span class="CT">/****/</span>
+</span><span><a class="LN" name="52">   52   </a>
+</span><span><a class="LN" name="53">   53   </a><span class="CT">/* CCP Data Acuisition Parameters */</span>
+</span><span><a class="LN" name="54">   54   </a><font color="#992211">#</font><span class="PP">define</span> CCP_DAQ
+</span><span><a class="LN" name="55">   55   </a><font color="#992211">#</font><span class="PP">define</span> CCP_MAX_DAQ                    (5)
+</span><span><a class="LN" name="56">   56   </a><font color="#992211">#</font><span class="PP">define</span> CCP_MAX_ODT                    (30)
+</span><span><a class="LN" name="57">   57   </a>
+</span><span><a class="LN" name="58">   58   </a><span class="CT">/* Allow an ODT entry size &gt;1 */</span>
+</span><span><a class="LN" name="59">   59   </a><span class="CT">/* Not recommended for CANape, this will only need additional RAM space */</span>
+</span><span><a class="LN" name="60">   60   </a><font color="#992211">#</font><span class="PP">define</span> CCP_ODT_ENTRY_SIZE
+</span><span><a class="LN" name="61">   61   </a>
+</span><span><a class="LN" name="62">   62   </a><span class="CT">/* Use the transmit queue in CCP.C */</span>
+</span><span><a class="LN" name="63">   63   </a><span class="CT">/* Complete sampling is done in ccpDaq(x) and the messages are written into the queue */</span>
+</span><span><a class="LN" name="64">   64   </a><font color="#992211">#</font><span class="PP">define</span> CCP_SEND_QUEUE
+</span><span><a class="LN" name="65">   65   </a><font color="#992211">#</font><span class="PP">define</span> CCP_SEND_QUEUE_SIZE            (0x20U)
+</span><span><a class="LN" name="66">   66   </a>
+</span><span><a class="LN" name="67">   67   </a><span class="CT">/* Indicate queue overruns in the msb of pid */</span>
+</span><span><a class="LN" name="68">   68   </a><span class="CT">/* Will be displayed in CANape's status bar if CANAPE.INI: [asap1a] check_overflow=1 */</span>
+</span><span><a class="LN" name="69">   69   </a><span class="CT">/* #define CCP_SEND_QUEUE_OVERRUN_INDICATION */</span>
+</span><span><a class="LN" name="70">   70   </a>
+</span><span><a class="LN" name="71">   71   </a><span class="CT">/* Transmit only one message in one call to ccpDaq() */</span>
+</span><span><a class="LN" name="72">   72   </a><span class="CT">/** #define CCP_SEND_SINGLE **/</span>
+</span><span><a class="LN" name="73">   73   </a><font color="#992211">#</font><span class="PP">define</span> CCP_DISABLE_INTERRUPT                                    <span class="CT">//Can_DisableControllerInterrupts(CCP_CAN_CHANNEL)</span>
+</span><span><a class="LN" name="74">   74   </a><font color="#992211">#</font><span class="PP">define</span> CCP_ENABLE_INTERRUPT                                     <span class="CT">//Can_EnableControllerInterrupts(CCP_CAN_CHANNEL)</span>
+</span><span><a class="LN" name="75">   75   </a><font color="#992211">#</font><span class="PP">define</span> CCP_DISABLE_GLOBAL_INTERRUPT   asm(<font color="#1122ff">&quot; wrteei 0&quot;</font>);
+</span><span><a class="LN" name="76">   76   </a><font color="#992211">#</font><span class="PP">define</span> CCP_ENABLE_GLOBAL_INTERRUPT    asm(<font color="#1122ff">&quot; wrteei 1&quot;</font>);
+</span><span><a class="LN" name="77">   77   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CANID_TYPE                 MB_IDType_ST
+</span><span><a class="LN" name="78">   78   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CAN_MODULE                 FLEXCAN_C
+</span><span><a class="LN" name="79">   79   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CAN_RX_BUFNUM              (0x00)
+</span><span><a class="LN" name="80">   80   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CAN_TX_BUFNUM              (0x08)
+</span><span><a class="LN" name="81">   81   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CRO_ID                     (256)
+</span><span><a class="LN" name="82">   82   </a><font color="#992211">#</font><span class="PP">define</span> CCP_DTO_ID                     (257)
+</span><span><a class="LN" name="83">   83   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CAL_FLS_BEGIN              (0x1E0000U)
+</span><span><a class="LN" name="84">   84   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CAL_FLS_END                (0x1FFFFFU)
+</span><span><a class="LN" name="85">   85   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CAL_RAM_BEGIN              (0x40000000U)
+</span><span><a class="LN" name="86">   86   </a><font color="#992211">#</font><span class="PP">define</span> CCP_CAL_RAM_END                (0x4000FFFFU)
+</span><span><a class="LN" name="87">   87   </a><font color="#992211">#</font><span class="PP">define</span> CCP_STATION_ID                 <font color="#1122ff">&quot;V1.0&quot;</font>
+</span><span><a class="LN" name="88">   88   </a><font color="#992211">#</font><span class="PP">define</span> CCP_STATION_ADDR               (0)
+</span><span><a class="LN" name="89">   89   </a><font color="#992211">#</font><span class="PP">define</span> ccpGetRandomNum()              (AppGetRandomNum())
+</span><span><a class="LN" name="90">   90   </a>
+</span><span><a class="LN" name="91">   91   </a><span class="KW">typedef</span> <span class="KW">struct</span> <b>{</b>
+</span><span><a class="LN" name="92">   92   </a>  CCP_BYTE ccpflag[4];
+</span><span><a class="LN" name="93">   93   </a>  CCP_WORD ccpData0[256];
+</span><span><a class="LN" name="94">   94   </a>  CCP_WORD ccpData1;
+</span><span><a class="LN" name="95">   95   </a>  CCP_WORD ccpData2;
+</span><span><a class="LN" name="96">   96   </a>  CCP_DWORD ccpData3;
+</span><span><a class="LN" name="97">   97   </a>  CCP_BYTE ccpmap[4][6];
+</span><span><a class="LN" name="98">   98   </a><b>}</b> <a name="type_tCcpData">tCcpData</a>;
+</span><span><a class="LN" name="99">   99   </a>
+</span><span><a class="LN" name="100">  100   </a><span class="DT">extern</span> <a href="#type_tCcpData" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_tCcpData');" target="_self"><font color="#1122aa">tCcpData</font></a> ccpRAMData;
+</span><span><a class="LN" name="101">  101   </a><span class="DT">extern</span> <a href="#type_tCcpData" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_tCcpData');" target="_self"><font color="#1122aa">tCcpData</font></a> ccpFlashData;
+</span><span><a class="LN" name="102">  102   </a><span class="DT">extern</span> <a href="#type_tCcpData" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_tCcpData');" target="_self"><font color="#1122aa">tCcpData</font></a>* appCalData;
+</span><span><a class="LN" name="103">  103   </a><span class="DT">extern</span> CCP_BYTE resetflag;
+</span><span><a class="LN" name="104">  104   </a><span class="DT">extern</span> CCP_BYTE ccpRxData[8];
+</span><span><a class="LN" name="105">  105   </a>
+</span><span><a class="LN" name="106">  106   </a><font color="#992211">#</font><span class="PP">endif</span>                                 <span class="CT">/* RTW_HEADER_ccppar_h_ */</span>
+</span><span><a class="LN" name="107">  107   </a>
+</span><span><a class="LN" name="108">  108   </a><span class="CT">/* File trailer for ECUCoder generated file ccppar.h.</span>
+</span><span><a class="LN" name="109">  109   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="110">  110   </a><span class="CT"> * [EOF]</span>
+</span><span><a class="LN" name="111">  111   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="112">  112   </a>
+</span></pre>
+</td></tr></table>
+</p>
+</body>
+</html>

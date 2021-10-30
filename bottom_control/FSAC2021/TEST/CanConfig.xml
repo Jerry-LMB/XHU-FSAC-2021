@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanConfig>
+  <EcuAddress>0</EcuAddress>
+  <CroAddress>100</CroAddress>
+  <DtoAddress>101</DtoAddress>
+  <DataFormat>1</DataFormat>
+  <CanRate>500</CanRate>
+  <ExternFlag>0</ExternFlag>
+  <DaqFlag>0</DaqFlag>
+</CanConfig>

@@ -1,0 +1,304 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RTW Report - spi.c</title>
+<style> .LN { font-style: italic; color: #888888 } </style>
+<style> .CT { font-style: italic; color: #117755 } </style>
+<style> .PP { font-style: bold;   color: #992211 } </style>
+<style> .KW { font-style: bold;   color: #112266 } </style>
+<style> .DT { font-style: bold;   color: #112266 } </style>
+<link rel="stylesheet" type="text/css" href="rtwreport.css"></link><script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script>
+<SCRIPT type="text/javascript" src="rtwannotate.js"></SCRIPT>
+</head>
+<body bgcolor="#eeeeee" text="#1122aa" onload="try {if (top) { if (top.rtwFileOnLoad) top.rtwFileOnLoad(window.document); else local_onload();}} catch(err) {};if (typeof rtwannotate === 'function') {rtwannotate('spi_c_cov.xml');}">
+<p>
+<table border="0" cellspacing="0" cellpadding="6" width="100%%" height="100%%"><tr><td width="100%%" valign="top" bgcolor="#ffffff">
+<h4>File: <a href="../spi.c" target="rtwreport_document_frame" id="linkToText_plain">spi.c</a></h4>
+<pre id="RTWcode">
+<span><a class="LN" name="1">    1   </a><span class="CT">/*</span>
+</span><span><a class="LN" name="2">    2   </a><span class="CT"> * Code generated for Simulink model Gas_Calibration.</span>
+</span><span><a class="LN" name="3">    3   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="4">    4   </a><span class="CT"> * FILE    : spi.c</span>
+</span><span><a class="LN" name="5">    5   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="6">    6   </a><span class="CT"> * VERSION : 1.1</span>
+</span><span><a class="LN" name="7">    7   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="8">    8   </a><span class="CT"> * DATE    : Sat Oct 02 12:32:17 2021</span>
+</span><span><a class="LN" name="9">    9   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="10">   10   </a><span class="CT"> * Copyright 2011-2012 ECUCoder. All Rights Reserved.</span>
+</span><span><a class="LN" name="11">   11   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="12">   12   </a>
+</span><span><a class="LN" name="13">   13   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;spi.h&quot;</font>
+</span><span><a class="LN" name="14">   14   </a><font color="#992211">#</font><span class="PP">if</span> (SPIAENABLE||SPIBENABLE||SPICENABLE||SPIDENABLE)
+</span><span><a class="LN" name="15">   15   </a>
+</span><span><a class="LN" name="16">   16   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="17">   17   </a><span class="CT"> * FUNCTION :    ec_spi_delay                                              *</span>
+</span><span><a class="LN" name="18">   18   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="19">   19   </a><span class="CT"> * DESCRIPTION : A delay function. Wait until get RFDF flag                *</span>
+</span><span><a class="LN" name="20">   20   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="21">   21   </a><span class="CT"> * PARAMETERS :  -DSPIn: can be DSPIA,DSPIB,DSPIC or DSPID                 *</span>
+</span><span><a class="LN" name="22">   22   </a><span class="CT"> *               -us: the number of us to be delayed                       *</span>
+</span><span><a class="LN" name="23">   23   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="24">   24   </a><span class="CT"> * RETURN :      None                                                      *</span>
+</span><span><a class="LN" name="25">   25   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="26">   26   </a><span class="DT">void</span> <a name="fcn_ec_spi_delay">ec_spi_delay</a>(uint8 DSPIn,uint32 us)
+</span><span><a class="LN" name="27">   27   </a><b>{</b>
+</span><span><a class="LN" name="28">   28   </a>  uint32 i,j;
+</span><span><a class="LN" name="29">   29   </a>  <span class="KW">for</span> (i=0; i&lt;us; i++) <b>{</b>
+</span><span><a class="LN" name="30">   30   </a>    <span class="KW">for</span> (j=0; j&lt;20; j++) <b>{</b>
+</span><span><a class="LN" name="31">   31   </a>      <span class="KW">if</span> (1 == DSPI(DSPIn).SR.B.RFDF) <b>{</b>
+</span><span><a class="LN" name="32">   32   </a>        i = us+1;
+</span><span><a class="LN" name="33">   33   </a>        j = 21;
+</span><span><a class="LN" name="34">   34   </a>      <b>}</b>
+</span><span><a class="LN" name="35">   35   </a>    <b>}</b>
+</span><span><a class="LN" name="36">   36   </a>  <b>}</b>
+</span><span><a class="LN" name="37">   37   </a><b>}</b>
+</span><span><a class="LN" name="38">   38   </a>
+</span><span><a class="LN" name="39">   39   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="40">   40   </a>
+</span><span><a class="LN" name="41">   41   </a><font color="#992211">#</font><span class="PP">if</span> 1
+</span><span><a class="LN" name="42">   42   </a>
+</span><span><a class="LN" name="43">   43   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="44">   44   </a><span class="CT"> * FUNCTION :    ec_spia_init                                              *</span>
+</span><span><a class="LN" name="45">   45   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="46">   46   </a><span class="CT"> * DESCRIPTION : Initialize DSPIA module                                   *</span>
+</span><span><a class="LN" name="47">   47   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="48">   48   </a><span class="CT"> * PARAMETERS :  None                                                      *</span>
+</span><span><a class="LN" name="49">   49   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="50">   50   </a><span class="CT"> * RETURN:       None                                                      *</span>
+</span><span><a class="LN" name="51">   51   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="52">   52   </a><span class="DT">void</span> <a name="fcn_ec_spia_init">ec_spia_init</a>(<span class="DT">void</span>)
+</span><span><a class="LN" name="53">   53   </a><b>{</b>
+</span><span><a class="LN" name="54">   54   </a>  DSPI(0).MCR.B.MSTR = 1;              <span class="CT">/* SPI Mode, Master or Slave */</span>
+</span><span><a class="LN" name="55">   55   </a>  DSPI(0).MCR.B.CONT_SCKE = 0;
+</span><span><a class="LN" name="56">   56   </a>  DSPI(0).MCR.B.DCONF = 0;             <span class="CT">/* Configure DSPI_A in SPI, DSI or CSI configuration */</span>
+</span><span><a class="LN" name="57">   57   </a>  DSPI(0).MCR.B.PCSIS5 = 1;            <span class="CT">/* Inactive state of PCSn is high */</span>
+</span><span><a class="LN" name="58">   58   </a>  DSPI(0).MCR.B.PCSIS4 = 1;
+</span><span><a class="LN" name="59">   59   </a>  DSPI(0).MCR.B.PCSIS3 = 1;
+</span><span><a class="LN" name="60">   60   </a>  DSPI(0).MCR.B.PCSIS2 = 1;
+</span><span><a class="LN" name="61">   61   </a>  DSPI(0).MCR.B.PCSIS1 = 1;
+</span><span><a class="LN" name="62">   62   </a>  DSPI(0).MCR.B.PCSIS0 = 1;
+</span><span><a class="LN" name="63">   63   </a>  DSPI(0).MCR.B.MDIS = !1;             <span class="CT">/* SPI Moudle enable */</span>
+</span><span><a class="LN" name="64">   64   </a>  DSPI(0).MCR.B.HALT = 1;              <span class="CT">/* Stop transfer */</span>
+</span><span><a class="LN" name="65">   65   </a>  DSPI(0).CTAR[0].B.DBR = DBR0;        <span class="CT">/* Duty cycle is configurable */</span>
+</span><span><a class="LN" name="66">   66   </a>  DSPI(0).CTAR[0].B.FMSZ = 0b1111;     <span class="CT">/* Frame size=16 */</span>
+</span><span><a class="LN" name="67">   67   </a>  DSPI(0).CTAR[0].B.PCSSCK = 0b01;     <span class="CT">/* PCS to SCK delay scaler, 3 */</span>
+</span><span><a class="LN" name="68">   68   </a>  DSPI(0).CTAR[0].B.CSSCK = 0b0100;    <span class="CT">/* PCS to SCK delay scaler, 32 */</span>
+</span><span><a class="LN" name="69">   69   </a>  DSPI(0).CTAR[0].B.ASC = 0b0100;      <span class="CT">/* After SCK delay scaler */</span>
+</span><span><a class="LN" name="70">   70   </a>  DSPI(0).CTAR[0].B.DT = 0b0100;       <span class="CT">/* Delay after transfer scaler */</span>
+</span><span><a class="LN" name="71">   71   </a>  DSPI(0).CTAR[0].B.CPOL = 0;          <span class="CT">/* Clock polarity, 0 means the inactive state of SCK is low, 1 means high */</span>
+</span><span><a class="LN" name="72">   72   </a>  DSPI(0).CTAR[0].B.CPHA = 1;          <span class="CT">/* Clock phase, 0 means data is captured on the leading edge of SCK */</span>
+</span><span><a class="LN" name="73">   73   </a>  DSPI(0).CTAR[0].B.LSBFE = 0;         <span class="CT">/* LSB first enable, 0: MSB first; 1: LSB first */</span>
+</span><span><a class="LN" name="74">   74   </a>  DSPI(0).CTAR[0].B.PBR = 0;           <span class="CT">/* Baud rate prescaler */</span>
+</span><span><a class="LN" name="75">   75   </a>  DSPI(0).CTAR[0].B.BR = 4;            <span class="CT">/* Baud rate scaler */</span>
+</span><span><a class="LN" name="76">   76   </a>  DSPI(0).MCR.B.HALT = 0;              <span class="CT">/* Start transfer */</span>
+</span><span><a class="LN" name="77">   77   </a><b>}</b>
+</span><span><a class="LN" name="78">   78   </a>
+</span><span><a class="LN" name="79">   79   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="80">   80   </a>
+</span><span><a class="LN" name="81">   81   </a><font color="#992211">#</font><span class="PP">if</span> 0
+</span><span><a class="LN" name="82">   82   </a>
+</span><span><a class="LN" name="83">   83   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="84">   84   </a><span class="CT"> * FUNCTION :    ec_spib_init                                              *</span>
+</span><span><a class="LN" name="85">   85   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="86">   86   </a><span class="CT"> * DESCRIPTION : Initialize DSPIB module                                   *</span>
+</span><span><a class="LN" name="87">   87   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="88">   88   </a><span class="CT"> * PARAMETERS :  None                                                      *</span>
+</span><span><a class="LN" name="89">   89   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="90">   90   </a><span class="CT"> * RETURN:       None                                                      *</span>
+</span><span><a class="LN" name="91">   91   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="92">   92   </a><span class="DT">void</span> <a name="fcn_ec_spib_init">ec_spib_init</a>(<span class="DT">void</span>)
+</span><span><a class="LN" name="93">   93   </a><b>{</b>
+</span><span><a class="LN" name="94">   94   </a>  DSPI(1).MCR.B.MSTR = 1;              <span class="CT">/* SPI Mode,Master or Slave */</span>
+</span><span><a class="LN" name="95">   95   </a>  DSPI(1).MCR.B.CONT_SCKE = 0;
+</span><span><a class="LN" name="96">   96   </a>  DSPI(1).MCR.B.DCONF = 0;             <span class="CT">/* Configure DSPI_B in SPI, DSI or CSI configuration */</span>
+</span><span><a class="LN" name="97">   97   </a>  DSPI(1).MCR.B.PCSIS5 = 1;            <span class="CT">/* Inactive state of PCSn is high */</span>
+</span><span><a class="LN" name="98">   98   </a>  DSPI(1).MCR.B.PCSIS4 = 1;
+</span><span><a class="LN" name="99">   99   </a>  DSPI(1).MCR.B.PCSIS3 = 1;
+</span><span><a class="LN" name="100">  100   </a>  DSPI(1).MCR.B.PCSIS2 = 1;
+</span><span><a class="LN" name="101">  101   </a>  DSPI(1).MCR.B.PCSIS1 = 1;
+</span><span><a class="LN" name="102">  102   </a>  DSPI(1).MCR.B.PCSIS0 = 1;
+</span><span><a class="LN" name="103">  103   </a>  DSPI(1).MCR.B.MDIS = !0;             <span class="CT">/* SPI Moudle enable */</span>
+</span><span><a class="LN" name="104">  104   </a>  DSPI(1).MCR.B.HALT = 1;              <span class="CT">/* Stop transfer */</span>
+</span><span><a class="LN" name="105">  105   </a>  DSPI(1).CTAR[0].B.DBR = DBR0;        <span class="CT">/* Duty cycle is configurable*/</span>
+</span><span><a class="LN" name="106">  106   </a>  DSPI(1).CTAR[0].B.FMSZ = 0b1111;     <span class="CT">/* Frame size=16 */</span>
+</span><span><a class="LN" name="107">  107   </a>  DSPI(1).CTAR[0].B.PCSSCK = 0b01;     <span class="CT">/* PCS to SCK delay scaler, 3 */</span>
+</span><span><a class="LN" name="108">  108   </a>  DSPI(1).CTAR[0].B.CSSCK = 0b0100;    <span class="CT">/* PCS to SCK delay scaler, 32 */</span>
+</span><span><a class="LN" name="109">  109   </a>  DSPI(1).CTAR[0].B.ASC = 0b0100;      <span class="CT">/* After SCK delay scaler */</span>
+</span><span><a class="LN" name="110">  110   </a>  DSPI(1).CTAR[0].B.DT = 0b0100;       <span class="CT">/* Delay after transfer scaler */</span>
+</span><span><a class="LN" name="111">  111   </a>  DSPI(1).CTAR[0].B.CPOL = 0;          <span class="CT">/* Clock polarity, 0 means the inactive state of SCK is low, 1 means high */</span>
+</span><span><a class="LN" name="112">  112   </a>  DSPI(1).CTAR[0].B.CPHA = 0;          <span class="CT">/* Clock phase, 0 means data is captured on the leading edge of SCK */</span>
+</span><span><a class="LN" name="113">  113   </a>  DSPI(1).CTAR[0].B.LSBFE = 0;         <span class="CT">/* LSB first enable, 0: MSB first; 1: LSB first */</span>
+</span><span><a class="LN" name="114">  114   </a>  DSPI(1).CTAR[0].B.PBR = 0;           <span class="CT">/* Baud rate prescaler */</span>
+</span><span><a class="LN" name="115">  115   </a>  DSPI(1).CTAR[0].B.BR = 4;            <span class="CT">/* Baud rate scaler */</span>
+</span><span><a class="LN" name="116">  116   </a>  DSPI(1).MCR.B.HALT = 0;              <span class="CT">/* Start transfer */</span>
+</span><span><a class="LN" name="117">  117   </a><b>}</b>
+</span><span><a class="LN" name="118">  118   </a>
+</span><span><a class="LN" name="119">  119   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="120">  120   </a>
+</span><span><a class="LN" name="121">  121   </a><font color="#992211">#</font><span class="PP">if</span> 0
+</span><span><a class="LN" name="122">  122   </a>
+</span><span><a class="LN" name="123">  123   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="124">  124   </a><span class="CT"> * FUNCTION :    ec_spic_init                                              *</span>
+</span><span><a class="LN" name="125">  125   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="126">  126   </a><span class="CT"> * DESCRIPTION : Initialize DSPIC module                                   *</span>
+</span><span><a class="LN" name="127">  127   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="128">  128   </a><span class="CT"> * PARAMETERS :  None                                                      *</span>
+</span><span><a class="LN" name="129">  129   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="130">  130   </a><span class="CT"> * RETURN:       None                                                      *</span>
+</span><span><a class="LN" name="131">  131   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="132">  132   </a><span class="DT">void</span> <a name="fcn_ec_spic_init">ec_spic_init</a>(<span class="DT">void</span>)
+</span><span><a class="LN" name="133">  133   </a><b>{</b>
+</span><span><a class="LN" name="134">  134   </a>  DSPI(2).MCR.B.MSTR = 1;              <span class="CT">/* SPI Mode,Master or Slave */</span>
+</span><span><a class="LN" name="135">  135   </a>  DSPI(2).MCR.B.CONT_SCKE = 0;
+</span><span><a class="LN" name="136">  136   </a>  DSPI(2).MCR.B.DCONF = 0;             <span class="CT">/* Configure DSPI_C in SPI, DSI or CSI configuration */</span>
+</span><span><a class="LN" name="137">  137   </a>  DSPI(2).MCR.B.PCSIS5 = 1;            <span class="CT">/* Inactive state of PCSn is high */</span>
+</span><span><a class="LN" name="138">  138   </a>  DSPI(2).MCR.B.PCSIS4 = 1;
+</span><span><a class="LN" name="139">  139   </a>  DSPI(2).MCR.B.PCSIS3 = 1;
+</span><span><a class="LN" name="140">  140   </a>  DSPI(2).MCR.B.PCSIS2 = 1;
+</span><span><a class="LN" name="141">  141   </a>  DSPI(2).MCR.B.PCSIS1 = 1;
+</span><span><a class="LN" name="142">  142   </a>  DSPI(2).MCR.B.PCSIS0 = 1;
+</span><span><a class="LN" name="143">  143   </a>  DSPI(2).MCR.B.MDIS = !0;             <span class="CT">/* SPI Moudle enable */</span>
+</span><span><a class="LN" name="144">  144   </a>  DSPI(2).MCR.B.HALT = 1;              <span class="CT">/* Stop transfer */</span>
+</span><span><a class="LN" name="145">  145   </a>  DSPI(2).CTAR[0].B.DBR = DBR0;        <span class="CT">/* Duty cycle is configurable */</span>
+</span><span><a class="LN" name="146">  146   </a>  DSPI(2).CTAR[0].B.FMSZ = 0b1111;     <span class="CT">/* Frame size=16 */</span>
+</span><span><a class="LN" name="147">  147   </a>  DSPI(2).CTAR[0].B.PCSSCK = 0b01;     <span class="CT">/* PCS to SCK delay scaler, 3 */</span>
+</span><span><a class="LN" name="148">  148   </a>  DSPI(2).CTAR[0].B.CSSCK = 0b0100;    <span class="CT">/* PCS to SCK delay scaler, 32 */</span>
+</span><span><a class="LN" name="149">  149   </a>  DSPI(2).CTAR[0].B.ASC = 0b0100;      <span class="CT">/* After SCK delay scaler */</span>
+</span><span><a class="LN" name="150">  150   </a>  DSPI(2).CTAR[0].B.DT = 0b0100;       <span class="CT">/* Delay after transfer scaler */</span>
+</span><span><a class="LN" name="151">  151   </a>  DSPI(2).CTAR[0].B.CPOL = 0;          <span class="CT">/* Clock polarity, 0 means the inactive state of SCK is low, 1 means high */</span>
+</span><span><a class="LN" name="152">  152   </a>  DSPI(2).CTAR[0].B.CPHA = 0;          <span class="CT">/* Clock phase, 0 means data is captured on the leading edge of SCK */</span>
+</span><span><a class="LN" name="153">  153   </a>  DSPI(2).CTAR[0].B.LSBFE = 0;         <span class="CT">/* LSB first enable, 0: MSB first; 1: LSB first */</span>
+</span><span><a class="LN" name="154">  154   </a>  DSPI(2).CTAR[0].B.PBR = 0;           <span class="CT">/* Baud rate prescaler */</span>
+</span><span><a class="LN" name="155">  155   </a>  DSPI(2).CTAR[0].B.BR = 4;            <span class="CT">/* Baud rate scaler */</span>
+</span><span><a class="LN" name="156">  156   </a>  DSPI(2).MCR.B.HALT = 0;              <span class="CT">/* Start transfer */</span>
+</span><span><a class="LN" name="157">  157   </a><b>}</b>
+</span><span><a class="LN" name="158">  158   </a>
+</span><span><a class="LN" name="159">  159   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="160">  160   </a>
+</span><span><a class="LN" name="161">  161   </a><font color="#992211">#</font><span class="PP">if</span> 0
+</span><span><a class="LN" name="162">  162   </a>
+</span><span><a class="LN" name="163">  163   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="164">  164   </a><span class="CT"> * FUNCTION :    ec_spid_init                                              *</span>
+</span><span><a class="LN" name="165">  165   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="166">  166   </a><span class="CT"> * DESCRIPTION : Initialize DSPID module                                   *</span>
+</span><span><a class="LN" name="167">  167   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="168">  168   </a><span class="CT"> * PARAMETERS :  None                                                      *</span>
+</span><span><a class="LN" name="169">  169   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="170">  170   </a><span class="CT"> * RETURN:       None                                                      *</span>
+</span><span><a class="LN" name="171">  171   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="172">  172   </a><span class="DT">void</span> <a name="fcn_ec_spid_init">ec_spid_init</a>(<span class="DT">void</span>)
+</span><span><a class="LN" name="173">  173   </a><b>{</b>
+</span><span><a class="LN" name="174">  174   </a>  DSPI(3).MCR.B.MSTR = 1;              <span class="CT">/* SPI Mode,Master or Slave */</span>
+</span><span><a class="LN" name="175">  175   </a>  DSPI(3).MCR.B.CONT_SCKE = 0;
+</span><span><a class="LN" name="176">  176   </a>  DSPI(3).MCR.B.DCONF = 0;             <span class="CT">/* Configure DSPI_D in SPI, DSI or CSI configuration */</span>
+</span><span><a class="LN" name="177">  177   </a>  DSPI(3).MCR.B.PCSIS5 = 1;            <span class="CT">/* Inactive state of PCSn is high */</span>
+</span><span><a class="LN" name="178">  178   </a>  DSPI(3).MCR.B.PCSIS4 = 1;
+</span><span><a class="LN" name="179">  179   </a>  DSPI(3).MCR.B.PCSIS3 = 1;
+</span><span><a class="LN" name="180">  180   </a>  DSPI(3).MCR.B.PCSIS2 = 1;
+</span><span><a class="LN" name="181">  181   </a>  DSPI(3).MCR.B.PCSIS1 = 1;
+</span><span><a class="LN" name="182">  182   </a>  DSPI(3).MCR.B.PCSIS0 = 1;
+</span><span><a class="LN" name="183">  183   </a>  DSPI(3).MCR.B.MDIS = !0;             <span class="CT">/* SPI Moudle enable */</span>
+</span><span><a class="LN" name="184">  184   </a>  DSPI(3).MCR.B.HALT = 1;              <span class="CT">/* Stop transfer */</span>
+</span><span><a class="LN" name="185">  185   </a>  DSPI(3).CTAR[0].B.DBR = DBR0;        <span class="CT">/* Duty cycle is configurable */</span>
+</span><span><a class="LN" name="186">  186   </a>  DSPI(3).CTAR[0].B.FMSZ = 0b1111;     <span class="CT">/* Frame size=16 */</span>
+</span><span><a class="LN" name="187">  187   </a>  DSPI(3).CTAR[0].B.PCSSCK = 0b01;     <span class="CT">/* PCS to SCK delay scaler, 3 */</span>
+</span><span><a class="LN" name="188">  188   </a>  DSPI(3).CTAR[0].B.CSSCK = 0b0100;    <span class="CT">/* PCS to SCK delay scaler, 32 */</span>
+</span><span><a class="LN" name="189">  189   </a>  DSPI(3).CTAR[0].B.ASC = 0b0100;      <span class="CT">/* After SCK delay scaler */</span>
+</span><span><a class="LN" name="190">  190   </a>  DSPI(3).CTAR[0].B.DT = 0b0100;       <span class="CT">/* Delay after transfer scaler */</span>
+</span><span><a class="LN" name="191">  191   </a>  DSPI(3).CTAR[0].B.CPOL = 0;          <span class="CT">/* Clock polarity, 0 means the inactive state of SCK is low, 1 means high */</span>
+</span><span><a class="LN" name="192">  192   </a>  DSPI(3).CTAR[0].B.CPHA = 0;          <span class="CT">/* Clock phase, 0 means data is captured on the leading edge of SCK */</span>
+</span><span><a class="LN" name="193">  193   </a>  DSPI(3).CTAR[0].B.LSBFE = 0;         <span class="CT">/* LSB first enable, 0: MSB first; 1: LSB first */</span>
+</span><span><a class="LN" name="194">  194   </a>  DSPI(3).CTAR[0].B.PBR = 0;           <span class="CT">/* Baud rate prescaler */</span>
+</span><span><a class="LN" name="195">  195   </a>  DSPI(3).CTAR[0].B.BR = 4;            <span class="CT">/* Baud rate scaler */</span>
+</span><span><a class="LN" name="196">  196   </a>  DSPI(3).MCR.B.HALT = 0;              <span class="CT">/* Start transfer */</span>
+</span><span><a class="LN" name="197">  197   </a><b>}</b>
+</span><span><a class="LN" name="198">  198   </a>
+</span><span><a class="LN" name="199">  199   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="200">  200   </a>
+</span><span><a class="LN" name="201">  201   </a><font color="#992211">#</font><span class="PP">if</span> (SPIAENABLE||SPIBENABLE||SPICENABLE||SPIDENABLE)
+</span><span><a class="LN" name="202">  202   </a>
+</span><span><a class="LN" name="203">  203   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="204">  204   </a><span class="CT"> * FUNCTION :    ec_spi_masterwriteread                                    *</span>
+</span><span><a class="LN" name="205">  205   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="206">  206   </a><span class="CT"> * DESCRIPTION : SPI function in master mode                               *</span>
+</span><span><a class="LN" name="207">  207   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="208">  208   </a><span class="CT"> * PARAMETERS :  -DSPIn: can be DSPIA,DSPIB,DSPIC or DSPID                 *</span>
+</span><span><a class="LN" name="209">  209   </a><span class="CT"> *               -PCSn: can be PCS_0, PCS_1, PCS_2, PCS_3, PCS_4, PCS_5    *</span>
+</span><span><a class="LN" name="210">  210   </a><span class="CT"> *               -Length: the number of data to be transmitted or received *</span>
+</span><span><a class="LN" name="211">  211   </a><span class="CT"> *               -Tx_Buffer: a pointer pointing to the buffer used to save *</span>
+</span><span><a class="LN" name="212">  212   </a><span class="CT"> *                the data transmitted by SPI                              *</span>
+</span><span><a class="LN" name="213">  213   </a><span class="CT"> *               -Rx_Buffer: a pointer pointing to the buffer used to save *</span>
+</span><span><a class="LN" name="214">  214   </a><span class="CT"> *                the data received by SPI                                 *</span>
+</span><span><a class="LN" name="215">  215   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="216">  216   </a><span class="CT"> * RETURN:       None                                                      *</span>
+</span><span><a class="LN" name="217">  217   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="218">  218   </a><span class="DT">void</span> <a name="fcn_ec_spi_masterwriteread">ec_spi_masterwriteread</a>(uint8 DSPIn,uint8 PCSn,uint8 Length, uint16
+</span><span><a class="LN" name="219">  219   </a>  Tx_Buffer[], uint16 Rx_Buffer[])
+</span><span><a class="LN" name="220">  220   </a><b>{</b>
+</span><span><a class="LN" name="221">  221   </a>  uint8 i = 0;
+</span><span><a class="LN" name="222">  222   </a>  <span class="KW">for</span> (i=0; i&lt;Length; i++)             <span class="CT">/* Transmit all SPI data frame */</span>
+</span><span><a class="LN" name="223">  223   </a>  <b>{</b>
+</span><span><a class="LN" name="224">  224   </a>    <span class="KW">switch</span> (PCSn)                      <span class="CT">/* Select PS accrording to hardware config */</span>
+</span><span><a class="LN" name="225">  225   </a>    <b>{</b>
+</span><span><a class="LN" name="226">  226   </a>     <span class="KW">case</span>(PCS_0):
+</span><span><a class="LN" name="227">  227   </a>      DSPI(DSPIn).PUSHR.R = (uint32)(0x08010000|(uint16)Tx_Buffer[i]);
+</span><span><a class="LN" name="228">  228   </a>      <span class="KW">break</span>;
+</span><span><a class="LN" name="229">  229   </a>
+</span><span><a class="LN" name="230">  230   </a>     <span class="KW">case</span>(PCS_1):
+</span><span><a class="LN" name="231">  231   </a>      DSPI(DSPIn).PUSHR.R = (uint32)(0x08020000|(uint16)Tx_Buffer[i]);
+</span><span><a class="LN" name="232">  232   </a>      <span class="KW">break</span>;
+</span><span><a class="LN" name="233">  233   </a>
+</span><span><a class="LN" name="234">  234   </a>     <span class="KW">case</span>(PCS_2):
+</span><span><a class="LN" name="235">  235   </a>      DSPI(DSPIn).PUSHR.R = (uint32)(0x08040000|(uint16)Tx_Buffer[i]);
+</span><span><a class="LN" name="236">  236   </a>      <span class="KW">break</span>;
+</span><span><a class="LN" name="237">  237   </a>
+</span><span><a class="LN" name="238">  238   </a>     <span class="KW">case</span>(PCS_3):
+</span><span><a class="LN" name="239">  239   </a>      DSPI(DSPIn).PUSHR.R = (uint32)(0x08080000|(uint16)Tx_Buffer[i]);
+</span><span><a class="LN" name="240">  240   </a>      <span class="KW">break</span>;
+</span><span><a class="LN" name="241">  241   </a>
+</span><span><a class="LN" name="242">  242   </a>     <span class="KW">case</span>(PCS_4):
+</span><span><a class="LN" name="243">  243   </a>      DSPI(DSPIn).PUSHR.R = (uint32)(0x08100000|(uint16)Tx_Buffer[i]);
+</span><span><a class="LN" name="244">  244   </a>      <span class="KW">break</span>;
+</span><span><a class="LN" name="245">  245   </a>
+</span><span><a class="LN" name="246">  246   </a>     <span class="KW">case</span>(PCS_5):
+</span><span><a class="LN" name="247">  247   </a>      DSPI(DSPIn).PUSHR.R = (uint32)(0x08200000|(uint16)Tx_Buffer[i]);
+</span><span><a class="LN" name="248">  248   </a>    <b>}</b>
+</span><span><a class="LN" name="249">  249   </a>
+</span><span><a class="LN" name="250">  250   </a>    <a href="#fcn_ec_spi_delay" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_spi_delay');" target="_self"><font color="#1122aa">ec_spi_delay</font></a>(DSPIn,100);           <span class="CT">/* Pop out of the delay function once the receive FIFO not empty */</span>
+</span><span><a class="LN" name="251">  251   </a>    Rx_Buffer[i] = (uint16)DSPI(DSPIn).POPR.B.RXDATA;
+</span><span><a class="LN" name="252">  252   </a>    DSPI(DSPIn).SR.R = 0x90020000;
+</span><span><a class="LN" name="253">  253   </a>  <b>}</b>
+</span><span><a class="LN" name="254">  254   </a><b>}</b>
+</span><span><a class="LN" name="255">  255   </a>
+</span><span><a class="LN" name="256">  256   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="257">  257   </a><span class="CT"> * FUNCTION :    ec_spi_slavereadwrite                                     *</span>
+</span><span><a class="LN" name="258">  258   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="259">  259   </a><span class="CT"> * DESCRIPTION : SPI function in slave mode                                *</span>
+</span><span><a class="LN" name="260">  260   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="261">  261   </a><span class="CT"> * PARAMETERS :  -DSPIn: can be DSPIA, DSPIB, DSPIC or DSPID               *</span>
+</span><span><a class="LN" name="262">  262   </a><span class="CT"> *               -Tx_Data: the data to be transmitted by SPI               *</span>
+</span><span><a class="LN" name="263">  263   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="264">  264   </a><span class="CT"> * RETURN:       -Rx_Data: the data receivedd by SPI                       *</span>
+</span><span><a class="LN" name="265">  265   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="266">  266   </a>uint16 <a name="fcn_ec_spi_slavereadwrite">ec_spi_slavereadwrite</a>(uint8 DSPIn, uint16 Tx_Data)
+</span><span><a class="LN" name="267">  267   </a><b>{</b>
+</span><span><a class="LN" name="268">  268   </a>  uint16 Rx_Data = 0;
+</span><span><a class="LN" name="269">  269   </a>  Rx_Data = (uint16)DSPI(DSPIn).POPR.B.RXDATA;
+</span><span><a class="LN" name="270">  270   </a>  <a href="#fcn_ec_spi_delay" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_spi_delay');" target="_self"><font color="#1122aa">ec_spi_delay</font></a>(DSPIn,100);
+</span><span><a class="LN" name="271">  271   </a>  DSPI(DSPIn).PUSHR.R = (uint32)(0x00000000|(uint16)Tx_Data);
+</span><span><a class="LN" name="272">  272   </a>  DSPI(DSPIn).SR.R = 0x80020000;       <span class="CT">/* Clear TCF, RDRF flags by writing 1 to them */</span>
+</span><span><a class="LN" name="273">  273   </a>  <span class="KW">return</span> Rx_Data;
+</span><span><a class="LN" name="274">  274   </a><b>}</b>
+</span><span><a class="LN" name="275">  275   </a>
+</span><span><a class="LN" name="276">  276   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="277">  277   </a>
+</span><span><a class="LN" name="278">  278   </a><span class="CT">/* File trailer for ECUCoder generated file spi.c.</span>
+</span><span><a class="LN" name="279">  279   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="280">  280   </a><span class="CT"> * [EOF]</span>
+</span><span><a class="LN" name="281">  281   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="282">  282   </a>
+</span></pre>
+</td></tr></table>
+</p>
+</body>
+</html>

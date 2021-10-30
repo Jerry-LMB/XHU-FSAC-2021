@@ -1,0 +1,1010 @@
+Link map of __start
+  1] __start (func,global) found in Runtime.PPCEABI.S.UC.a __start.o
+   2] __init_registers (func,weak) found in Runtime.PPCEABI.S.UC.a __start.o
+    3] _stack_addr found as linker generated symbol
+    3] _SDA2_BASE_ found as linker generated symbol
+    3] _SDA_BASE_ found as linker generated symbol
+   2] __init_hardware (func,global) found in __ppc_eabi_init.o 
+    3] usr_init (func,global) found in MPC55xx_init.o 
+     4] INIT_Derivative (func,global) found in MPC5554_HWInit.o 
+      5] L2SRAM_LOCATION found as linker generated symbol
+     4] INIT_ExternalBusAndMemory (func,global) found in MPC5554_HWInit.o 
+      5] __initSIUExtBusInterface (func,global) found in MPC5554_HWInit.o 
+       6] InitPCRs (func,global) found in MPC5554_HWInit.o 
+      5] __initEBIChipSelects (func,global) found in MPC5554_HWInit.o 
+      5] __initMMUExternalMemory (func,global) found in MPC5554_HWInit.o 
+     4] EXCEP_InitExceptionHandlers (func,global) found in Exceptions.o 
+      5] EXCEPTION_HANDLERS found as linker generated symbol
+      5] EXCEP_DefaultExceptionHandler (func,global) found in Exceptions.o 
+     4] INTC_InitINTCInterrupts (func,global) found in IntcInterrupts.o 
+      5] INTC_INTCInterruptHandler (func,global) found in IntcInterrupts.o 
+      5] INTCInterruptsHandlerTable (object,global) found in IntcInterrupts.o 
+   2] __init_data (func,weak) found in Runtime.PPCEABI.S.UC.a __start.o
+    3] _rom_copy_info (object,global) found in Linker Generated Symbol File 
+    3] __copy_rom_section (func,global) found in Runtime.PPCEABI.S.UC.a __start.o
+     4] memcpy (func,global) found in Runtime.PPCEABI.S.UC.a __mem.o
+     4] __flush_cache (func,global) found in __ppc_eabi_init.o 
+    3] _bss_init_info (object,global) found in Linker Generated Symbol File 
+    3] __init_bss_section (func,global) found in Runtime.PPCEABI.S.UC.a __start.o
+     4] memset (func,global) found in Runtime.PPCEABI.S.UC.a __mem.o
+      5] __fill_mem (func,global) found in Runtime.PPCEABI.S.UC.a __mem.o
+   2] __init_user (func,global) found in __ppc_eabi_init.o 
+    3] FlashConfig (func,global) found in __ppc_eabi_init.o 
+     4] @22 (object,local) found in __ppc_eabi_init.o 
+   2] main (func,global) found in main.o 
+    3] ec_cpu_init (func,global) found in cpu.o 
+    3] ec_interrupts_init (func,global) found in interrupts.o 
+    3] ec_interrupts_allintreg (func,global) found in interrupts.o 
+     4] ISR_Rti_CH23 (func,global) found in untitled.o 
+      5] ECUCoderModelBaseCounter (object,global) found in main.o 
+      5] rate_monotonic_scheduler (func,local) found in untitled.o 
+       6] untitled_M (object,global) found in untitled.o 
+        7] untitled_M_ (object,global) found in untitled.o 
+     4] INTC_InstallINTCInterruptHandler (func,global) found in IntcInterrupts.o 
+    3] Pad_ConfigurationPB (object,global) found in pcr.o 
+     4] PcrCfgReg (object,global) found in pcr.o 
+    3] ec_pad_init (func,global) found in siu.o 
+    3] ec_adc_init (func,global) found in adc.o 
+     4] ADC0_GCC_f (object,global) found in adc.o 
+     4] ADC0_OCC_f (object,global) found in adc.o 
+    3] my_etpu_config (object,global) found in main.o 
+    3] etpu_code (object,global) found in main.o 
+    3] etpu_globals (object,global) found in main.o 
+    3] fs_etpu_init (func,global) found in etpu_util.o 
+     4] eTPU (object,global) found in main.o 
+     4] fs_etpu_code_start (object,global) found in main.o 
+     4] fs_memcpy32 (func,global) found in etpu_util.o 
+     4] fs_memset32 (func,global) found in etpu_util.o 
+     4] fs_etpu_data_ram_start (object,global) found in main.o 
+     4] fs_free_param (object,global) found in main.o 
+    3] CANINIT (object,global) found in can_cfg.o 
+    3] ec_cana_init (func,global) found in can.o 
+    3] ec_canb_init (func,global) found in can.o 
+    3] ec_canc_init (func,global) found in can.o 
+    3] ec_spia_init (func,global) found in spi.o 
+    3] untitled_initialize (func,global) found in untitled.o 
+     4] ec_buffer_init (func,global) found in can.o 
+     4] ec_bufint_init (func,global) found in can.o 
+      5] @132 (object,local) found in can.o 
+     4] ISR_FlexCAN_2_MB1 (func,global) found in untitled.o 
+      5] untitled_B (object,global) found in untitled.o 
+      5] ec_can_receive (func,global) found in can.o 
+       6] ec_can_applrxindication (func,global) found in can_hook.o 
+        7] CCP_CRO_Indication (func,global) found in can_ccp.o 
+         8] ccpRxData (object,global) found in can_ccp.o 
+         8] ccp (object,global) found in ccp.o 
+      5] @380 (object,local) found in untitled.o 
+      5] @383 (object,local) found in untitled.o 
+      5] ssdConfig (object,global) found in flash_app.o 
+      5] pFlashErase (object,global) found in flash_app.o 
+       6] FlashErase_C (object,global) found in flash_array.o 
+      5] pFlashProgram (object,global) found in flash_app.o 
+       6] FlashProgram_C (object,global) found in flash_array.o 
+      5] ec_can_transmit (func,global) found in can.o 
+      5] ec_cpu_reset (func,global) found in cpu.o 
+     4] ccpInit (func,global) found in ccp.o 
+      5] ccpCanInit (func,global) found in can_ccp.o 
+     4] ISR_FlexCAN_2_MB0 (func,global) found in untitled.o 
+     4] ISR_FlexCAN_2_MB8 (func,global) found in untitled.o 
+      5] ec_can_appltxconfirmation (func,global) found in can_hook.o 
+       6] CCP_DTO_Confirmation (func,global) found in can_ccp.o 
+        7] ccpSendCallBack (func,global) found in ccp.o 
+         8] ccpSendCrm (func,global) found in ccp.o 
+          9] ccpSend (func,global) found in can_ccp.o 
+           10] ccpTxData (object,local) found in can_ccp.o 
+     4] ec_rti_init (func,global) found in rti.o 
+    3] CCP_FlashInit (func,global) found in flash_app.o 
+     4] pFlashInit (object,global) found in flash_app.o 
+      5] FlashInit_C (object,global) found in flash_array.o 
+     4] pGetLock (object,global) found in flash_app.o 
+      5] GetLock_C (object,global) found in flash_array.o 
+     4] pSetLock (object,global) found in flash_app.o 
+      5] SetLock_C (object,global) found in flash_array.o 
+    3] fs_timer_start (func,global) found in etpu_util.o 
+    3] rt_OneStep (func,global) found in main.o 
+     4] ECUCoderOverrunFlags (object,local) found in main.o 
+     4] untitled_SetEventsForThisBaseStep (func,global) found in untitled.o 
+     4] untitled_step (func,global) found in untitled.o 
+      5] @499 (object,local) found in untitled.o 
+      5] untitled_step0 (func,global) found in untitled.o 
+      5] untitled_step1 (func,global) found in untitled.o 
+       6] ccpBackground (func,global) found in ccp.o 
+        7] ccpCommand (func,global) found in ccp.o 
+         8] ccpStopAllDaq (func,local) found in ccp.o 
+         8] @348 (object,local) found in ccp.o 
+         8] ccpStationId (object,global) found in ccp.o 
+         8] ccpGetPointer (func,global) found in can_ccp.o 
+         8] ccpWriteMTA (func,local) found in ccp.o 
+          9] ccpCheckWriteAccess (func,global) found in can_ccp.o 
+         8] ccpReadMTA (func,local) found in ccp.o 
+         8] ccpStopDaq (func,local) found in ccp.o 
+         8] ccpClearDaqList (func,local) found in ccp.o 
+          9] ccpQueueInit (func,global) found in ccp.o 
+         8] ccpPrepareDaq (func,local) found in ccp.o 
+         8] ccpStartDaq (func,local) found in ccp.o 
+         8] ccpStartAllPreparedDaq (func,local) found in ccp.o 
+        7] ccpUserBackground (func,global) found in can_ccp.o 
+        7] CRC16CCITTtab (object,global) found in ccp.o 
+      5] untitled_step2 (func,global) found in untitled.o 
+       6] ccpDaq (func,global) found in ccp.o 
+        7] ccpSampleAndTransmitDtm (func,local) found in ccp.o 
+         8] ccpQueueWrite (func,global) found in ccp.o 
+      5] untitled_step3 (func,global) found in untitled.o 
+       6] ec_tle6232_diag (func,global) found in untitled.o 
+        7] @336 (object,local) found in untitled.o 
+        7] ec_spi_masterwriteread (func,global) found in spi.o 
+         8] ec_spi_delay (func,global) found in spi.o 
+        7] TLE6232DIA (object,global) found in untitled.o 
+      5] untitled_step4 (func,global) found in untitled.o 
+      5] untitled_step5 (func,global) found in untitled.o 
+      5] untitled_step6 (func,global) found in untitled.o 
+   2] exit (func,weak) found in __ppc_eabi_init.o 
+    3] _ExitProcess (func,weak) found in __ppc_eabi_init.o 
+  1] bam_rchw (object,global) found in MPC55xx_init.o 
+  1] bam_resetvector (object,global) found in MPC55xx_init.o 
+  1] diagFlashData (object,global) found in ccp_data.o 
+  1] ccpFlashData (object,global) found in ccp_data.o 
+  1] @14 (object,local) found in siu.o 
+   2] @13 (object,local) found in siu.o 
+  1] @146 (object,local) found in flash_app.o 
+   2] @145 (object,local) found in flash_app.o 
+  1] @13 (object,local) found in IntcInterrupts.o 
+   2] @12 (object,local) found in IntcInterrupts.o 
+  1] @6 (object,local) found in Exceptions.o 
+   2] @5 (object,local) found in Exceptions.o 
+  1] @56 (object,local) found in interrupts.o 
+   2] @55 (object,local) found in interrupts.o 
+  1] @35 (object,local) found in adc.o 
+   2] @34 (object,local) found in adc.o 
+  1] @31 (object,local) found in spi.o 
+   2] @30 (object,local) found in spi.o 
+  1] @61 (object,local) found in spi.o 
+   2] @60 (object,local) found in spi.o 
+  1] @47 (object,local) found in can_ccp.o 
+   2] @46 (object,local) found in can_ccp.o 
+  1] @57 (object,local) found in can_ccp.o 
+   2] @56 (object,local) found in can_ccp.o 
+  1] @67 (object,local) found in can_ccp.o 
+   2] @66 (object,local) found in can_ccp.o 
+  1] @41 (object,local) found in ccp.o 
+   2] @40 (object,local) found in ccp.o 
+  1] @69 (object,local) found in ccp.o 
+   2] @68 (object,local) found in ccp.o 
+  1] @97 (object,local) found in ccp.o 
+   2] @96 (object,local) found in ccp.o 
+  1] @130 (object,local) found in ccp.o 
+   2] @129 (object,local) found in ccp.o 
+  1] @147 (object,local) found in ccp.o 
+   2] @146 (object,local) found in ccp.o 
+  1] @159 (object,local) found in ccp.o 
+   2] @158 (object,local) found in ccp.o 
+  1] @193 (object,local) found in ccp.o 
+   2] @192 (object,local) found in ccp.o 
+  1] @221 (object,local) found in ccp.o 
+   2] @220 (object,local) found in ccp.o 
+  1] @241 (object,local) found in ccp.o 
+   2] @240 (object,local) found in ccp.o 
+  1] @350 (object,local) found in ccp.o 
+   2] @349 (object,local) found in ccp.o 
+  1] @364 (object,local) found in ccp.o 
+   2] @363 (object,local) found in ccp.o 
+  1] @377 (object,local) found in ccp.o 
+   2] @376 (object,local) found in ccp.o 
+  1] @45 (object,local) found in can_hook.o 
+   2] @44 (object,local) found in can_hook.o 
+  1] @57 (object,local) found in can_hook.o 
+   2] @56 (object,local) found in can_hook.o 
+  1] @51 (object,local) found in can.o 
+   2] @50 (object,local) found in can.o 
+  1] @70 (object,local) found in can.o 
+   2] @69 (object,local) found in can.o 
+  1] @89 (object,local) found in can.o 
+   2] @88 (object,local) found in can.o 
+  1] @175 (object,local) found in can.o 
+   2] @174 (object,local) found in can.o 
+  1] @235 (object,local) found in can.o 
+   2] @234 (object,local) found in can.o 
+  1] @126 (object,local) found in etpu_util.o 
+   2] @125 (object,local) found in etpu_util.o 
+  1] @363 (object,local) found in etpu_util.o 
+   2] @362 (object,local) found in etpu_util.o 
+  1] @378 (object,local) found in etpu_util.o 
+   2] @377 (object,local) found in etpu_util.o 
+  1] @397 (object,local) found in main.o 
+   2] @396 (object,local) found in main.o 
+  1] @415 (object,local) found in main.o 
+   2] @414 (object,local) found in main.o 
+  1] @363 (object,local) found in untitled.o 
+   2] @362 (object,local) found in untitled.o 
+  1] @369 (object,local) found in untitled.o 
+   2] @368 (object,local) found in untitled.o 
+  1] @406 (object,local) found in untitled.o 
+   2] @405 (object,local) found in untitled.o 
+  1] @415 (object,local) found in untitled.o 
+   2] @414 (object,local) found in untitled.o 
+  1] @421 (object,local) found in untitled.o 
+   2] @420 (object,local) found in untitled.o 
+  1] @448 (object,local) found in untitled.o 
+   2] @447 (object,local) found in untitled.o 
+  1] @454 (object,local) found in untitled.o 
+   2] @453 (object,local) found in untitled.o 
+  1] @460 (object,local) found in untitled.o 
+   2] @459 (object,local) found in untitled.o 
+  1] @466 (object,local) found in untitled.o 
+   2] @465 (object,local) found in untitled.o 
+  1] @474 (object,local) found in untitled.o 
+   2] @473 (object,local) found in untitled.o 
+  1] @480 (object,local) found in untitled.o 
+   2] @479 (object,local) found in untitled.o 
+  1] @501 (object,local) found in untitled.o 
+   2] @500 (object,local) found in untitled.o 
+  1] @507 (object,local) found in untitled.o 
+   2] @506 (object,local) found in untitled.o 
+  1] __init_cpp_exceptions_reference (object,global) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+   2] __init_cpp_exceptions (func,global) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+    3] fragmentID (object,local) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+    3] __exception_info_constants (func,weak) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+     4] _eti_init_info (object,global) found in Linker Generated Symbol File 
+    3] __register_fragment (func,global) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+     4] fragmentinfo (object,local) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  1] __fini_cpp_exceptions_reference (object,global) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+   2] __fini_cpp_exceptions (func,global) found in Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+    3] __unregister_fragment (func,global) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  1] _ctors (notype,global) found in Linker Generated Symbol File 
+  1] _ctors$99 (object,global) found in Linker Generated Symbol File 
+  1] _dtors (notype,global) found in Linker Generated Symbol File 
+  1] _dtors$99 (object,global) found in Linker Generated Symbol File 
+    3] .text (section,local) found in MPC5554_HWInit.o 
+    3] .text.34 (notype,local) found in MPC5554_HWInit.o 
+    3] .init (section,local) found in MPC55xx_init.o 
+    3] .init.13 (notype,local) found in MPC55xx_init.o 
+    3] .text (section,local) found in siu.o 
+    3] .text.22 (notype,local) found in siu.o 
+    3] .text (section,local) found in flash_app.o 
+    3] .text.234 (notype,local) found in flash_app.o 
+    3] .text (section,local) found in interrupts.o 
+    3] .text.61 (notype,local) found in interrupts.o 
+    3] .text (section,local) found in adc.o 
+    3] .text.61 (notype,local) found in adc.o 
+    3] .text (section,local) found in spi.o 
+    3] .text.77 (notype,local) found in spi.o 
+    3] .text (section,local) found in rti.o 
+    3] .text.28 (notype,local) found in rti.o 
+    3] .text (section,local) found in cpu.o 
+    3] .text.19 (notype,local) found in cpu.o 
+    3] .text (section,local) found in can_ccp.o 
+    3] .text.105 (notype,local) found in can_ccp.o 
+    3] .text (section,local) found in ccp.o 
+    3] .text.413 (notype,local) found in ccp.o 
+    3] .text (section,local) found in can_hook.o 
+    3] .text.63 (notype,local) found in can_hook.o 
+    3] .text (section,local) found in can.o 
+    3] .text.279 (notype,local) found in can.o 
+    3] .text (section,local) found in etpu_util.o 
+    3] .text.612 (notype,local) found in etpu_util.o 
+    3] .text (section,local) found in main.o 
+    3] .text.526 (notype,local) found in main.o 
+    3] .text (section,local) found in untitled.o 
+    3] .text.540 (notype,local) found in untitled.o 
+    3] .init (section,local) found in Runtime.PPCEABI.S.UC.a __start.o
+    3] .init.104 (notype,local) found in Runtime.PPCEABI.S.UC.a __start.o
+    3] .text (section,local) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+    3] .text.1332 (notype,local) found in Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+    3] .text (section,local) found in etpu_ic.o 
+    3] .text.334 (notype,local) found in etpu_ic.o 
+
+
+.__bam_bootarea section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000008 00020000 00000420  1 .__bam_bootarea 	MPC55xx_init.o 
+  00000000 000004 00020000 00000420  4 bam_rchw 	MPC55xx_init.o 
+  00000004 000004 00020004 00000424  4 bam_resetvector 	MPC55xx_init.o 
+
+
+.init section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000050 00020020 00000428  1 .init 	__ppc_eabi_init.o 
+  00000000 00001c 00020020 00000428  4 __init_hardware 	__ppc_eabi_init.o 
+  0000001c 000034 0002003c 00000444  4 __flush_cache 	__ppc_eabi_init.o 
+  00000050 00001c 00020070 00000478  1 .init 	MPC55xx_init.o 
+  00000050 00001c 00020070 00000478  4 usr_init 	MPC55xx_init.o 
+  0000006c 000000 0002008c 00000494  1 .init.13 	MPC55xx_init.o 
+  0000006c 000184 0002008c 00000494  1 .init 	Runtime.PPCEABI.S.UC.a __start.o
+  0000006c 000068 0002008c 00000494  4 __start 	Runtime.PPCEABI.S.UC.a __start.o
+  000000d4 000054 000200f4 000004fc  4 __copy_rom_section 	Runtime.PPCEABI.S.UC.a __start.o
+  00000128 000018 00020148 00000550  4 __init_bss_section 	Runtime.PPCEABI.S.UC.a __start.o
+  00000140 00001c 00020160 00000568  4 __init_registers 	Runtime.PPCEABI.S.UC.a __start.o
+  0000015c 000094 0002017c 00000584  4 __init_data 	Runtime.PPCEABI.S.UC.a __start.o
+  000001f0 000000 00020210 00000618  1 .init.104 	Runtime.PPCEABI.S.UC.a __start.o
+  000001f0 000134 00020210 00000618  1 .init 	Runtime.PPCEABI.S.UC.a __mem.o
+  000001f0 000050 00020210 00000618  4 memcpy 	Runtime.PPCEABI.S.UC.a __mem.o
+  00000240 0000b4 00020260 00000668  4 __fill_mem 	Runtime.PPCEABI.S.UC.a __mem.o
+  000002f4 000030 00020314 0000071c  4 memset 	Runtime.PPCEABI.S.UC.a __mem.o
+  00000324 000014 00020344 0000074c  1 .init 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000324 000014 00020344 0000074c  4 __exception_info_constants 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  UNUSED   000050 ........ ........    __find_exception_addresses Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000338 0000d4 00020358 00000760  1 .init 	Linker Generated Symbol File 
+  00000338 0000b4 00020358 00000760  4 _rom_copy_info 	Linker Generated Symbol File 
+  000003ec 000020 0002040c 00000814  4 _bss_init_info 	Linker Generated Symbol File 
+
+
+.init_vle section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.__exception_handlers section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 0000cc 00021000 00000840  1 .__exception_handlers 	IntcInterrupts.o 
+  00000000 0000cc 00021000 00000840 16 INTC_INTCInterruptHandler 	IntcInterrupts.o 
+  000000cc 000004 000210d0 00000910 16 *fill*
+  000000d0 000004 000210d0 00000910  1 .__exception_handlers 	Exceptions.o 
+  000000d0 000004 000210d0 00000910 16 EXCEP_DefaultExceptionHandler 	Exceptions.o 
+
+
+.text section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 00009c 00022000 00000914  1 .text 	__ppc_eabi_init.o 
+  00000000 000058 00022000 00000914  4 FlashConfig 	__ppc_eabi_init.o 
+  00000058 000020 00022058 0000096c  4 __init_user 	__ppc_eabi_init.o 
+  00000078 000020 00022078 0000098c  4 exit 	__ppc_eabi_init.o 
+  00000098 000004 00022098 000009ac  4 _ExitProcess 	__ppc_eabi_init.o 
+  0000009c 0000e0 0002209c 000009b0  1 .text 	MPC5554_HWInit.o 
+  0000009c 000020 0002209c 000009b0  4 INIT_Derivative 	MPC5554_HWInit.o 
+  000000bc 000018 000220bc 000009d0  4 INIT_ExternalBusAndMemory 	MPC5554_HWInit.o 
+  000000d4 000014 000220d4 000009e8  4 InitPCRs 	MPC5554_HWInit.o 
+  000000e8 000084 000220e8 000009fc  4 __initSIUExtBusInterface 	MPC5554_HWInit.o 
+  0000016c 000004 0002216c 00000a80  4 __initEBIChipSelects 	MPC5554_HWInit.o 
+  UNUSED   000018 ........ ........    WriteMMUTableEntry MPC5554_HWInit.o 
+  00000170 00000c 00022170 00000a84  4 __initMMUExternalMemory 	MPC5554_HWInit.o 
+  0000017c 000000 0002217c 00000a90  1 .text.34 	MPC5554_HWInit.o 
+  0000017c 000054 0002217c 00000a90  1 .text 	siu.o 
+  0000017c 000054 0002217c 00000a90  4 ec_pad_init 	siu.o 
+  000001d0 000000 000221d0 00000ae4  1 .text.22 	siu.o 
+  000001d0 000120 000221d0 00000ae4  1 .text 	flash_app.o 
+  UNUSED   0000c0 ........ ........    Fls_Init flash_app.o 
+  000001d0 000120 000221d0 00000ae4  4 CCP_FlashInit 	flash_app.o 
+  UNUSED   0000bc ........ ........    Fls_Read flash_app.o 
+  000002f0 000000 000222f0 00000c04  1 .text.234 	flash_app.o 
+  000002f0 000060 000222f0 00000c04  1 .text 	IntcInterrupts.o 
+  000002f0 000030 000222f0 00000c04  4 INTC_InstallINTCInterruptHandler 	IntcInterrupts.o 
+  00000320 000030 00022320 00000c34  4 INTC_InitINTCInterrupts 	IntcInterrupts.o 
+  00000350 000064 00022350 00000c64  1 .text 	Exceptions.o 
+  00000350 000064 00022350 00000c64  4 EXCEP_InitExceptionHandlers 	Exceptions.o 
+  000003b4 000070 000223b4 00000cc8  1 .text 	interrupts.o 
+  000003b4 000040 000223b4 00000cc8  4 ec_interrupts_init 	interrupts.o 
+  000003f4 000030 000223f4 00000d08  4 ec_interrupts_allintreg 	interrupts.o 
+  00000424 000000 00022424 00000d38  1 .text.61 	interrupts.o 
+  00000424 000430 00022424 00000d38  1 .text 	adc.o 
+  00000424 000430 00022424 00000d38  4 ec_adc_init 	adc.o 
+  UNUSED   000198 ........ ........    ec_adc_readresult adc.o 
+  00000854 000000 00022854 00001168  1 .text.61 	adc.o 
+  00000854 00040c 00022854 00001168  1 .text 	spi.o 
+  00000854 000068 00022854 00001168  4 ec_spi_delay 	spi.o 
+  000008bc 0001d0 000228bc 000011d0  4 ec_spia_init 	spi.o 
+  00000a8c 0001d4 00022a8c 000013a0  4 ec_spi_masterwriteread 	spi.o 
+  UNUSED   000088 ........ ........    ec_spi_slavereadwrite spi.o 
+  00000c60 000000 00022c60 00001574  1 .text.77 	spi.o 
+  00000c60 000114 00022c60 00001574  1 .text 	rti.o 
+  00000c60 000114 00022c60 00001574  4 ec_rti_init 	rti.o 
+  UNUSED   0000b0 ........ ........    ec_pit_init rti.o 
+  00000d74 000000 00022d74 00001688  1 .text.28 	rti.o 
+  00000d74 000080 00022d74 00001688  1 .text 	cpu.o 
+  00000d74 000068 00022d74 00001688  4 ec_cpu_init 	cpu.o 
+  00000ddc 000018 00022ddc 000016f0  4 ec_cpu_reset 	cpu.o 
+  00000df4 000000 00022df4 00001708  1 .text.19 	cpu.o 
+  00000df4 000224 00022df4 00001708  1 .text 	can_ccp.o 
+  00000df4 000004 00022df4 00001708  4 ccpCanInit 	can_ccp.o 
+  00000df8 000074 00022df8 0000170c  4 CCP_CRO_Indication 	can_ccp.o 
+  00000e6c 000020 00022e6c 00001780  4 CCP_DTO_Confirmation 	can_ccp.o 
+  00000e8c 0000d0 00022e8c 000017a0  4 ccpSend 	can_ccp.o 
+  00000f5c 000080 00022f5c 00001870  4 ccpUserBackground 	can_ccp.o 
+  00000fdc 000008 00022fdc 000018f0  4 ccpGetPointer 	can_ccp.o 
+  00000fe4 000034 00022fe4 000018f8  4 ccpCheckWriteAccess 	can_ccp.o 
+  00001018 000000 00023018 0000192c  1 .text.105 	can_ccp.o 
+  00001018 001280 00023018 0000192c  1 .text 	ccp.o 
+  00001018 00006c 00023018 0000192c  4 ccpSendCrm 	ccp.o 
+  00001084 000024 00023084 00001998  4 ccpQueueInit 	ccp.o 
+  000010a8 000078 000230a8 000019bc  4 ccpQueueWrite 	ccp.o 
+  00001120 0000f0 00023120 00001a34  4 ccpWriteMTA 	ccp.o 
+  00001210 00005c 00023210 00001b24  4 ccpReadMTA 	ccp.o 
+  0000126c 00009c 0002326c 00001b80  4 ccpClearDaqList 	ccp.o 
+  00001308 0000ac 00023308 00001c1c  4 ccpPrepareDaq 	ccp.o 
+  000013b4 00004c 000233b4 00001cc8  4 ccpStartDaq 	ccp.o 
+  00001400 00007c 00023400 00001d14  4 ccpStartAllPreparedDaq 	ccp.o 
+  0000147c 00008c 0002347c 00001d90  4 ccpStopDaq 	ccp.o 
+  00001508 00005c 00023508 00001e1c  4 ccpStopAllDaq 	ccp.o 
+  00001564 000170 00023564 00001e78  4 ccpSampleAndTransmitDtm 	ccp.o 
+  000016d4 00015c 000236d4 00001fe8  4 ccpDaq 	ccp.o 
+  00001830 000160 00023830 00002144  4 ccpBackground 	ccp.o 
+  00001990 000790 00023990 000022a4  4 ccpCommand 	ccp.o 
+  00002120 000124 00024120 00002a34  4 ccpSendCallBack 	ccp.o 
+  00002244 000054 00024244 00002b58  4 ccpInit 	ccp.o 
+  00002298 000000 00024298 00002bac  1 .text.413 	ccp.o 
+  00002298 000088 00024298 00002bac  1 .text 	can_hook.o 
+  00002298 000048 00024298 00002bac  4 ec_can_applrxindication 	can_hook.o 
+  000022e0 000040 000242e0 00002bf4  4 ec_can_appltxconfirmation 	can_hook.o 
+  00002320 000000 00024320 00002c34  1 .text.63 	can_hook.o 
+  00002320 000f1c 00024320 00002c34  1 .text 	can.o 
+  00002320 000244 00024320 00002c34  4 ec_cana_init 	can.o 
+  00002564 000244 00024564 00002e78  4 ec_canb_init 	can.o 
+  000027a8 000244 000247a8 000030bc  4 ec_canc_init 	can.o 
+  000029ec 0000d4 000249ec 00003300  4 ec_buffer_init 	can.o 
+  00002ac0 00026c 00024ac0 000033d4  4 ec_bufint_init 	can.o 
+  UNUSED   000098 ........ ........    ec_can_disableinterrupts can.o 
+  UNUSED   000064 ........ ........    ec_can_enableinterrupts can.o 
+  00002d2c 0002b8 00024d2c 00003640  4 ec_can_receive 	can.o 
+  UNUSED   000144 ........ ........    ec_can_receiveall can.o 
+  00002fe4 000258 00024fe4 000038f8  4 ec_can_transmit 	can.o 
+  UNUSED   000204 ........ ........    ec_remote_transmit can.o 
+  0000323c 000000 0002523c 00003b50  1 .text.279 	can.o 
+  0000323c 000000 0002523c 00003b50  1 .text 	etpu_ic.o 
+  UNUSED   000118 ........ ........    fs_etpu_ic_init etpu_ic.o 
+  UNUSED   000100 ........ ........    fs_etpu_ic_init_ram etpu_ic.o 
+  UNUSED   000134 ........ ........    fs_etpu_ic_init_link etpu_ic.o 
+  UNUSED   00011c ........ ........    fs_etpu_ic_init_link_ram etpu_ic.o 
+  UNUSED   00002c ........ ........    fs_etpu_ic_read_trans_count etpu_ic.o 
+  UNUSED   00002c ........ ........    fs_etpu_ic_read_final_time etpu_ic.o 
+  UNUSED   00002c ........ ........    fs_etpu_ic_read_last_time etpu_ic.o 
+  0000323c 000000 0002523c 00003b50  1 .text.334 	etpu_ic.o 
+  0000323c 000260 0002523c 00003b50  1 .text 	etpu_util.o 
+  0000323c 0001c8 0002523c 00003b50  4 fs_etpu_init 	etpu_util.o 
+  UNUSED   000138 ........ ........    fs_etpu2_init etpu_util.o 
+  UNUSED   0000dc ........ ........    fs_etpu_chan_init etpu_util.o 
+  UNUSED   000028 ........ ........    fs_etpu_data_ram etpu_util.o 
+  UNUSED   00001c ........ ........    fs_etpu_set_hsr etpu_util.o 
+  UNUSED   00001c ........ ........    fs_etpu_get_hsr etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_enable etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_disable etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_interrupt_enable etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_interrupt_disable etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_dma_enable etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_dma_disable etpu_util.o 
+  00003404 000018 00025404 00003d18  4 fs_timer_start 	etpu_util.o 
+  UNUSED   000054 ........ ........    fs_etpu_malloc etpu_util.o 
+  UNUSED   0000a0 ........ ........    fs_etpu_malloc2 etpu_util.o 
+  UNUSED   00002c ........ ........    fs_etpu_set_chan_local_32 etpu_util.o 
+  UNUSED   000030 ........ ........    fs_etpu_set_chan_local_24 etpu_util.o 
+  UNUSED   00002c ........ ........    fs_etpu_set_chan_local_16 etpu_util.o 
+  UNUSED   00002c ........ ........    fs_etpu_set_chan_local_8 etpu_util.o 
+  UNUSED   00002c ........ ........    fs_etpu_get_chan_local_32 etpu_util.o 
+  UNUSED   000030 ........ ........    fs_etpu_get_chan_local_24s etpu_util.o 
+  UNUSED   000034 ........ ........    fs_etpu_get_chan_local_24 etpu_util.o 
+  UNUSED   00002c ........ ........    fs_etpu_get_chan_local_16 etpu_util.o 
+  UNUSED   00002c ........ ........    fs_etpu_get_chan_local_8 etpu_util.o 
+  UNUSED   00000c ........ ........    fs_etpu_set_global_32 etpu_util.o 
+  UNUSED   000010 ........ ........    fs_etpu_set_global_24 etpu_util.o 
+  UNUSED   00000c ........ ........    fs_etpu_set_global_16 etpu_util.o 
+  UNUSED   00000c ........ ........    fs_etpu_set_global_8 etpu_util.o 
+  UNUSED   00000c ........ ........    fs_etpu_get_global32 etpu_util.o 
+  UNUSED   000010 ........ ........    fs_etpu_get_global_24s etpu_util.o 
+  UNUSED   000014 ........ ........    fs_etpu_get_global_24 etpu_util.o 
+  UNUSED   00000c ........ ........    fs_etpu_get_global_16 etpu_util.o 
+  UNUSED   00000c ........ ........    fs_etpu_get_global_8 etpu_util.o 
+  0000341c 00004c 0002541c 00003d30  4 fs_memcpy32 	etpu_util.o 
+  00003468 000034 00025468 00003d7c  4 fs_memset32 	etpu_util.o 
+  UNUSED   000020 ........ ........    fs_etpu_get_chan_interrupt_flag etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_clear_chan_interrupt_flag etpu_util.o 
+  UNUSED   000020 ........ ........    fs_etpu_get_chan_dma_flag etpu_util.o 
+  UNUSED   000024 ........ ........    fs_etpu_clear_chan_dma_flag etpu_util.o 
+  UNUSED   000018 ........ ........    fs_etpu_get_global_exceptions etpu_util.o 
+  UNUSED   000018 ........ ........    fs_etpu_clear_global_exceptions etpu_util.o 
+  UNUSED   000148 ........ ........    fs_etpu_coherent_read_24 etpu_util.o 
+  UNUSED   000140 ........ ........    fs_etpu_coherent_read_32 etpu_util.o 
+  UNUSED   000140 ........ ........    fs_etpu_coherent_write_24 etpu_util.o 
+  UNUSED   000138 ........ ........    fs_etpu_coherent_write_32 etpu_util.o 
+  0000349c 000000 0002549c 00003db0  1 .text.612 	etpu_util.o 
+  0000349c 0001dc 0002549c 00003db0  1 .text 	main.o 
+  0000349c 0000b0 0002549c 00003db0  4 rt_OneStep 	main.o 
+  0000354c 00012c 0002554c 00003e60  4 main 	main.o 
+  00003678 000000 00025678 00003f8c  1 .text.526 	main.o 
+  00003678 000b80 00025678 00003f8c  1 .text 	untitled.o 
+  00003678 000130 00025678 00003f8c  4 ec_tle6232_diag 	untitled.o 
+  000037a8 000040 000257a8 000040bc  4 ISR_Rti_CH23 	untitled.o 
+  000037e8 000318 000257e8 000040fc  4 ISR_FlexCAN_2_MB1 	untitled.o 
+  00003b00 000184 00025b00 00004414  4 ISR_FlexCAN_2_MB0 	untitled.o 
+  00003c84 00003c 00025c84 00004598  4 ISR_FlexCAN_2_MB8 	untitled.o 
+  00003cc0 0000ac 00025cc0 000045d4  4 untitled_SetEventsForThisBaseStep 	untitled.o 
+  00003d6c 00010c 00025d6c 00004680  4 rate_monotonic_scheduler 	untitled.o 
+  00003e78 000020 00025e78 0000478c  4 untitled_step0 	untitled.o 
+  00003e98 000020 00025e98 000047ac  4 untitled_step1 	untitled.o 
+  00003eb8 000028 00025eb8 000047cc  4 untitled_step2 	untitled.o 
+  00003ee0 00002c 00025ee0 000047f4  4 untitled_step3 	untitled.o 
+  00003f0c 000124 00025f0c 00004820  4 untitled_step4 	untitled.o 
+  00004030 000028 00026030 00004944  4 untitled_step5 	untitled.o 
+  00004058 000004 00026058 0000496c  4 untitled_step6 	untitled.o 
+  0000405c 000078 0002605c 00004970  4 untitled_step 	untitled.o 
+  000040d4 000124 000260d4 000049e8  4 untitled_initialize 	untitled.o 
+  000041f8 000000 000261f8 00004b0c  1 .text.540 	untitled.o 
+  000041f8 000060 000261f8 00004b0c  1 .text 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  000041f8 000034 000261f8 00004b0c  4 __register_fragment 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  0000422c 00002c 0002622c 00004b40  4 __unregister_fragment 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   0000a4 ........ ........    ExPPC_FindExceptionFragment__FPcP12FragmentInfo Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   0001b0 ........ ........    ExPPC_FindExceptionRecord__FPcP15MWExceptionInfo Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000008 ........ ........    ExPPC_PopR31__FPcP15MWExceptionInfo Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000020 ........ ........    ExPPC_CurrentAction__FPC14ActionIterator Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000254 ........ ........    ExPPC_NextAction__FP14ActionIterator Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000198 ........ ........    ExPPC_PopStackFrame__FP12ThrowContextP15MWExceptionInfo Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   0009c4 ........ ........    ExPPC_UnwindStack__FP12ThrowContextP15MWExceptionInfoPv Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000088 ........ ........    ExPPC_IsInSpecification__FPcP16ex_specification Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000100 ........ ........    __unexpected Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000040 ........ ........    __dt__Q23std13bad_exceptionFv Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00002c ........ ........    ExPPC_LongJump__FP12ThrowContextPvPv Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000080 ........ ........    ExPPC_HandleUnexpected__FP12ThrowContextP15MWExceptionInfoP16ex_specification Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   000364 ........ ........    ExPPC_ThrowHandler__FP12ThrowContext Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00006c ........ ........    __throw Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00002c ........ ........    __end__catch Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   0000d4 ........ ........    __uncaught_exception_helper__FP12ThrowContext Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00003c ........ ........    __uncaught_exception Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    what__Q23std13bad_exceptionCFv Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  00004258 000000 00026258 00004b6c  1 .text.1332 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  00004258 000078 00026258 00004b6c  1 .text 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00004258 000044 00026258 00004b6c  4 __init_cpp_exceptions 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  0000429c 000034 0002629c 00004bb0  4 __fini_cpp_exceptions 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+
+
+.text_vle section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.rodata section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 00000c 000262d0 00004be8  1 .rodata 	__ppc_eabi_init.o 
+  00000000 00000c 000262d0 00004be8  4 @22 	__ppc_eabi_init.o 
+  0000000c 000004 000262e0 00004bf8  8 *fill*
+  00000010 0006d8 000262e0 00004bf8  1 .rodata 	flash_array.o 
+  UNUSED   00014c ........ ........    BlankCheck_C flash_array.o 
+  UNUSED   00012c ........ ........    CheckSum_C flash_array.o 
+  00000010 000184 000262e0 00004bf8  4 FlashErase_C 	flash_array.o 
+  00000198 000130 00026468 00004d80  8 FlashInit_C 	flash_array.o 
+  000002c8 000240 00026598 00004eb0  8 FlashProgram_C 	flash_array.o 
+  UNUSED   0000b8 ........ ........    FlashResume_C flash_array.o 
+  UNUSED   00011c ........ ........    FlashSuspend_C flash_array.o 
+  00000508 0000e0 000267d8 000050f0  8 GetLock_C 	flash_array.o 
+  UNUSED   000044 ........ ........    GetWaitState_C flash_array.o 
+  UNUSED   000170 ........ ........    ProgramVerify_C flash_array.o 
+  UNUSED   000060 ........ ........    RWECheck_C flash_array.o 
+  000005e8 000100 000268b8 000051d0  8 SetLock_C 	flash_array.o 
+  UNUSED   00005c ........ ........    SetWaitState_C flash_array.o 
+  000006e8 001840 000269b8 000052d0  1 .rodata 	main.o 
+  000006e8 000040 000269b8 000052d0  8 etpu_globals 	main.o 
+  00000728 001800 000269f8 00005310  8 etpu_code 	main.o 
+
+
+.ctors section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000000 000281f8 00006b10  1 .ctors$00 	Linker Generated Symbol File 
+  00000000 000000 000281f8 00006b10  4 _ctors 	Linker Generated Symbol File 
+  00000000 000004 000281f8 00006b10  1 .ctors$10 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000000 000004 000281f8 00006b10  4 __init_cpp_exceptions_reference 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000004 000004 000281fc 00006b14  1 .ctors$99 	Linker Generated Symbol File 
+  00000004 000004 000281fc 00006b14  4 _ctors$99 	Linker Generated Symbol File 
+
+
+.dtors section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000000 00028200 00006b18  1 .dtors$00 	Linker Generated Symbol File 
+  00000000 000000 00028200 00006b18  4 _dtors 	Linker Generated Symbol File 
+  00000000 000004 00028200 00006b18  1 .dtors$15 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000000 000004 00028200 00006b18  4 __fini_cpp_exceptions_reference 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000004 000004 00028204 00006b1c  1 .dtors$99 	Linker Generated Symbol File 
+  00000004 000004 00028204 00006b1c  4 _dtors$99 	Linker Generated Symbol File 
+
+
+extab section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000008 00028208 00006b20  1 extab 	siu.o 
+  00000000 000008 00028208 00006b20  4 @13 	siu.o 
+  00000008 000008 00028210 00006b28  1 extab 	flash_app.o 
+  00000008 000008 00028210 00006b28  4 @145 	flash_app.o 
+  UNUSED   000008 ........ ........    @176 flash_app.o 
+  00000010 000008 00028218 00006b30  1 extab 	IntcInterrupts.o 
+  00000010 000008 00028218 00006b30  4 @12 	IntcInterrupts.o 
+  00000018 000008 00028220 00006b38  1 extab 	Exceptions.o 
+  00000018 000008 00028220 00006b38  4 @5 	Exceptions.o 
+  00000020 000008 00028228 00006b40  1 extab 	interrupts.o 
+  00000020 000008 00028228 00006b40  4 @55 	interrupts.o 
+  00000028 000008 00028230 00006b48  1 extab 	adc.o 
+  00000028 000008 00028230 00006b48  4 @34 	adc.o 
+  UNUSED   000008 ........ ........    @49 adc.o 
+  00000030 000010 00028238 00006b50  1 extab 	spi.o 
+  00000030 000008 00028238 00006b50  4 @30 	spi.o 
+  00000038 000008 00028240 00006b58  4 @60 	spi.o 
+  UNUSED   000008 ........ ........    @69 spi.o 
+  00000040 000018 00028248 00006b60  1 extab 	can_ccp.o 
+  00000040 000008 00028248 00006b60  4 @46 	can_ccp.o 
+  00000048 000008 00028250 00006b68  4 @56 	can_ccp.o 
+  00000050 000008 00028258 00006b70  4 @66 	can_ccp.o 
+  00000058 000060 00028260 00006b78  1 extab 	ccp.o 
+  00000058 000008 00028260 00006b78  4 @40 	ccp.o 
+  00000060 000008 00028268 00006b80  4 @68 	ccp.o 
+  00000068 000008 00028270 00006b88  4 @96 	ccp.o 
+  00000070 000008 00028278 00006b90  4 @129 	ccp.o 
+  00000078 000008 00028280 00006b98  4 @146 	ccp.o 
+  00000080 000008 00028288 00006ba0  4 @158 	ccp.o 
+  00000088 000008 00028290 00006ba8  4 @192 	ccp.o 
+  00000090 000008 00028298 00006bb0  4 @220 	ccp.o 
+  00000098 000008 000282a0 00006bb8  4 @240 	ccp.o 
+  000000a0 000008 000282a8 00006bc0  4 @349 	ccp.o 
+  000000a8 000008 000282b0 00006bc8  4 @363 	ccp.o 
+  000000b0 000008 000282b8 00006bd0  4 @376 	ccp.o 
+  000000b8 000010 000282c0 00006bd8  1 extab 	can_hook.o 
+  000000b8 000008 000282c0 00006bd8  4 @44 	can_hook.o 
+  000000c0 000008 000282c8 00006be0  4 @56 	can_hook.o 
+  000000c8 000028 000282d0 00006be8  1 extab 	can.o 
+  000000c8 000008 000282d0 00006be8  4 @50 	can.o 
+  000000d0 000008 000282d8 00006bf0  4 @69 	can.o 
+  000000d8 000008 000282e0 00006bf8  4 @88 	can.o 
+  000000e0 000008 000282e8 00006c00  4 @174 	can.o 
+  UNUSED   000008 ........ ........    @199 can.o 
+  000000e8 000008 000282f0 00006c08  4 @234 	can.o 
+  UNUSED   000008 ........ ........    @261 can.o 
+  000000f0 000018 000282f8 00006c10  1 extab 	etpu_util.o 
+  000000f0 000008 000282f8 00006c10  4 @125 	etpu_util.o 
+  UNUSED   000008 ........ ........    @144 etpu_util.o 
+  UNUSED   000008 ........ ........    @162 etpu_util.o 
+  UNUSED   000008 ........ ........    @224 etpu_util.o 
+  UNUSED   000008 ........ ........    @239 etpu_util.o 
+  000000f8 000008 00028300 00006c18  4 @362 	etpu_util.o 
+  00000100 000008 00028308 00006c20  4 @377 	etpu_util.o 
+  UNUSED   000008 ........ ........    @425 etpu_util.o 
+  UNUSED   000008 ........ ........    @445 etpu_util.o 
+  UNUSED   000008 ........ ........    @465 etpu_util.o 
+  UNUSED   000008 ........ ........    @485 etpu_util.o 
+  00000108 000010 00028310 00006c28  1 extab 	main.o 
+  00000108 000008 00028310 00006c28  4 @396 	main.o 
+  00000110 000008 00028318 00006c30  4 @414 	main.o 
+  00000118 000068 00028320 00006c38  1 extab 	untitled.o 
+  00000118 000008 00028320 00006c38  4 @362 	untitled.o 
+  00000120 000008 00028328 00006c40  4 @368 	untitled.o 
+  00000128 000008 00028330 00006c48  4 @405 	untitled.o 
+  00000130 000008 00028338 00006c50  4 @414 	untitled.o 
+  00000138 000008 00028340 00006c58  4 @420 	untitled.o 
+  00000140 000008 00028348 00006c60  4 @447 	untitled.o 
+  00000148 000008 00028350 00006c68  4 @453 	untitled.o 
+  00000150 000008 00028358 00006c70  4 @459 	untitled.o 
+  00000158 000008 00028360 00006c78  4 @465 	untitled.o 
+  00000160 000008 00028368 00006c80  4 @473 	untitled.o 
+  00000168 000008 00028370 00006c88  4 @479 	untitled.o 
+  00000170 000008 00028378 00006c90  4 @500 	untitled.o 
+  00000178 000008 00028380 00006c98  4 @506 	untitled.o 
+
+
+extabindex section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.diagData_flash section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 001000 001c0000 00006f10  1 .diagData_flash 	ccp_data.o 
+  00000000 001000 001c0000 00006f10  8 diagFlashData 	ccp_data.o 
+
+
+.ccpData_flash section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000224 001e0000 00007f10  1 .ccpData_flash 	ccp_data.o 
+  00000000 000224 001e0000 00007f10  4 ccpFlashData 	ccp_data.o 
+
+
+.__uninitialized_intc_handlertable section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 001340 40000000 00008140  1 .__uninitialized_intc_handlertable 	IntcInterrupts.o 
+  00000000 001340 40000000 00008140  8 INTCInterruptsHandlerTable 	IntcInterrupts.o 
+
+
+.data section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 0001ce 40001340 00008140  1 .data 	pcr.o 
+  00000000 0001ce 40001340 00008140  4 PcrCfgReg 	pcr.o 
+  000001ce 000002 40001510 00008310  8 *fill*
+  000001d0 000028 40001510 00008310  1 .data 	flash_app.o 
+  000001d0 000028 40001510 00008310  8 ssdConfig 	flash_app.o 
+  000001f8 000290 40001538 00008338  1 .data 	ccp.o 
+  000001f8 000200 40001538 00008338  8 CRC16CCITTtab 	ccp.o 
+  000003f8 000090 40001738 00008538  4 @348 	ccp.o 
+  00000488 000040 400017c8 000085c8  1 .data 	can.o 
+  00000488 000040 400017c8 000085c8  4 @132 	can.o 
+  000004c8 000300 40001808 00008608  1 .data 	can_cfg.o 
+  000004c8 000300 40001808 00008608  8 CANINIT 	can_cfg.o 
+  000007c8 000028 40001b08 00008908  1 .data 	main.o 
+  000007c8 000028 40001b08 00008908  8 my_etpu_config 	main.o 
+  000007f0 000034 40001b30 00008930  1 .data 	untitled.o 
+  000007f0 000018 40001b30 00008930  8 TLE6232DIA 	untitled.o 
+  00000808 00001c 40001b48 00008948  4 @499 	untitled.o 
+
+
+.sdata section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000014 40001b68 00008968  1 .sdata 	flash_app.o 
+  00000000 000004 40001b68 00008968  4 pFlashInit 	flash_app.o 
+  00000004 000004 40001b6c 0000896c  4 pFlashErase 	flash_app.o 
+  UNUSED   000004 ........ ........    pBlankCheck flash_app.o 
+  00000008 000004 40001b70 00008970  4 pFlashProgram 	flash_app.o 
+  UNUSED   000004 ........ ........    pProgramVerify flash_app.o 
+  UNUSED   000004 ........ ........    pCheckSum flash_app.o 
+  0000000c 000004 40001b74 00008974  4 pGetLock 	flash_app.o 
+  00000010 000004 40001b78 00008978  4 pSetLock 	flash_app.o 
+  UNUSED   000004 ........ ........    pFlashSuspend flash_app.o 
+  UNUSED   000004 ........ ........    pFlashResume flash_app.o 
+  00000014 000004 40001b80 00008980  8 *fill*
+  00000018 000005 40001b80 00008980  1 .sdata 	ccp.o 
+  00000018 000005 40001b80 00008980  4 ccpStationId 	ccp.o 
+  0000001d 000003 40001b88 00008988  8 *fill*
+  00000020 00000c 40001b88 00008988  1 .sdata 	main.o 
+  00000020 000004 40001b88 00008988  4 eTPU 	main.o 
+  00000024 000004 40001b8c 0000898c  4 fs_etpu_code_start 	main.o 
+  00000028 000004 40001b90 00008990  4 fs_etpu_data_ram_start 	main.o 
+  UNUSED   000004 ........ ........    fs_etpu_data_ram_end main.o 
+  UNUSED   000004 ........ ........    fs_etpu_data_ram_ext main.o 
+  0000002c 000004 40001b98 00008998  8 *fill*
+  00000030 000004 40001b98 00008998  1 .sdata 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+  00000030 000004 40001b98 00008998  4 fragmentID 	Runtime.PPCEABI.S.UC.a __init_cpp_exceptions.o
+
+
+.sbss section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000008 40001ba0 000089a0  1 .sbss 	adc.o 
+  00000000 000004 40001ba0 000089a0  4 ADC0_GCC_f 	adc.o 
+  00000004 000004 40001ba4 000089a4  4 ADC0_OCC_f 	adc.o 
+  00000008 000010 40001ba8 000089a8  1 .sbss 	can_ccp.o 
+  00000008 000008 40001ba8 000089a8  8 ccpRxData 	can_ccp.o 
+  00000010 000008 40001bb0 000089b0  8 ccpTxData 	can_ccp.o 
+  00000018 000010 40001bb8 000089b8  1 .sbss 	main.o 
+  00000018 000001 40001bb8 000089b8  1 ECUCoderModelBaseCounter 	main.o 
+  UNUSED   000002 ........ ........    AfterRunFlags main.o 
+  0000001c 000007 40001bbc 000089bc  4 ECUCoderOverrunFlags 	main.o 
+  00000024 000004 40001bc4 000089c4  4 fs_free_param 	main.o 
+
+
+.sdata2 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000008 40001bc8 000089a0  1 .sdata2 	pcr.o 
+  00000000 000008 40001bc8 000089a0  8 Pad_ConfigurationPB 	pcr.o 
+  00000008 000018 40001bd0 000089a8  1 .sdata2 	untitled.o 
+  00000008 000004 40001bd0 000089a8  4 untitled_M 	untitled.o 
+  0000000c 000002 40001bd4 000089ac  4 @336 	untitled.o 
+  00000010 000004 40001bd8 000089b0  4 @380 	untitled.o 
+  00000018 000008 40001be0 000089b8  8 @383 	untitled.o 
+
+
+.sbss2 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.bss section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 002220 40001be8 000089c0  1 .bss 	ccp.o 
+  00000000 002220 40001be8 000089c0  8 ccp 	ccp.o 
+  00002220 000030 40003e08 0000abe0  1 .bss 	untitled.o 
+  00002220 00000e 40003e08 0000abe0  4 untitled_M_ 	untitled.o 
+  00002230 000020 40003e18 0000abf0  8 untitled_B 	untitled.o 
+  00002250 00000c 40003e38 0000ac10  1 .bss 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  00002250 00000c 40003e38 0000ac10  4 fragmentinfo 	Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+
+
+extabindex section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 00000c 00028388 00006f10  4 @14 	siu.o 
+  0000000c 00000c 00028394 00006f10  4 @146 	flash_app.o 
+  00000018 00000c 000283a0 00006f10  4 @56 	interrupts.o 
+  00000024 00000c 000283ac 00006f10  4 @35 	adc.o 
+  00000030 00000c 000283b8 00006f10  4 @31 	spi.o 
+  0000003c 00000c 000283c4 00006f10  4 @61 	spi.o 
+  00000048 00000c 000283d0 00006f10  4 @47 	can_ccp.o 
+  00000054 00000c 000283dc 00006f10  4 @57 	can_ccp.o 
+  00000060 00000c 000283e8 00006f10  4 @67 	can_ccp.o 
+  0000006c 00000c 000283f4 00006f10  4 @41 	ccp.o 
+  00000078 00000c 00028400 00006f10  4 @69 	ccp.o 
+  00000084 00000c 0002840c 00006f10  4 @97 	ccp.o 
+  00000090 00000c 00028418 00006f10  4 @130 	ccp.o 
+  0000009c 00000c 00028424 00006f10  4 @147 	ccp.o 
+  000000a8 00000c 00028430 00006f10  4 @159 	ccp.o 
+  000000b4 00000c 0002843c 00006f10  4 @193 	ccp.o 
+  000000c0 00000c 00028448 00006f10  4 @221 	ccp.o 
+  000000cc 00000c 00028454 00006f10  4 @241 	ccp.o 
+  000000d8 00000c 00028460 00006f10  4 @350 	ccp.o 
+  000000e4 00000c 0002846c 00006f10  4 @364 	ccp.o 
+  000000f0 00000c 00028478 00006f10  4 @377 	ccp.o 
+  000000fc 00000c 00028484 00006f10  4 @45 	can_hook.o 
+  00000108 00000c 00028490 00006f10  4 @57 	can_hook.o 
+  00000114 00000c 0002849c 00006f10  4 @51 	can.o 
+  00000120 00000c 000284a8 00006f10  4 @70 	can.o 
+  0000012c 00000c 000284b4 00006f10  4 @89 	can.o 
+  00000138 00000c 000284c0 00006f10  4 @175 	can.o 
+  00000144 00000c 000284cc 00006f10  4 @235 	can.o 
+  00000150 00000c 000284d8 00006f10  4 @126 	etpu_util.o 
+  0000015c 00000c 000284e4 00006f10  4 @363 	etpu_util.o 
+  00000168 00000c 000284f0 00006f10  4 @378 	etpu_util.o 
+  00000174 00000c 000284fc 00006f10  4 @397 	main.o 
+  00000180 00000c 00028508 00006f10  4 @415 	main.o 
+  0000018c 00000c 00028514 00006f10  4 @363 	untitled.o 
+  00000198 00000c 00028520 00006f10  4 @369 	untitled.o 
+  000001a4 00000c 0002852c 00006f10  4 @406 	untitled.o 
+  000001b0 00000c 00028538 00006f10  4 @415 	untitled.o 
+  000001bc 00000c 00028544 00006f10  4 @421 	untitled.o 
+  000001c8 00000c 00028550 00006f10  4 @448 	untitled.o 
+  000001d4 00000c 0002855c 00006f10  4 @454 	untitled.o 
+  000001e0 00000c 00028568 00006f10  4 @460 	untitled.o 
+  000001ec 00000c 00028574 00006f10  4 @466 	untitled.o 
+  000001f8 00000c 00028580 00006f10  4 @474 	untitled.o 
+  00000204 00000c 0002858c 00006f10  4 @480 	untitled.o 
+  00000210 00000c 00028598 00006f10  4 @501 	untitled.o 
+  0000021c 00000c 000285a4 00006f10  4 @507 	untitled.o 
+  00000228 00000c 000285b0 00006f10  4 @13 	IntcInterrupts.o 
+  00000234 00000c 000285bc 00006f10  4 @6 	Exceptions.o 
+  00000240 000030 000285c8 00006f10  4 _eti_init_info 	Linker Generated Symbol File 
+  UNUSED   00000c ........ ........    @177 flash_app.o 
+  UNUSED   00000c ........ ........    @50 adc.o 
+  UNUSED   00000c ........ ........    @70 spi.o 
+  UNUSED   00000c ........ ........    @200 can.o 
+  UNUSED   00000c ........ ........    @262 can.o 
+  UNUSED   00000c ........ ........    @146 etpu_ic.o 
+  UNUSED   00000c ........ ........    @163 etpu_ic.o 
+  UNUSED   00000c ........ ........    @184 etpu_ic.o 
+  UNUSED   00000c ........ ........    @203 etpu_ic.o 
+  UNUSED   00000c ........ ........    @210 etpu_ic.o 
+  UNUSED   00000c ........ ........    @217 etpu_ic.o 
+  UNUSED   00000c ........ ........    @224 etpu_ic.o 
+  UNUSED   00000c ........ ........    @145 etpu_util.o 
+  UNUSED   00000c ........ ........    @163 etpu_util.o 
+  UNUSED   00000c ........ ........    @225 etpu_util.o 
+  UNUSED   00000c ........ ........    @240 etpu_util.o 
+  UNUSED   00000c ........ ........    @426 etpu_util.o 
+  UNUSED   00000c ........ ........    @446 etpu_util.o 
+  UNUSED   00000c ........ ........    @466 etpu_util.o 
+  UNUSED   00000c ........ ........    @486 etpu_util.o 
+  UNUSED   00000c ........ ........    @214 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @290 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @380 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @436 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @910 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @931 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @971 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @987 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @1006 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @1150 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @1222 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+  UNUSED   00000c ........ ........    @1229 Runtime.PPCEABI.S.UC.a ExceptionPPC.o
+
+
+Memory map:
+                       Starting Size     File     ROM      RAM Buffer  S-Record
+                       address           Offset   Address  Address     Line
+       .__bam_bootarea 00020000 00000008 00000420 00020000 00020000          2
+                 .init 00020020 0000040c 00000428 00020020 00020020          3
+             .init_vle 0002042c 00000000 00000834 0002042c 0002042c          0
+  .__exception_handlers 00021000 000000d4 00000840 00021000 00021000         55
+                 .text 00022000 000042d0 00000914 00022000 00022000         66
+             .text_vle 000262d0 00000000 00005000 000262d0 000262d0          0
+               .rodata 000262d0 00001f28 00004be8 000262d0 000262d0        922
+                .ctors 000281f8 00000008 00006b10 000281f8 000281f8       1321
+                .dtors 00028200 00000008 00006b18 00028200 00028200       1322
+                 extab 00028208 00000180 00006b20 00028208 00028208       1323
+            extabindex 00028388 00000270 00006ca0 00028388 00028388       1343
+       .diagData_flash 001c0000 00001000 00006f10 001c0000 001c0000       1485
+        .ccpData_flash 001e0000 00000224 00007f10 001e0000 001e0000       1690
+  .__uninitialized_intc_handlertable 40000000 00001340 00008140 00028600 00028600          0
+                 .data 40001340 00000824 00008140 00028600 00028600       1375
+                .sdata 40001b68 00000034 00008968 00028e28 00028e28       1480
+                 .sbss 40001ba0 00000028 000089a0 00028e60 00028e60          0
+               .sdata2 40001bc8 00000020 000089a0 00028e60 00028e60       1483
+                .sbss2 40001be8 00000000 000089c0 00028e80 00028e80          0
+                  .bss 40001be8 0000225c 000089c0 00028e80 00028e80          0
+      .PPC.EMB.apuinfo 00012150 00000000 0001ab10 0003afd0 0003afd0          0
+         .debug_abbrev          000001a9 000089c0
+           .debug_info          00009238 00008b69
+           .debug_line          00005179 00011da1
+            .debug_loc          00000d90 00016f1a
+       .debug_pubnames          00000b72 00017caa
+
+
+Linker generated symbols:
+       EXCEPTION_HANDLERS 00021000
+          L2SRAM_LOCATION 40000000
+        _f___bam_bootarea 00020000
+    _f___bam_bootarea_rom 00020000
+        _e___bam_bootarea 00020008
+                  _f_init 00020020
+              _f_init_rom 00020020
+                  _e_init 0002042c
+              _f_init_vle 0002042c
+          _f_init_vle_rom 0002042c
+              _e_init_vle 0002042c
+  _f___exception_handlers 00021000
+_f___exception_handlers_rom 00021000
+  _e___exception_handlers 000210d4
+                  _f_text 00022000
+              _f_text_rom 00022000
+                  _e_text 000262d0
+              _f_text_vle 000262d0
+          _f_text_vle_rom 000262d0
+              _e_text_vle 000262d0
+                _f_rodata 000262d0
+            _f_rodata_rom 000262d0
+                _e_rodata 000281f8
+                 _f_ctors 000281f8
+             _f_ctors_rom 000281f8
+                 _e_ctors 00028200
+                 _f_dtors 00028200
+             _f_dtors_rom 00028200
+                 _e_dtors 00028208
+                  _fextab 00028208
+              _fextab_rom 00028208
+                  _eextab 00028388
+             _fextabindex 00028388
+         _fextabindex_rom 00028388
+             _eextabindex 000285f8
+        _f_diagData_flash 001c0000
+    _f_diagData_flash_rom 001c0000
+        _e_diagData_flash 001c1000
+         _f_ccpData_flash 001e0000
+     _f_ccpData_flash_rom 001e0000
+         _e_ccpData_flash 001e0224
+_f___uninitialized_intc_handlertable 40000000
+_e___uninitialized_intc_handlertable 40001340
+                  _f_data 40001340
+              _f_data_rom 00028600
+                  _e_data 40001b64
+                 _f_sdata 40001b68
+             _f_sdata_rom 00028e28
+                 _e_sdata 40001b9c
+                  _f_sbss 40001ba0
+                  _e_sbss 40001bc8
+                _f_sdata2 40001bc8
+            _f_sdata2_rom 00028e60
+                _e_sdata2 40001be8
+                 _f_sbss2 40001be8
+                 _e_sbss2 40001be8
+                   _f_bss 40001be8
+                   _e_bss 40003e44
+              _stack_addr 40010000
+               _stack_end 4000c000
+               _heap_addr 4000a000
+                _heap_end 4000c000
+             _nbfunctions 00000061
+           SIZEOF_HEADERS 00000420
+               _SDA_BASE_ 40009b68
+              _SDA2_BASE_ 40009bc8
+           _ABS_SDA_BASE_ 40009b68
+          _ABS_SDA2_BASE_ 40009bc8

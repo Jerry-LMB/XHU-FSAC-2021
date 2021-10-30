@@ -1,0 +1,177 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RTW Report - main.c</title>
+<style> .LN { font-style: italic; color: #888888 } </style>
+<style> .CT { font-style: italic; color: #117755 } </style>
+<style> .PP { font-style: bold;   color: #992211 } </style>
+<style> .KW { font-style: bold;   color: #112266 } </style>
+<style> .DT { font-style: bold;   color: #112266 } </style>
+<link rel="stylesheet" type="text/css" href="rtwreport.css"></link><script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script>
+<SCRIPT type="text/javascript" src="rtwannotate.js"></SCRIPT>
+</head>
+<body bgcolor="#eeeeee" text="#1122aa" onload="try {if (top) { if (top.rtwFileOnLoad) top.rtwFileOnLoad(window.document); else local_onload();}} catch(err) {};if (typeof rtwannotate === 'function') {rtwannotate('main_c_cov.xml');}">
+<p>
+<table border="0" cellspacing="0" cellpadding="6" width="100%%" height="100%%"><tr><td width="100%%" valign="top" bgcolor="#ffffff">
+<h4>File: <a href="../main.c" target="rtwreport_document_frame" id="linkToText_plain">main.c</a></h4>
+<pre id="RTWcode">
+<span><a class="LN" name="1">    1   </a><span class="CT">/*</span>
+</span><span><a class="LN" name="2">    2   </a><span class="CT"> * Code generated for Simulink model FSAC2021_V1.</span>
+</span><span><a class="LN" name="3">    3   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="4">    4   </a><span class="CT"> * FILE    : main.c</span>
+</span><span><a class="LN" name="5">    5   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="6">    6   </a><span class="CT"> * VERSION : 1.219</span>
+</span><span><a class="LN" name="7">    7   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="8">    8   </a><span class="CT"> * DATE    : Sat Oct 30 18:49:46 2021</span>
+</span><span><a class="LN" name="9">    9   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="10">   10   </a><span class="CT"> * Copyright 2011-2012 ECUCoder. All Rights Reserved.</span>
+</span><span><a class="LN" name="11">   11   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="12">   12   </a>
+</span><span><a class="LN" name="13">   13   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;FSAC2021_V1.h&quot;</font>
+</span><span><a class="LN" name="14">   14   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;etpu.h&quot;</font>
+</span><span><a class="LN" name="15">   15   </a>
+</span><span><a class="LN" name="16">   16   </a><a href="rtwtypes_h.html#type_uint8_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_uint8_T');" target="_self"><font color="#1122aa">uint8_T</font></a> <a name="var_ECUCoderModelBaseCounter">ECUCoderModelBaseCounter</a> = 0;
+</span><span><a class="LN" name="17">   17   </a><a href="rtwtypes_h.html#type_uint8_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_uint8_T');" target="_self"><font color="#1122aa">uint8_T</font></a> <a name="var_AfterRunFlags">AfterRunFlags</a>[2] = <b>{</b> 0, 0 <b>}</b>;
+</span><span><a class="LN" name="18">   18   </a>
+</span><span><a class="LN" name="19">   19   </a><span class="DT">static</span> <a href="rtwtypes_h.html#type_boolean_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_boolean_T');" target="_self"><font color="#1122aa">boolean_T</font></a> <a name="var_ECUCoderOverrunFlags">ECUCoderOverrunFlags</a>[10] = <b>{</b> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 <b>}</b>;
+</span><span><a class="LN" name="20">   20   </a>
+</span><span><a class="LN" name="21">   21   </a>uint32_t *<a name="var_fs_free_param">fs_free_param</a>;
+</span><span><a class="LN" name="22">   22   </a><span class="DT">void</span> <a name="fcn_rt_OneStep">rt_OneStep</a>(<span class="DT">void</span>)
+</span><span><a class="LN" name="23">   23   </a><b>{</b>
+</span><span><a class="LN" name="24">   24   </a>  <a href="rtwtypes_h.html#type_boolean_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_boolean_T');" target="_self"><font color="#1122aa">boolean_T</font></a> ECUCodereventFlags[10];    <span class="CT">/* Model has 10 rates */</span>
+</span><span><a class="LN" name="25">   25   </a>  <a href="rtwtypes_h.html#type_int_T" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'type_int_T');" target="_self"><font color="#1122aa">int_T</font></a> i;
+</span><span><a class="LN" name="26">   26   </a>
+</span><span><a class="LN" name="27">   27   </a>  <span class="CT">/* Check base rate for overrun */</span>
+</span><span><a class="LN" name="28">   28   </a>  <span class="KW">if</span> (<a href="#var_ECUCoderOverrunFlags" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ECUCoderOverrunFlags');" target="_self"><font color="#1122aa">ECUCoderOverrunFlags</font></a>[0]++) <b>{</b>
+</span><span><a class="LN" name="29">   29   </a>    ((<span class="DT">void</span>) 0);
+</span><span><a class="LN" name="30">   30   </a>    <span class="KW">return</span>;
+</span><span><a class="LN" name="31">   31   </a>  <b>}</b>
+</span><span><a class="LN" name="32">   32   </a>
+</span><span><a class="LN" name="33">   33   </a>  <a href="FSAC2021_V1_c.html#fcn_FSAC2021_V1_SetEventsForThisBaseStep" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_FSAC2021_V1_SetEventsForThisBaseStep');" target="_self"><font color="#1122aa">FSAC2021_V1_SetEventsForThisBaseStep</font></a>(ECUCodereventFlags);
+</span><span><a class="LN" name="34">   34   </a>
+</span><span><a class="LN" name="35">   35   </a>  <span class="CT">/* Set model inputs associated with base rate here */</span>
+</span><span><a class="LN" name="36">   36   </a>  <a href="#var_ECUCoderOverrunFlags" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ECUCoderOverrunFlags');" target="_self"><font color="#1122aa">ECUCoderOverrunFlags</font></a>[0]--;
+</span><span><a class="LN" name="37">   37   </a>
+</span><span><a class="LN" name="38">   38   </a>  <span class="CT">/* Check subrates for overrun */</span>
+</span><span><a class="LN" name="39">   39   </a>  <span class="KW">for</span> (i = 1; i &lt; 10; i++) <b>{</b>
+</span><span><a class="LN" name="40">   40   </a>    <span class="KW">if</span> (ECUCodereventFlags[i]) <b>{</b>
+</span><span><a class="LN" name="41">   41   </a>      <span class="KW">if</span> (<a href="#var_ECUCoderOverrunFlags" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ECUCoderOverrunFlags');" target="_self"><font color="#1122aa">ECUCoderOverrunFlags</font></a>[i]++) <b>{</b>
+</span><span><a class="LN" name="42">   42   </a>        ((<span class="DT">void</span>) 0);
+</span><span><a class="LN" name="43">   43   </a>        <span class="KW">return</span>;
+</span><span><a class="LN" name="44">   44   </a>      <b>}</b>
+</span><span><a class="LN" name="45">   45   </a>
+</span><span><a class="LN" name="46">   46   </a>      <a href="FSAC2021_V1_c.html#fcn_FSAC2021_V1_step" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_FSAC2021_V1_step');" target="_self"><font color="#1122aa">FSAC2021_V1_step</font></a>(i);
+</span><span><a class="LN" name="47">   47   </a>
+</span><span><a class="LN" name="48">   48   </a>      <span class="CT">/* Get model outputs here */</span>
+</span><span><a class="LN" name="49">   49   </a>      <a href="#var_ECUCoderOverrunFlags" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ECUCoderOverrunFlags');" target="_self"><font color="#1122aa">ECUCoderOverrunFlags</font></a>[i]--;
+</span><span><a class="LN" name="50">   50   </a>    <b>}</b>
+</span><span><a class="LN" name="51">   51   </a>  <b>}</b>
+</span><span><a class="LN" name="52">   52   </a><b>}</b>
+</span><span><a class="LN" name="53">   53   </a>
+</span><span><a class="LN" name="54">   54   </a>main()
+</span><span><a class="LN" name="55">   55   </a><b>{</b>
+</span><span><a class="LN" name="56">   56   </a>  <a href="cpu_c.html#fcn_ec_cpu_init" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_cpu_init');" target="_self"><font color="#1122aa">ec_cpu_init</font></a>();
+</span><span><a class="LN" name="57">   57   </a>
+</span><span><a class="LN" name="58">   58   </a>  <span class="CT">/* Interrupt management */</span>
+</span><span><a class="LN" name="59">   59   </a>  ec_interrupts_init();
+</span><span><a class="LN" name="60">   60   </a>  EXCEP_InitExceptionHandlers();
+</span><span><a class="LN" name="61">   61   </a>  INTC_InitINTCInterrupts();
+</span><span><a class="LN" name="62">   62   </a>  ec_interrupts_allintreg();
+</span><span><a class="LN" name="63">   63   </a>
+</span><span><a class="LN" name="64">   64   </a>  <span class="CT">/* Initialize Pad */</span>
+</span><span><a class="LN" name="65">   65   </a>  ec_pad_init(&amp;<a href="pcr_c.html#var_Pad_ConfigurationPB" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_Pad_ConfigurationPB');" target="_self"><font color="#1122aa">Pad_ConfigurationPB</font></a>);
+</span><span><a class="LN" name="66">   66   </a>  <a href="adc_c.html#fcn_ec_adc_init" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_adc_init');" target="_self"><font color="#1122aa">ec_adc_init</font></a>();
+</span><span><a class="LN" name="67">   67   </a>
+</span><span><a class="LN" name="68">   68   </a>  <span class="CT">/* Initialize eTPU */</span>
+</span><span><a class="LN" name="69">   69   </a>  fs_etpu_init(my_etpu_config,
+</span><span><a class="LN" name="70">   70   </a>               (uint32_t *)etpu_code,
+</span><span><a class="LN" name="71">   71   </a>               <span class="KW">sizeof</span>(etpu_code),
+</span><span><a class="LN" name="72">   72   </a>               (uint32_t *)etpu_globals,
+</span><span><a class="LN" name="73">   73   </a>               <span class="KW">sizeof</span>(etpu_globals));
+</span><span><a class="LN" name="74">   74   </a>
+</span><span><a class="LN" name="75">   75   </a>  <span class="CT">/* Initialize CAN */</span>
+</span><span><a class="LN" name="76">   76   </a><font color="#992211">#</font><span class="PP">if</span> CANAENABLE
+</span><span><a class="LN" name="77">   77   </a>
+</span><span><a class="LN" name="78">   78   </a>  <a href="can_c.html#fcn_ec_cana_init" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_cana_init');" target="_self"><font color="#1122aa">ec_cana_init</font></a>(&amp;(<a href="can_cfg_c.html#var_CANINIT" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_CANINIT');" target="_self"><font color="#1122aa">CANINIT</font></a>[0]));
+</span><span><a class="LN" name="79">   79   </a>
+</span><span><a class="LN" name="80">   80   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="81">   81   </a>
+</span><span><a class="LN" name="82">   82   </a><font color="#992211">#</font><span class="PP">if</span> CANBENABLE
+</span><span><a class="LN" name="83">   83   </a>
+</span><span><a class="LN" name="84">   84   </a>  <a href="can_c.html#fcn_ec_canb_init" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_canb_init');" target="_self"><font color="#1122aa">ec_canb_init</font></a>(&amp;(<a href="can_cfg_c.html#var_CANINIT" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_CANINIT');" target="_self"><font color="#1122aa">CANINIT</font></a>[1]));
+</span><span><a class="LN" name="85">   85   </a>
+</span><span><a class="LN" name="86">   86   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="87">   87   </a>
+</span><span><a class="LN" name="88">   88   </a><font color="#992211">#</font><span class="PP">if</span> CANCENABLE
+</span><span><a class="LN" name="89">   89   </a>
+</span><span><a class="LN" name="90">   90   </a>  <a href="can_c.html#fcn_ec_canc_init" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_canc_init');" target="_self"><font color="#1122aa">ec_canc_init</font></a>(&amp;(<a href="can_cfg_c.html#var_CANINIT" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_CANINIT');" target="_self"><font color="#1122aa">CANINIT</font></a>[2]));
+</span><span><a class="LN" name="91">   91   </a>
+</span><span><a class="LN" name="92">   92   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="93">   93   </a>
+</span><span><a class="LN" name="94">   94   </a>  <span class="CT">/* Initialize SPI */</span>
+</span><span><a class="LN" name="95">   95   </a><font color="#992211">#</font><span class="PP">if</span> SPIAENABLE
+</span><span><a class="LN" name="96">   96   </a>
+</span><span><a class="LN" name="97">   97   </a>  <a href="spi_c.html#fcn_ec_spia_init" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_spia_init');" target="_self"><font color="#1122aa">ec_spia_init</font></a>();
+</span><span><a class="LN" name="98">   98   </a>
+</span><span><a class="LN" name="99">   99   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="100">  100   </a>
+</span><span><a class="LN" name="101">  101   </a><font color="#992211">#</font><span class="PP">if</span> SPIBENABLE
+</span><span><a class="LN" name="102">  102   </a>
+</span><span><a class="LN" name="103">  103   </a>  <a href="spi_c.html#fcn_ec_spib_init" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_spib_init');" target="_self"><font color="#1122aa">ec_spib_init</font></a>();
+</span><span><a class="LN" name="104">  104   </a>
+</span><span><a class="LN" name="105">  105   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="106">  106   </a>
+</span><span><a class="LN" name="107">  107   </a><font color="#992211">#</font><span class="PP">if</span> SPICENABLE
+</span><span><a class="LN" name="108">  108   </a>
+</span><span><a class="LN" name="109">  109   </a>  <a href="spi_c.html#fcn_ec_spic_init" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_spic_init');" target="_self"><font color="#1122aa">ec_spic_init</font></a>();
+</span><span><a class="LN" name="110">  110   </a>
+</span><span><a class="LN" name="111">  111   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="112">  112   </a>
+</span><span><a class="LN" name="113">  113   </a><font color="#992211">#</font><span class="PP">if</span> SPIDENABLE
+</span><span><a class="LN" name="114">  114   </a>
+</span><span><a class="LN" name="115">  115   </a>  <a href="spi_c.html#fcn_ec_spid_init" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_spid_init');" target="_self"><font color="#1122aa">ec_spid_init</font></a>();
+</span><span><a class="LN" name="116">  116   </a>
+</span><span><a class="LN" name="117">  117   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="118">  118   </a>
+</span><span><a class="LN" name="119">  119   </a>  <span class="CT">/* Initialize SCI */</span>
+</span><span><a class="LN" name="120">  120   </a><font color="#992211">#</font><span class="PP">if</span> SCIAENABLE
+</span><span><a class="LN" name="121">  121   </a>
+</span><span><a class="LN" name="122">  122   </a>  <a href="sci_c.html#fcn_ec_scia_init" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_scia_init');" target="_self"><font color="#1122aa">ec_scia_init</font></a>();
+</span><span><a class="LN" name="123">  123   </a>
+</span><span><a class="LN" name="124">  124   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="125">  125   </a>
+</span><span><a class="LN" name="126">  126   </a><font color="#992211">#</font><span class="PP">if</span> SCIBENABLE
+</span><span><a class="LN" name="127">  127   </a>
+</span><span><a class="LN" name="128">  128   </a>  <a href="sci_c.html#fcn_ec_scib_init" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_scib_init');" target="_self"><font color="#1122aa">ec_scib_init</font></a>();
+</span><span><a class="LN" name="129">  129   </a>
+</span><span><a class="LN" name="130">  130   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="131">  131   </a>
+</span><span><a class="LN" name="132">  132   </a>  <span class="CT">/* Initialize model */</span>
+</span><span><a class="LN" name="133">  133   </a>  <a href="FSAC2021_V1_c.html#fcn_FSAC2021_V1_initialize" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_FSAC2021_V1_initialize');" target="_self"><font color="#1122aa">FSAC2021_V1_initialize</font></a>();
+</span><span><a class="LN" name="134">  134   </a>
+</span><span><a class="LN" name="135">  135   </a>  <span class="CT">/* Initialize Flash */</span>
+</span><span><a class="LN" name="136">  136   </a>  CCP_FlashInit();
+</span><span><a class="LN" name="137">  137   </a>
+</span><span><a class="LN" name="138">  138   </a>  <span class="CT">/* Enable all timebases */</span>
+</span><span><a class="LN" name="139">  139   </a>  fs_timer_start();
+</span><span><a class="LN" name="140">  140   </a>  EnableInterrupts();
+</span><span><a class="LN" name="141">  141   </a>  <span class="KW">while</span> (((<span class="DT">void</span>*) 0) == 0) <b>{</b>
+</span><span><a class="LN" name="142">  142   </a>    <span class="KW">if</span> (<a href="#var_ECUCoderModelBaseCounter" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ECUCoderModelBaseCounter');" target="_self"><font color="#1122aa">ECUCoderModelBaseCounter</font></a> &gt;0 ) <b>{</b>
+</span><span><a class="LN" name="143">  143   </a>      <a href="#var_ECUCoderModelBaseCounter" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'var_ECUCoderModelBaseCounter');" target="_self"><font color="#1122aa">ECUCoderModelBaseCounter</font></a> = 0;
+</span><span><a class="LN" name="144">  144   </a>      <a href="#fcn_rt_OneStep" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_rt_OneStep');" target="_self"><font color="#1122aa">rt_OneStep</font></a>();
+</span><span><a class="LN" name="145">  145   </a>    <b>}</b>
+</span><span><a class="LN" name="146">  146   </a>  <b>}</b>
+</span><span><a class="LN" name="147">  147   </a>
+</span><span><a class="LN" name="148">  148   </a>  <span class="KW">return</span> 0;
+</span><span><a class="LN" name="149">  149   </a><b>}</b>
+</span><span><a class="LN" name="150">  150   </a>
+</span><span><a class="LN" name="151">  151   </a><span class="CT">/* File trailer for ECUCoder generated file main.c.</span>
+</span><span><a class="LN" name="152">  152   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="153">  153   </a><span class="CT"> * [EOF]</span>
+</span><span><a class="LN" name="154">  154   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="155">  155   </a>
+</span></pre>
+</td></tr></table>
+</p>
+</body>
+</html>

@@ -1,0 +1,84 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   11 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "is_active_c14_FSAC2021_826"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "is_c14_FSAC2021_826"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "is_Move"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Move"\
+    }\
+    ChartData {\
+      Name         "is_Goto"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Move.Goto"\
+    }\
+    ChartData {\
+      Name         "is_Motor_Enable"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Move.Motor_Enable"\
+    }\
+    ChartData {\
+      Name         "is_Motor_Move"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Move.Motor_Move"\
+    }\
+    ChartData {\
+      Name         "is_Motor_Stanby"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Move.Motor_Stanby"\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i1"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "presentTicks"\
+      Description  "CurrentCount"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "elapsedTicks"\
+      Description  "ElapsedCount"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "previousTicks"\
+      Description  "PreviousCount"\
+      SFName       ""\
+      Path         ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

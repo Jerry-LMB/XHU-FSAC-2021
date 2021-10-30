@@ -1,0 +1,1600 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     FSAC2021_V1_Running.a2l
+ *
+ * Code generation for model "FSAC2021_V1_Running".
+ *
+ * Model version              : 1.179
+ * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
+ * C source code generated on : Sun Sep 26 20:42:02 2021
+ * 
+ * Target selection: ec55xx.tlc
+ * Embedded hardware selection: Freescale MPC5500
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+
+ASAP2_VERSION  1 31   /* Version 1.31 */
+
+/begin PROJECT ECUCoderProject "ECUCoder Project"
+  
+  /begin HEADER "Header Comments go here"
+    
+  /end HEADER
+  
+  
+  /begin MODULE ModuleName  "No Comment"
+    
+    /begin MOD_PAR "No Comment"
+      
+    /end MOD_PAR
+    
+    /begin MOD_COMMON  "No Comment" 
+      BYTE_ORDER     MSB_FIRST
+    /end MOD_COMMON
+    /begin RECORD_LAYOUT Scalar_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Scalar_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Scalar_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Scalar_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Scalar_SWORD
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    /begin RECORD_LAYOUT Scalar_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Scalar_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Scalar_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Scalar_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_SLONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT32_IEEE
+      AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT64_IEEE
+      AXIS_PTS_X  1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT32_IEEE
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_FLOAT64_IEEE
+      FNC_VALUES  1  FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT64_IEEE
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Voltage
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       @MemoryAddress@Voltage@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Steer_Origin_Flag
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       @MemoryAddress@Steer_Origin_Flag@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      ipc_strr
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       @MemoryAddress@ipc_strr@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      MODE
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       @MemoryAddress@MODE@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      flag
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       @MemoryAddress@flag@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      enflag
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT64_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_double
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -1.7E+308
+      /* Upper limit            */      1.7E+308
+      ECU_ADDRESS                       @MemoryAddress@enflag@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      ACC
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT32_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_single
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3.4E+38
+      /* Upper limit            */      3.4E+38
+      ECU_ADDRESS                       @MemoryAddress@ACC@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Vspd
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT32_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_single
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3.4E+38
+      /* Upper limit            */      3.4E+38
+      ECU_ADDRESS                       @MemoryAddress@Vspd@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Motor_Spd
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT32_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_single
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3.4E+38
+      /* Upper limit            */      3.4E+38
+      ECU_ADDRESS                       @MemoryAddress@Motor_Spd@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Steer_sensor_angle
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT32_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_single
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3.4E+38
+      /* Upper limit            */      3.4E+38
+      ECU_ADDRESS                       @MemoryAddress@Steer_sensor_angle@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RES_Value
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT32_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_single
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3.4E+38
+      /* Upper limit            */      3.4E+38
+      ECU_ADDRESS                       @MemoryAddress@RES_Value@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Read_compare_OutVolt
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT32_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_single
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3.4E+38
+      /* Upper limit            */      3.4E+38
+      ECU_ADDRESS                       @MemoryAddress@Read_compare_OutVolt@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Back_Angle
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT32_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_single
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3.4E+38
+      /* Upper limit            */      3.4E+38
+      ECU_ADDRESS                       @MemoryAddress@Back_Angle@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Read_Lft_Acc_Disp
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint16
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       @MemoryAddress@Read_Lft_Acc_Disp@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Read_Right_Acc_Disp1
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint16
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       @MemoryAddress@Read_Right_Acc_Disp1@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Read_Brk_Liquid_Prs
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint16
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       @MemoryAddress@Read_Brk_Liquid_Prs@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Read_EBS_Gas_Prs1
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint16
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       @MemoryAddress@Read_EBS_Gas_Prs1@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Read_EBS_Gas_Prs2
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint16
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       @MemoryAddress@Read_EBS_Gas_Prs2@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Str
+      /* Long identifier        */      ""
+      /* Data type              */      SBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_int8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -128
+      /* Upper limit            */      127
+      ECU_ADDRESS                       @MemoryAddress@Str@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      To_MOTOR_OK
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@To_MOTOR_OK@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      ASSI_state
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@ASSI_state@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      To_AMI_OK
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@To_AMI_OK@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Read_BCU
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@Read_BCU@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      strsr_node
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@strsr_node@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Brk_Enable_Flag
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@Brk_Enable_Flag@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      AMI_State
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@AMI_State@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RES_EBS
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@RES_EBS@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Metoc_Move
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@Metoc_Move@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      MNT_SEND
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@MNT_SEND@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      ENCODER_SEND
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@ENCODER_SEND@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      brake_node
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@brake_node@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      AMI_HEART
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@AMI_HEART@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      RES__ok
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@RES__ok@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      ASMS_VALUE
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@ASMS_VALUE@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      AMI
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@AMI@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Steer_Status
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@Steer_Status@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      motec_node
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@motec_node@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      bms_node
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@bms_node@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      STRSNR
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@STRSNR@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      BMS
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@BMS@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      AMI_NODE
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@AMI_NODE@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      res_go
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@res_go@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      res_ebs1
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@res_ebs1@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      BRAKE
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@BRAKE@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      MOTEC
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@MOTEC@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      motor_node
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@motor_node@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      TS_Flag
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@TS_Flag@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EBS_Status
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@EBS_Status@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      BUC_Enable_Flag
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@BUC_Enable_Flag@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      sensor_erroe
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@sensor_erroe@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Node_Lost
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@Node_Lost@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      res_ebs_value
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@res_ebs_value@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      light_blue
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@light_blue@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Buzzer_pin
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@Buzzer_pin@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Stafe_Relay_pin
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@Stafe_Relay_pin@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      V48_relay
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@V48_relay@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      R2D_Voltage
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@R2D_Voltage@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      IMD
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@IMD@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EBS
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@EBS@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      BMS_LIGHT
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@BMS_LIGHT@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      LVMS_Read
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@LVMS_Read@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      HVMS_Read
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@HVMS_Read@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      On_Out_Switch
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@On_Out_Switch@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      START
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@START@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      On_IN_Switch
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@On_IN_Switch@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      HV_LIGHT
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@HV_LIGHT@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      IMD_BENDER
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@IMD_BENDER@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      ASMS_Read
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@ASMS_Read@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      EBS_Rel_Switch
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@EBS_Rel_Switch@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Compare_Voltage
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@Compare_Voltage@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      enable
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_boolean
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      1
+      ECU_ADDRESS                       @MemoryAddress@enable@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      blue
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@blue@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      motor
+      /* Long identifier        */      ""
+      /* Data type              */      UBYTE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_uint8
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      255
+      ECU_ADDRESS                       @MemoryAddress@motor@
+    /end MEASUREMENT
+    
+    
+    /begin MEASUREMENT
+      /* Name                   */      Vel_spd
+      /* Long identifier        */      ""
+      /* Data type              */      FLOAT32_IEEE
+      /* Conversion method      */      FSAC2021_V1_Running_CM_single
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -3.4E+38
+      /* Upper limit            */      3.4E+38
+      ECU_ADDRESS                       @MemoryAddress@Vel_spd@
+    /end MEASUREMENT
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      FSAC2021_V1_Running_CM_double
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%15.10"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      FSAC2021_V1_Running_CM_single
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%8.6"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      FSAC2021_V1_Running_CM_uint16
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%5.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      FSAC2021_V1_Running_CM_int8
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%3.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      FSAC2021_V1_Running_CM_uint8
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%3.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      FSAC2021_V1_Running_CM_boolean
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%1.0"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin GROUP 
+      /* Name                   */       FSAC2021_V1_Running
+      /* Long identifier        */       "FSAC2021_V1_Running"
+      /* Root                    */       ROOT
+      /begin SUB_GROUP
+        Root_CAN_SEND
+        Root_Controller
+        Root_DIAG
+        Root_I__O_OutPut
+        Root_Input_Process
+        Root_VCU_CAN_Read
+        Root_VCU_KL_Read
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_CAN_SEND
+      /* Long identifier        */       "FSAC2021_V1_Running/CAN_SEND"
+      /begin SUB_GROUP
+        S1_Subsystem1
+        S1__BRK_STR_DRIVER_
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        ACC
+        ASSI_state
+        Motor_Spd
+        Voltage
+        Vspd
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Controller
+      /* Long identifier        */       "FSAC2021_V1_Running/Controller"
+      /begin SUB_GROUP
+        S2_200ms_Duty
+        S2_50ms_Duty
+        S2_SteerCtr
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        AMI_State
+        Brk_Enable_Flag
+        RES_EBS
+        Steer_Origin_Flag
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_DIAG
+      /* Long identifier        */       "FSAC2021_V1_Running/DIAG"
+      /begin SUB_GROUP
+        S3_DIAG
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        ASMS_VALUE
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_I__O_OutPut
+      /* Long identifier        */       "FSAC2021_V1_Running/I//O_OutPut"
+      /begin SUB_GROUP
+        S4_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_Input_Process
+      /* Long identifier        */       "FSAC2021_V1_Running/Input_Process"
+      /begin SUB_GROUP
+        S5_KL_Sig_Process
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_VCU_CAN_Read
+      /* Long identifier        */       "FSAC2021_V1_Running/VCU_CAN_Read"
+      /begin SUB_GROUP
+        S9_PCANA_RES_AMI_MOTEC_BRAKE_STEER_SENSOR_IPC_
+        S9_PCANB_BMS_DRIVE_MOTOR_
+        S9_Subsystem
+        S9_Subsystem1
+        S9_Subsystem2
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       Root_VCU_KL_Read
+      /* Long identifier        */       "FSAC2021_V1_Running/VCU_KL_Read"
+      /begin SUB_GROUP
+        S10_Read_VCU_AnaInput
+        S10_Read_VCU_DigInput
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1__BRK_STR_DRIVER_
+      /* Long identifier        */       "FSAC2021_V1_Running/CAN_SEND/(BRK、STR、DRIVER)"
+      /begin REF_MEASUREMENT
+        Read_BCU
+        To_AMI_OK
+        To_MOTOR_OK
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S1_Subsystem1
+      /* Long identifier        */       "FSAC2021_V1_Running/CAN_SEND/Subsystem1"
+      /begin SUB_GROUP
+        S13_Brk_Mtr_Enbale
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        ENCODER_SEND
+        MNT_SEND
+        Metoc_Move
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_200ms_Duty
+      /* Long identifier        */       "FSAC2021_V1_Running/Controller/200ms_Duty"
+      /begin SUB_GROUP
+        S62_Light_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_50ms_Duty
+      /* Long identifier        */       "FSAC2021_V1_Running/Controller/50ms_Duty"
+      /begin SUB_GROUP
+        S63_EBS_Judge
+        S63_HV_Judge_
+        S63_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S2_SteerCtr
+      /* Long identifier        */       "FSAC2021_V1_Running/Controller/SteerCtr"
+      /begin SUB_GROUP
+        S66_Subsystem3
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        Str
+        enflag
+        flag
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S3_DIAG
+      /* Long identifier        */       "FSAC2021_V1_Running/DIAG/DIAG"
+      /begin SUB_GROUP
+        S128_Analog_Sensor_Diag
+        S128_CAN_NODE_LOSTCOM
+        S128_Res_Diag
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S4_Subsystem
+      /* Long identifier        */       "FSAC2021_V1_Running/I//O_OutPut/Subsystem"
+      /begin REF_MEASUREMENT
+        BMS_LIGHT
+        Buzzer_pin
+        EBS
+        IMD
+        R2D_Voltage
+        Stafe_Relay_pin
+        V48_relay
+        light_blue
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S5_KL_Sig_Process
+      /* Long identifier        */       "FSAC2021_V1_Running/Input_Process/KL_Sig_Process"
+      /begin SUB_GROUP
+        S194_Whl_Spd_Process
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S9_PCANA_RES_AMI_MOTEC_BRAKE_STEER_SENSOR_IPC_
+      /* Long identifier        */       "FSAC2021_V1_Running/VCU_CAN_Read/PCANA(RES、AMI、MOTEC、BRAKE、STEER_SENSOR、IPC)"
+      /begin SUB_GROUP
+        S401_Res_Message1
+        S401_STEER_SENSOR_INFO1
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        AMI
+        AMI_HEART
+        RES__ok
+        brake_node
+        strsr_node
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S9_PCANB_BMS_DRIVE_MOTOR_
+      /* Long identifier        */       "FSAC2021_V1_Running/VCU_CAN_Read/PCANB(BMS、DRIVE_MOTOR)"
+      /begin REF_MEASUREMENT
+        motor_node
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S9_Subsystem
+      /* Long identifier        */       "FSAC2021_V1_Running/VCU_CAN_Read/Subsystem"
+      /begin REF_MEASUREMENT
+        bms_node
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S9_Subsystem1
+      /* Long identifier        */       "FSAC2021_V1_Running/VCU_CAN_Read/Subsystem1"
+      /begin REF_MEASUREMENT
+        motec_node
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S9_Subsystem2
+      /* Long identifier        */       "FSAC2021_V1_Running/VCU_CAN_Read/Subsystem2"
+      /begin REF_MEASUREMENT
+        Steer_Status
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_Read_VCU_AnaInput
+      /* Long identifier        */       "FSAC2021_V1_Running/VCU_KL_Read/Read_VCU_AnaInput"
+      /begin REF_MEASUREMENT
+        Read_Brk_Liquid_Prs
+        Read_EBS_Gas_Prs1
+        Read_EBS_Gas_Prs2
+        Read_Lft_Acc_Disp
+        Read_Right_Acc_Disp1
+        Read_compare_OutVolt
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S10_Read_VCU_DigInput
+      /* Long identifier        */       "FSAC2021_V1_Running/VCU_KL_Read/Read_VCU_DigInput"
+      /begin REF_MEASUREMENT
+        ASMS_Read
+        EBS_Rel_Switch
+        HVMS_Read
+        HV_LIGHT
+        IMD_BENDER
+        LVMS_Read
+        On_IN_Switch
+        On_Out_Switch
+        START
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S13_Brk_Mtr_Enbale
+      /* Long identifier        */       "FSAC2021_V1_Running/CAN_SEND/Subsystem1/Brk_Mtr_Enbale"
+      /begin REF_MEASUREMENT
+        BUC_Enable_Flag
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S62_Light_Subsystem
+      /* Long identifier        */       "FSAC2021_V1_Running/Controller/200ms_Duty/Light_Subsystem"
+      /begin REF_MEASUREMENT
+        blue
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S63_EBS_Judge
+      /* Long identifier        */       "FSAC2021_V1_Running/Controller/50ms_Duty/EBS_Judge"
+      /begin REF_MEASUREMENT
+        EBS_Status
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S63_HV_Judge_
+      /* Long identifier        */       "FSAC2021_V1_Running/Controller/50ms_Duty/HV_Judge "
+      /begin REF_MEASUREMENT
+        Compare_Voltage
+        TS_Flag
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S63_Subsystem
+      /* Long identifier        */       "FSAC2021_V1_Running/Controller/50ms_Duty/Subsystem"
+      /begin REF_MEASUREMENT
+        MODE
+        enable
+        ipc_strr
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S66_Subsystem3
+      /* Long identifier        */       "FSAC2021_V1_Running/Controller/SteerCtr/Subsystem3"
+      /begin REF_MEASUREMENT
+        Back_Angle
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S128_Analog_Sensor_Diag
+      /* Long identifier        */       "FSAC2021_V1_Running/DIAG/DIAG/Analog_Sensor_Diag"
+      /begin REF_MEASUREMENT
+        sensor_erroe
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S128_CAN_NODE_LOSTCOM
+      /* Long identifier        */       "FSAC2021_V1_Running/DIAG/DIAG/CAN_NODE_LOSTCOM"
+      /begin SUB_GROUP
+        S132_B_M_S_Check
+        S132_Subsystem
+        S132_Subsystem1
+      /end SUB_GROUP
+      /begin REF_MEASUREMENT
+        Node_Lost
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S128_Res_Diag
+      /* Long identifier        */       "FSAC2021_V1_Running/DIAG/DIAG/Res_Diag"
+      /begin SUB_GROUP
+        S134_Subsystem
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S194_Whl_Spd_Process
+      /* Long identifier        */       "FSAC2021_V1_Running/Input_Process/KL_Sig_Process/Whl_Spd_Process"
+      /begin SUB_GROUP
+        S196_Whl2Veh_Spd_Trans
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S401_Res_Message1
+      /* Long identifier        */       "FSAC2021_V1_Running/VCU_CAN_Read/PCANA(RES、AMI、MOTEC、BRAKE、STEER_SENSOR、IPC)/Res_Message1"
+      /begin REF_MEASUREMENT
+        RES_Value
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S401_STEER_SENSOR_INFO1
+      /* Long identifier        */       "FSAC2021_V1_Running/VCU_CAN_Read/PCANA(RES、AMI、MOTEC、BRAKE、STEER_SENSOR、IPC)/STEER_SENSOR_INFO1"
+      /begin REF_MEASUREMENT
+        Steer_sensor_angle
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S132_B_M_S_Check
+      /* Long identifier        */       "FSAC2021_V1_Running/DIAG/DIAG/CAN_NODE_LOSTCOM/B_M_S_Check"
+      /begin REF_MEASUREMENT
+        BRAKE
+        MOTEC
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S132_Subsystem
+      /* Long identifier        */       "FSAC2021_V1_Running/DIAG/DIAG/CAN_NODE_LOSTCOM/Subsystem"
+      /begin REF_MEASUREMENT
+        motor
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S132_Subsystem1
+      /* Long identifier        */       "FSAC2021_V1_Running/DIAG/DIAG/CAN_NODE_LOSTCOM/Subsystem1"
+      /begin REF_MEASUREMENT
+        AMI_NODE
+        BMS
+        STRSNR
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S134_Subsystem
+      /* Long identifier        */       "FSAC2021_V1_Running/DIAG/DIAG/Res_Diag/Subsystem"
+      /begin REF_MEASUREMENT
+        res_ebs1
+        res_ebs_value
+        res_go
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S196_Whl2Veh_Spd_Trans
+      /* Long identifier        */       "FSAC2021_V1_Running/Input_Process/KL_Sig_Process/Whl_Spd_Process/Whl2Veh_Spd_Trans"
+      /begin SUB_GROUP
+        S202_Round
+      /end SUB_GROUP
+    /end GROUP
+    
+    /begin GROUP 
+      /* Name                   */       S202_Round
+      /* Long identifier        */       "FSAC2021_V1_Running/Input_Process/KL_Sig_Process/Whl_Spd_Process/Whl2Veh_Spd_Trans/Round"
+      /begin REF_MEASUREMENT
+        Vel_spd
+      /end REF_MEASUREMENT
+    /end GROUP
+    
+    
+  /end MODULE
+  
+  
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF FSAC2021_V1_Running.a2l */

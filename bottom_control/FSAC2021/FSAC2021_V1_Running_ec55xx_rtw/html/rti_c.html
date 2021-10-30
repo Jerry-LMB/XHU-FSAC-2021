@@ -1,0 +1,92 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RTW Report - rti.c</title>
+<style> .LN { font-style: italic; color: #888888 } </style>
+<style> .CT { font-style: italic; color: #117755 } </style>
+<style> .PP { font-style: bold;   color: #992211 } </style>
+<style> .KW { font-style: bold;   color: #112266 } </style>
+<style> .DT { font-style: bold;   color: #112266 } </style>
+<link rel="stylesheet" type="text/css" href="rtwreport.css"></link><script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script>
+<SCRIPT type="text/javascript" src="rtwannotate.js"></SCRIPT>
+</head>
+<body bgcolor="#eeeeee" text="#1122aa" onload="try {if (top) { if (top.rtwFileOnLoad) top.rtwFileOnLoad(window.document); else local_onload();}} catch(err) {};if (typeof rtwannotate === 'function') {rtwannotate('rti_c_cov.xml');}">
+<p>
+<table border="0" cellspacing="0" cellpadding="6" width="100%%" height="100%%"><tr><td width="100%%" valign="top" bgcolor="#ffffff">
+<h4>File: <a href="../rti.c" target="rtwreport_document_frame" id="linkToText_plain">rti.c</a></h4>
+<pre id="RTWcode">
+<span><a class="LN" name="1">    1   </a><span class="CT">/*</span>
+</span><span><a class="LN" name="2">    2   </a><span class="CT"> * Code generated for Simulink model FSAC2021_V1_Running.</span>
+</span><span><a class="LN" name="3">    3   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="4">    4   </a><span class="CT"> * FILE    : rti.c</span>
+</span><span><a class="LN" name="5">    5   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="6">    6   </a><span class="CT"> * VERSION : 1.179</span>
+</span><span><a class="LN" name="7">    7   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="8">    8   </a><span class="CT"> * DATE    : Sun Sep 26 20:42:00 2021</span>
+</span><span><a class="LN" name="9">    9   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="10">   10   </a><span class="CT"> * Copyright 2011-2012 ECUCoder. All Rights Reserved.</span>
+</span><span><a class="LN" name="11">   11   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="12">   12   </a>
+</span><span><a class="LN" name="13">   13   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;rti.h&quot;</font>
+</span><span><a class="LN" name="14">   14   </a>
+</span><span><a class="LN" name="15">   15   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="16">   16   </a><span class="CT"> * FUNCTION :    ec_rti_init                                               *</span>
+</span><span><a class="LN" name="17">   17   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="18">   18   </a><span class="CT"> * DESCRIPTION : Initialize the RTI module                                 *</span>
+</span><span><a class="LN" name="19">   19   </a><span class="CT"> *               Define the eMIOS channel 23 for Rti                       *</span>
+</span><span><a class="LN" name="20">   20   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="21">   21   </a><span class="CT"> * PARAMETERS :  -Counter: range from 12 to 10000000, us                   *</span>
+</span><span><a class="LN" name="22">   22   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="23">   23   </a><span class="CT"> * RETURN :      None                                                      *</span>
+</span><span><a class="LN" name="24">   24   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="25">   25   </a><span class="DT">void</span> <a name="fcn_ec_rti_init">ec_rti_init</a>(uint32 Counter)
+</span><span><a class="LN" name="26">   26   </a><b>{</b>
+</span><span><a class="LN" name="27">   27   </a>  EMIOS.MCR.B.MDIS = 0;                <span class="CT">/* EMIOS module enter normal mode */</span>
+</span><span><a class="LN" name="28">   28   </a>  EMIOS.MCR.B.GPRE = 79;               <span class="CT">/* Divide 80 MHz sysclk for eMIOS clock */</span>
+</span><span><a class="LN" name="29">   29   </a>  EMIOS.MCR.B.ETB = 0;                 <span class="CT">/* External time base is disabled; Ch 23 drives counter bus A */</span>
+</span><span><a class="LN" name="30">   30   </a>  EMIOS.MCR.B.GTBE = 1;                <span class="CT">/* Enable global time base */</span>
+</span><span><a class="LN" name="31">   31   </a>  EMIOS.MCR.B.GPREN = 1;               <span class="CT">/* Enable eMIOS clock */</span>
+</span><span><a class="LN" name="32">   32   </a>  <span class="KW">if</span> (Counter &lt; RTI_TIMER_VALUE_MIN ) <b>{</b>
+</span><span><a class="LN" name="33">   33   </a>    Counter = RTI_TIMER_VALUE_MIN;
+</span><span><a class="LN" name="34">   34   </a>  <b>}</b> <span class="KW">else</span> <span class="KW">if</span> (Counter &gt; RTI_TIMER_VALUE_MAX ) <b>{</b>
+</span><span><a class="LN" name="35">   35   </a>    Counter = RTI_TIMER_VALUE_MAX;
+</span><span><a class="LN" name="36">   36   </a>  <b>}</b> <span class="KW">else</span> <b>{</b>
+</span><span><a class="LN" name="37">   37   </a>  <b>}</b>
+</span><span><a class="LN" name="38">   38   </a>
+</span><span><a class="LN" name="39">   39   </a>  EMIOS.CH[23].CADR.R = Counter-1;
+</span><span><a class="LN" name="40">   40   </a>  EMIOS.CH[23].CCR.B.MODE = 0x10;      <span class="CT">/* Modulus counter */</span>
+</span><span><a class="LN" name="41">   41   </a>  EMIOS.CH[23].CCR.B.BSL = 0x3;        <span class="CT">/* All channels: internal counter */</span>
+</span><span><a class="LN" name="42">   42   </a>  EMIOS.CH[23].CCR.B.UCPRE = 0;        <span class="CT">/* Prescaler=0, divide ratio=1 */</span>
+</span><span><a class="LN" name="43">   43   </a>  EMIOS.CH[23].CCR.B.UCPREN = 1;       <span class="CT">/* Prescaler enabled */</span>
+</span><span><a class="LN" name="44">   44   </a>  EMIOS.CH[23].CCR.B.FEN = 1;          <span class="CT">/* Enable interupt */</span>
+</span><span><a class="LN" name="45">   45   </a>  EMIOS.CH[23].CCR.B.DMA = 0;          <span class="CT">/* FLAG assigned to interrupt request */</span>
+</span><span><a class="LN" name="46">   46   </a><b>}</b>
+</span><span><a class="LN" name="47">   47   </a>
+</span><span><a class="LN" name="48">   48   </a><span class="DT">void</span> <a name="fcn_ec_pit_init">ec_pit_init</a>(uint32 Counter)
+</span><span><a class="LN" name="49">   49   </a><b>{</b>
+</span><span><a class="LN" name="50">   50   </a>  <span class="KW">if</span> (Counter &lt; RTI_TIMER_VALUE_MIN ) <b>{</b>
+</span><span><a class="LN" name="51">   51   </a>    Counter = RTI_TIMER_VALUE_MIN;
+</span><span><a class="LN" name="52">   52   </a>  <b>}</b> <span class="KW">else</span> <span class="KW">if</span> (Counter &gt; RTI_TIMER_VALUE_MAX ) <b>{</b>
+</span><span><a class="LN" name="53">   53   </a>    Counter = RTI_TIMER_VALUE_MAX;
+</span><span><a class="LN" name="54">   54   </a>  <b>}</b> <span class="KW">else</span> <b>{</b>
+</span><span><a class="LN" name="55">   55   </a>  <b>}</b>
+</span><span><a class="LN" name="56">   56   </a>
+</span><span><a class="LN" name="57">   57   </a>  EMIOS.CH[22].CADR.R = Counter-1;
+</span><span><a class="LN" name="58">   58   </a>  EMIOS.CH[22].CCR.B.MODE = 0x10;      <span class="CT">/* Modulus counter */</span>
+</span><span><a class="LN" name="59">   59   </a>  EMIOS.CH[22].CCR.B.BSL = 0x3;        <span class="CT">/* All channels: internal counter */</span>
+</span><span><a class="LN" name="60">   60   </a>  EMIOS.CH[22].CCR.B.UCPRE = 0;        <span class="CT">/* Prescaler=0, divide ratio=1 */</span>
+</span><span><a class="LN" name="61">   61   </a>  EMIOS.CH[22].CCR.B.UCPREN = 1;       <span class="CT">/* Prescaler enabled */</span>
+</span><span><a class="LN" name="62">   62   </a>  EMIOS.CH[22].CCR.B.FEN = 1;          <span class="CT">/* Enable interupt */</span>
+</span><span><a class="LN" name="63">   63   </a>  EMIOS.CH[22].CCR.B.DMA = 0;          <span class="CT">/* FLAG assigned to interrupt request */</span>
+</span><span><a class="LN" name="64">   64   </a><b>}</b>
+</span><span><a class="LN" name="65">   65   </a>
+</span><span><a class="LN" name="66">   66   </a><span class="CT">/* File trailer for ECUCoder generated file rti.c.</span>
+</span><span><a class="LN" name="67">   67   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="68">   68   </a><span class="CT"> * [EOF]</span>
+</span><span><a class="LN" name="69">   69   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="70">   70   </a>
+</span></pre>
+</td></tr></table>
+</p>
+</body>
+</html>

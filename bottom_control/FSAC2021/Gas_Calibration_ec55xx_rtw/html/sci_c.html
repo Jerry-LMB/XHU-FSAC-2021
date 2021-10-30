@@ -1,0 +1,161 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RTW Report - sci.c</title>
+<style> .LN { font-style: italic; color: #888888 } </style>
+<style> .CT { font-style: italic; color: #117755 } </style>
+<style> .PP { font-style: bold;   color: #992211 } </style>
+<style> .KW { font-style: bold;   color: #112266 } </style>
+<style> .DT { font-style: bold;   color: #112266 } </style>
+<link rel="stylesheet" type="text/css" href="rtwreport.css"></link><script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script>
+<SCRIPT type="text/javascript" src="rtwannotate.js"></SCRIPT>
+</head>
+<body bgcolor="#eeeeee" text="#1122aa" onload="try {if (top) { if (top.rtwFileOnLoad) top.rtwFileOnLoad(window.document); else local_onload();}} catch(err) {};if (typeof rtwannotate === 'function') {rtwannotate('sci_c_cov.xml');}">
+<p>
+<table border="0" cellspacing="0" cellpadding="6" width="100%%" height="100%%"><tr><td width="100%%" valign="top" bgcolor="#ffffff">
+<h4>File: <a href="../sci.c" target="rtwreport_document_frame" id="linkToText_plain">sci.c</a></h4>
+<pre id="RTWcode">
+<span><a class="LN" name="1">    1   </a><span class="CT">/*</span>
+</span><span><a class="LN" name="2">    2   </a><span class="CT"> * Code generated for Simulink model Gas_Calibration.</span>
+</span><span><a class="LN" name="3">    3   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="4">    4   </a><span class="CT"> * FILE    : sci.c</span>
+</span><span><a class="LN" name="5">    5   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="6">    6   </a><span class="CT"> * VERSION : 1.1</span>
+</span><span><a class="LN" name="7">    7   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="8">    8   </a><span class="CT"> * DATE    : Sat Oct 02 12:32:17 2021</span>
+</span><span><a class="LN" name="9">    9   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="10">   10   </a><span class="CT"> * Copyright 2011-2012 ECUCoder. All Rights Reserved.</span>
+</span><span><a class="LN" name="11">   11   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="12">   12   </a>
+</span><span><a class="LN" name="13">   13   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;sci.h&quot;</font>
+</span><span><a class="LN" name="14">   14   </a><font color="#992211">#</font><span class="PP">if</span> 0
+</span><span><a class="LN" name="15">   15   </a>
+</span><span><a class="LN" name="16">   16   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="17">   17   </a><span class="CT"> * FUNCTION :    ec_scia_init                                              *</span>
+</span><span><a class="LN" name="18">   18   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="19">   19   </a><span class="CT"> * DESCRIPTION : Initialize eSCIA module                                   *</span>
+</span><span><a class="LN" name="20">   20   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="21">   21   </a><span class="CT"> * PARAMETERS :  None                                                      *</span>
+</span><span><a class="LN" name="22">   22   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="23">   23   </a><span class="CT"> * RETURN :      None                                                      *</span>
+</span><span><a class="LN" name="24">   24   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="25">   25   </a><span class="DT">void</span> <a name="fcn_ec_scia_init">ec_scia_init</a>(<span class="DT">void</span>)
+</span><span><a class="LN" name="26">   26   </a><b>{</b>
+</span><span><a class="LN" name="27">   27   </a>  ESCI(0).CR2.B.MDIS = !0;             <span class="CT">/* Module is enabled */</span>
+</span><span><a class="LN" name="28">   28   </a>  ESCI(0).CR2.B.FBR = 0;               <span class="CT">/* Bit errors will be detected on a per byte basis */</span>
+</span><span><a class="LN" name="29">   29   </a>  ESCI(0).CR2.B.BSTP = 1;              <span class="CT">/* Bit error/physical bus error stop */</span>
+</span><span><a class="LN" name="30">   30   </a>  ESCI(0).CR2.B.IEBERR = 0;            <span class="CT">/* Disable bit error interrupt */</span>
+</span><span><a class="LN" name="31">   31   </a>  ESCI(0).CR1.B.SBR = 520;             <span class="CT">/* Set baudrate */</span>
+</span><span><a class="LN" name="32">   32   </a>  ESCI(0).CR1.B.M = 0;                 <span class="CT">/* M=0 for 1 start bit, 8 data bits, 1 stop bit; M=1 for 9 data bits */</span>
+</span><span><a class="LN" name="33">   33   </a>  ESCI(0).CR1.B.PE = 0;                <span class="CT">/* PE=0 for disabled Parity function; PE=1 for enabled */</span>
+</span><span><a class="LN" name="34">   34   </a>  ESCI(0).CR1.B.PT = 0;                <span class="CT">/* PT=0 for even parity; PT=1 for odd parity */</span>
+</span><span><a class="LN" name="35">   35   </a>  ESCI(0).CR1.B.TE = 1;                <span class="CT">/* Transmitter enable */</span>
+</span><span><a class="LN" name="36">   36   </a>  ESCI(0).CR1.B.RE = 1;                <span class="CT">/* Receiver enable */</span>
+</span><span><a class="LN" name="37">   37   </a>  ESCI(0).CR1.B.TIE = 0;               <span class="CT">/* Transmitter interrupt */</span>
+</span><span><a class="LN" name="38">   38   </a>  ESCI(0).CR1.B.RIE = 0;               <span class="CT">/* Receiver full interrupt */</span>
+</span><span><a class="LN" name="39">   39   </a>  SIU.PCR[89].R = 0x0600;              <span class="CT">/* Configure pad for primary function: TxDA */</span>
+</span><span><a class="LN" name="40">   40   </a>  SIU.PCR[90].R = 0x0500;              <span class="CT">/* Configure pad for primary function: RxDA */</span>
+</span><span><a class="LN" name="41">   41   </a><b>}</b>
+</span><span><a class="LN" name="42">   42   </a>
+</span><span><a class="LN" name="43">   43   </a><span class="DT">void</span> <a name="fcn_ec_lin_init">ec_lin_init</a>(<span class="DT">void</span>)
+</span><span><a class="LN" name="44">   44   </a><b>{</b>
+</span><span><a class="LN" name="45">   45   </a>  ESCI(0).CR2.B.FBR = 1;
+</span><span><a class="LN" name="46">   46   </a>  ESCI(0).CR2.B.BESM13 = 1;
+</span><span><a class="LN" name="47">   47   </a>  ESCI(0).CR2.B.BRK13 = 1;
+</span><span><a class="LN" name="48">   48   </a>  ESCI(0).CR2.B.BSTP = 1;
+</span><span><a class="LN" name="49">   49   </a>  ESCI(0).CR2.B.SBSTP = 1;
+</span><span><a class="LN" name="50">   50   </a>  ESCI(0).LCR.B.LIN = 1;
+</span><span><a class="LN" name="51">   51   </a>  ESCI(0).LCR.B.LDBG = 0;
+</span><span><a class="LN" name="52">   52   </a><b>}</b>
+</span><span><a class="LN" name="53">   53   </a>
+</span><span><a class="LN" name="54">   54   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="55">   55   </a>
+</span><span><a class="LN" name="56">   56   </a><font color="#992211">#</font><span class="PP">if</span> 0
+</span><span><a class="LN" name="57">   57   </a>
+</span><span><a class="LN" name="58">   58   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="59">   59   </a><span class="CT"> * FUNCTION :    ec_scib_init                                              *</span>
+</span><span><a class="LN" name="60">   60   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="61">   61   </a><span class="CT"> * DESCRIPTION : Initialize eSCIB module                                   *</span>
+</span><span><a class="LN" name="62">   62   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="63">   63   </a><span class="CT"> * PARAMETERS :  None                                                      *</span>
+</span><span><a class="LN" name="64">   64   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="65">   65   </a><span class="CT"> * RETURN :      None                                                      *</span>
+</span><span><a class="LN" name="66">   66   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="67">   67   </a><span class="DT">void</span> <a name="fcn_ec_scib_init">ec_scib_init</a>(<span class="DT">void</span>)
+</span><span><a class="LN" name="68">   68   </a><b>{</b>
+</span><span><a class="LN" name="69">   69   </a>  ESCI(1).CR2.B.MDIS = !0;             <span class="CT">/* Module is enabled */</span>
+</span><span><a class="LN" name="70">   70   </a>  ESCI(1).CR2.B.FBR = 0;               <span class="CT">/* Bit errors will be detected on a per byte basis */</span>
+</span><span><a class="LN" name="71">   71   </a>  ESCI(1).CR2.B.BSTP = 1;              <span class="CT">/* Bit error/physical bus error stop */</span>
+</span><span><a class="LN" name="72">   72   </a>  ESCI(1).CR2.B.IEBERR = 0;            <span class="CT">/* Disable bit error interrupt. */</span>
+</span><span><a class="LN" name="73">   73   </a>  ESCI(1).CR1.B.SBR = 520;             <span class="CT">/* Set baudrate */</span>
+</span><span><a class="LN" name="74">   74   </a>  ESCI(1).CR1.B.M = 0;                 <span class="CT">/* M=0 for 1 start bit, 8 data bits, 1 stop bit; M=1 for 9 data bits */</span>
+</span><span><a class="LN" name="75">   75   </a>  ESCI(1).CR1.B.PE = 0;                <span class="CT">/* PE=0 for disabled Parity function; PE=1 for enabled */</span>
+</span><span><a class="LN" name="76">   76   </a>  ESCI(1).CR1.B.PT = 0;                <span class="CT">/* PT=0 for even parity; PT=1 for odd parity */</span>
+</span><span><a class="LN" name="77">   77   </a>  ESCI(1).CR1.B.TE = 1;                <span class="CT">/* Transmitter enable */</span>
+</span><span><a class="LN" name="78">   78   </a>  ESCI(1).CR1.B.RE = 1;                <span class="CT">/* Receiver enable */</span>
+</span><span><a class="LN" name="79">   79   </a>  ESCI(1).CR1.B.TIE = 0;               <span class="CT">/* Transmitter interrupt */</span>
+</span><span><a class="LN" name="80">   80   </a>  ESCI(1).CR1.B.RIE = 0;               <span class="CT">/* Receiver full interrupt */</span>
+</span><span><a class="LN" name="81">   81   </a>  SIU.PCR[91].R = 0x0600;              <span class="CT">/* Configure pad for primary function: TxDA */</span>
+</span><span><a class="LN" name="82">   82   </a>  SIU.PCR[92].R = 0x0500;              <span class="CT">/* Configure pad for primary function: RxDA */</span>
+</span><span><a class="LN" name="83">   83   </a><b>}</b>
+</span><span><a class="LN" name="84">   84   </a>
+</span><span><a class="LN" name="85">   85   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="86">   86   </a>
+</span><span><a class="LN" name="87">   87   </a><font color="#992211">#</font><span class="PP">if</span> (SCIAENABLE||SCIBENABLE)
+</span><span><a class="LN" name="88">   88   </a>
+</span><span><a class="LN" name="89">   89   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="90">   90   </a><span class="CT"> * FUNCTION :    ec_sci_receive                                            *</span>
+</span><span><a class="LN" name="91">   91   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="92">   92   </a><span class="CT"> * DESCRIPTION : Read the received data                                    *</span>
+</span><span><a class="LN" name="93">   93   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="94">   94   </a><span class="CT"> * PARAMETERS :  -Module: can be eSCIA, eSCIB                              *</span>
+</span><span><a class="LN" name="95">   95   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="96">   96   </a><span class="CT"> * RETURN :      -data: the data received by eSCI                          *</span>
+</span><span><a class="LN" name="97">   97   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="98">   98   </a>uint8 <a name="fcn_ec_sci_receive">ec_sci_receive</a>(uint8 Module)
+</span><span><a class="LN" name="99">   99   </a><b>{</b>
+</span><span><a class="LN" name="100">  100   </a>  uint8 data = 0;
+</span><span><a class="LN" name="101">  101   </a>  <span class="KW">while</span> (ESCI(Module).SR.B.RDRF == 0) <b>{</b>
+</span><span><a class="LN" name="102">  102   </a>  <b>}</b>                                    <span class="CT">/* Wait for receive data reg full = 1 */</span>
+</span><span><a class="LN" name="103">  103   </a>
+</span><span><a class="LN" name="104">  104   </a>  ESCI(Module).SR.R = 0x20000000;      <span class="CT">/* Clear RDRF flag */</span>
+</span><span><a class="LN" name="105">  105   </a>  data = ESCI(Module).DR.B.D;          <span class="CT">/* Read byte of data */</span>
+</span><span><a class="LN" name="106">  106   </a>  <span class="KW">return</span> data;
+</span><span><a class="LN" name="107">  107   </a><b>}</b>
+</span><span><a class="LN" name="108">  108   </a>
+</span><span><a class="LN" name="109">  109   </a><span class="CT">/**************************************************************************</span>
+</span><span><a class="LN" name="110">  110   </a><span class="CT"> * FUNCTION :    ec_sci_transmit                                           *</span>
+</span><span><a class="LN" name="111">  111   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="112">  112   </a><span class="CT"> * DESCRIPTION : Transmit the given data                                   *</span>
+</span><span><a class="LN" name="113">  113   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="114">  114   </a><span class="CT"> * PARAMETERS :  -Module: can be eSCIA,eSCIB                               *</span>
+</span><span><a class="LN" name="115">  115   </a><span class="CT"> *               -Datalength: can be 1~8 bytes                             *</span>
+</span><span><a class="LN" name="116">  116   </a><span class="CT"> *               -Tx_Buffer: a pointer pointing to the data                *</span>
+</span><span><a class="LN" name="117">  117   </a><span class="CT"> *                to be transmitted                                        *</span>
+</span><span><a class="LN" name="118">  118   </a><span class="CT"> *                                                                         *</span>
+</span><span><a class="LN" name="119">  119   </a><span class="CT"> * RETURN :      None                                                      *</span>
+</span><span><a class="LN" name="120">  120   </a><span class="CT"> ***************************************************************************/</span>
+</span><span><a class="LN" name="121">  121   </a><span class="DT">void</span> <a name="fcn_ec_sci_transmit">ec_sci_transmit</a>(uint8 Module, uint8 Datalength, uint8 Tx_Buffer[])
+</span><span><a class="LN" name="122">  122   </a><b>{</b>
+</span><span><a class="LN" name="123">  123   </a>  uint8 i;
+</span><span><a class="LN" name="124">  124   </a>  <span class="KW">for</span> (i=0; i&lt;Datalength; i++) <b>{</b>
+</span><span><a class="LN" name="125">  125   </a>    <span class="KW">while</span> (ESCI(Module).SR.B.TDRE == 0) <b>{</b>
+</span><span><a class="LN" name="126">  126   </a>    <b>}</b>                                  <span class="CT">/* Wait for transmit data reg empty = 1 */</span>
+</span><span><a class="LN" name="127">  127   </a>
+</span><span><a class="LN" name="128">  128   </a>    ESCI(Module).SR.R = 0x80000000;    <span class="CT">/* Clear TDRE flag */</span>
+</span><span><a class="LN" name="129">  129   </a>    ESCI(Module).DR.B.D = Tx_Buffer[i];<span class="CT">/* Transmit 8 bits data */</span>
+</span><span><a class="LN" name="130">  130   </a>  <b>}</b>
+</span><span><a class="LN" name="131">  131   </a><b>}</b>
+</span><span><a class="LN" name="132">  132   </a>
+</span><span><a class="LN" name="133">  133   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="134">  134   </a>
+</span><span><a class="LN" name="135">  135   </a><span class="CT">/* File trailer for ECUCoder generated file sci.c.</span>
+</span><span><a class="LN" name="136">  136   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="137">  137   </a><span class="CT"> * [EOF]</span>
+</span><span><a class="LN" name="138">  138   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="139">  139   </a>
+</span></pre>
+</td></tr></table>
+</p>
+</body>
+</html>

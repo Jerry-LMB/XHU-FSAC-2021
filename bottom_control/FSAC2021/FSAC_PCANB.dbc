@@ -1,0 +1,215 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BMS
+VAL_TABLE_ Str_Mtr_Erro 1 "Yes" 0 "No" ;
+VAL_TABLE_ Is_Zeroing 1 "Aready" 0 "Zeroing" ;
+VAL_TABLE_ Off_Line 1 "Yes" 0 "No" ;
+VAL_TABLE_ Is_Move 1 "Stop" 0 "Moving" ;
+VAL_TABLE_ In_Origin 1 "Origin" 0 "Not Origin" ;
+VAL_TABLE_ Pin 1 "High_Pin" 0 "Low_Pin" ;
+VAL_TABLE_ IsEqual 1 "Equal" 0 "Not IsEqual" ;
+VAL_TABLE_ Check 1 "Wrong" 0 "Right" ;
+VAL_TABLE_ Diagnosis 1 "Enable" 0 "Disenable" ;
+VAL_TABLE_ Status 1 "Error" 0 "Normal" ;
+VAL_TABLE_ clear_encoder_fault 0 "clear" ;
+VAL_TABLE_ status_reg_addr 2 "current_state" 1 "current_position" 0 "current_speed" ;
+VAL_TABLE_ brake_stop_method 1 "stop_imd" 0 "stop_reduce" ;
+VAL_TABLE_ Emergency_Info 32768 "Limit position Alarm" 16384 "Current error fault" 8192 "Flash Error" 4096 "Speed over alarm" 2048 "Power module temp high alarm" 1024 "Power module temp high warning" 512 "Over speed error" 256 "Encoder Error" 128 "Over position error" 64 "Over top current" 32 "I2t Alarm" 16 "Overvoltage Warning" 8 "Undervoltage Warning" 4 "Parameter Error" 2 "I2t Warning" 1 "System Error" ;
+VAL_TABLE_ New_set_point 1 "Absolute" 0 "Relative" ;
+VAL_TABLE_ Motec_status 1 "Yes" 0 "No" ;
+VAL_TABLE_ NMT_nodectrl 128 "Pre-Operational" 2 "Stopped" 1 "Operational" ;
+VAL_TABLE_ NMT_noderesp 1 "node1" 0 "all response" ;
+VAL_TABLE_ Heartbeat_info 127 "Pre-operational" 5 "Operational" 4 "Stopped" 0 "Boot-up" ;
+VAL_TABLE_ ALM_Level 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_TABLE_ ChrONCC 3 "Unknown" 2 "680 Ohm" 1 "220 Ohm" 0 "Ununited" ;
+VAL_TABLE_ ChrOFFCC2 1 "United" 0 "Ununited" ;
+VAL_TABLE_ ChrCommunication 1 "Online" 0 "Communication Overtime" ;
+VAL_TABLE_ ChrState 4 "Charing Finished" 3 "Trickle Charging" 2 "Const Curr Charging" 1 "Enter Charging" 0 "Stop Charging" ;
+VAL_TABLE_ RlyStr 2 "Error" 1 "Close" 0 "Open" ;
+VAL_TABLE_ HeatingCtl 1 "On Heating" 0 "Stop Heating" ;
+VAL_TABLE_ CoolingCtl 1 "On Cooing" 0 "Stop Cooling" ;
+VAL_TABLE_ BatAlmLv 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No Warning" ;
+VAL_TABLE_ BatState 7 "Error" 6 "Shutdown" 5 "Run" 4 "Pre-charge" 3 "Standby" 2 "Power Up" 1 "Sleep" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ Internal_Limit_Active : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ ShutDownCmd : 0|8@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ MainRlyCmd : 0|8@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ Heartbeat_info : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ Halt_Ctrl : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 2197885092 MOTOR_SPEED_CONTROL: 2 Vector__XXX
+ SG_ Drive_Speed_Control : 0|16@1+ (1,0) [0|1500] "rmp" Vector__XXX
+
+BO_ 2181107875 MOTOR_READ_SPEED: 0 Vector__XXX
+
+BO_ 2147553443 MOTOR_CURRENT_SPEED: 2 Vector__XXX
+ SG_ Motor_Currt_Speed : 0|16@1+ (1,0) [0|2500] "rpm" Vector__XXX
+
+BO_ 2556772595 BMS_HCU_ALARM: 8 BMS
+ SG_ ALM_VCU_OFFLINE : 33|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_PRECHRG_FAIL : 36|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ALM_LEAK_OC : 38|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_HVREL_FAIL : 47|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ALM_HALL_BREAK : 46|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ALM_DSCH_OCT : 27|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_DSCH_OCS : 31|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_CHRG_OCT : 29|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_CHRG_OCS : 17|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_BSU_OFFLINE : 25|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_BSU_FAULT : 39|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ALM_BMU_FAIL : 34|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ALM_BATT_UC : 19|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_BATT_OC : 21|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_AUX_FAIL : 35|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ALM_BATT_UV : 23|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_BATT_OV : 9|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_BATT_DT : 11|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_BATT_DV : 13|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_CELL_TBK : 14|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ALM_CELL_IBK : 15|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ALM_CELL_UT : 1|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_CELL_OT : 3|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_CELL_UV : 5|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ ALM_CELL_OV : 7|2@0+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 2556707059 BMS_HCU_POWER: 8 BMS
+ SG_ MaxDisPowerLimit : 55|16@0+ (0.1,0) [0|300] "kW" Vector__XXX
+ SG_ MaxChrPowerLimit : 39|16@0+ (0.1,0) [0|300] "kW" Vector__XXX
+ SG_ MaxDisCurtLimit : 23|16@0+ (1,0) [0|1000] "A" Vector__XXX
+ SG_ MaxChrCurtLimit : 7|16@0+ (1,0) [0|1000] "A" Vector__XXX
+
+BO_ 2556641523 BMS_HCU_RELAY: 8 BMS
+ SG_ offChrRlyStr : 15|2@0+ (1,0) [0|2] "" Vector__XXX
+ SG_ ChrReqCurr : 55|16@0+ (1,0) [0|600] "A" Vector__XXX
+ SG_ ChrReqVolt : 39|16@0+ (1,0) [0|900] "V" Vector__XXX
+ SG_ chrONCC : 17|2@0+ (1,0) [0|3] "" Vector__XXX
+ SG_ chrOFFCC2 : 18|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ChrCommunication : 19|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ ChrState : 23|4@0+ (1,0) [0|4] "" Vector__XXX
+ SG_ OnChrRlyStr : 1|2@0+ (1,0) [0|2] "" Vector__XXX
+ SG_ PreRlyStr : 3|2@0+ (1,0) [0|2] "" Vector__XXX
+ SG_ NegRlyStr : 5|2@0+ (1,0) [0|2] "" Vector__XXX
+ SG_ PosRlyStr : 7|2@0+ (1,0) [0|2] "" Vector__XXX
+
+BO_ 2556575987 BMS_HCU_MAXT: 8 BMS
+ SG_ HeatingCtl : 47|8@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ CoolingCtl : 39|8@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ MinTempNo : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ MaxTempNo : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ MinTemp : 15|8@0+ (1,-40) [-40|120] "'C" Vector__XXX
+ SG_ MaxTemp : 7|8@0+ (1,-40) [-40|120] "'C" Vector__XXX
+
+BO_ 2556510451 BMS_HCU_MAXV: 8 BMS
+ SG_ MaxCellVoltNo : 47|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ MinCellVoltNo : 39|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ MinCellVolt : 23|16@0+ (1,0) [0|5000] "mV" Vector__XXX
+ SG_ MaxCellVolt : 7|16@0+ (1,0) [0|5000] "mV" Vector__XXX
+
+BO_ 2556444915 BMS_HCU_INFO: 8 BMS
+ SG_ BatLife : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ BatAlmLv : 51|4@0+ (1,0) [0|4] "" Vector__XXX
+ SG_ BatState : 55|4@0+ (1,0) [1|7] "" Vector__XXX
+ SG_ BatSoh : 47|8@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ BatSoc : 39|8@0+ (1,0) [0|100] "%" Vector__XXX
+ SG_ BatCurrent : 23|16@0+ (0.1,-1000) [-1000|1000] "A" Vector__XXX
+ SG_ BatVoltage : 7|16@0+ (0.1,0) [0|900] "V" Vector__XXX
+
+
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "spontaneous","Cyclic","Event";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 10 1000;
+BA_DEF_ BU_  "ILUsed" ENUM  "YES";
+BA_DEF_  "Manufacturer" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenMsgSendType" "spontaneous";
+BA_DEF_DEF_  "GenMsgCycleTime" 100;
+BA_DEF_DEF_  "ILUsed" "YES";
+BA_DEF_DEF_  "Manufacturer" "Research Institute";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_ "GenMsgSendType" BO_ 2556772595 2;
+BA_ "GenMsgSendType" BO_ 2556707059 1;
+BA_ "GenMsgCycleTime" BO_ 2556641523 500;
+BA_ "GenMsgSendType" BO_ 2556641523 1;
+BA_ "GenMsgCycleTime" BO_ 2556575987 500;
+BA_ "GenMsgSendType" BO_ 2556575987 1;
+BA_ "GenMsgCycleTime" BO_ 2556510451 250;
+BA_ "GenMsgSendType" BO_ 2556510451 1;
+BA_ "GenMsgSendType" BO_ 2556444915 1;
+BA_ "GenMsgCycleTime" BO_ 2556444915 10;
+VAL_ 3221225472 Heartbeat_info 127 "Pre-operational" 5 "Operational" 4 "Stopped" 0 "Boot-up" ;
+VAL_ 3221225472 Halt_Ctrl 1 "Yes" 0 "No" ;
+VAL_ 2556772595 ALM_VCU_OFFLINE 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_PRECHRG_FAIL 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_LEAK_OC 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_HVREL_FAIL 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_HALL_BREAK 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_DSCH_OCT 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_DSCH_OCS 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_CHRG_OCT 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_CHRG_OCS 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_BSU_OFFLINE 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_BSU_FAULT 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_BMU_FAIL 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_BATT_UC 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_BATT_OC 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_AUX_FAIL 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_BATT_UV 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_BATT_OV 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_BATT_DT 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_BATT_DV 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_CELL_TBK 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_CELL_IBK 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_CELL_UT 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_CELL_OT 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_CELL_UV 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556772595 ALM_CELL_OV 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No warning" ;
+VAL_ 2556641523 offChrRlyStr 2 "Error" 1 "Close" 0 "Open" ;
+VAL_ 2556641523 chrONCC 3 "Unknown" 2 "680 Ohm" 1 "220 Ohm" 0 "Ununited" ;
+VAL_ 2556641523 chrOFFCC2 1 "United" 0 "Ununited" ;
+VAL_ 2556641523 ChrCommunication 1 "Online" 0 "Communication Overtime" ;
+VAL_ 2556641523 ChrState 4 "Charing Finished" 3 "Trickle Charging" 2 "Const Curr Charging" 1 "Enter Charging" 0 "Stop Charging" ;
+VAL_ 2556641523 OnChrRlyStr 2 "Error" 1 "Close" 0 "Open" ;
+VAL_ 2556641523 PreRlyStr 2 "Error" 1 "Close" 0 "Open" ;
+VAL_ 2556641523 NegRlyStr 2 "Error" 1 "Close" 0 "Open" ;
+VAL_ 2556641523 PosRlyStr 2 "Error" 1 "Close" 0 "Open" ;
+VAL_ 2556575987 HeatingCtl 1 "On Heating" 0 "Stop Heating" ;
+VAL_ 2556575987 CoolingCtl 1 "On Cooing" 0 "Stop Cooling" ;
+VAL_ 2556444915 BatAlmLv 3 "Level 3 Warning" 2 "Level 2 Warning" 1 "Level 1 Warning" 0 "No Warning" ;
+VAL_ 2556444915 BatState 7 "Error" 6 "Shutdown" 5 "Run" 4 "Pre-charge" 3 "Standby" 2 "Power Up" 1 "Sleep" ;
+

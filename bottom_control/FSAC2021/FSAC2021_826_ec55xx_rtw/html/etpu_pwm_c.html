@@ -1,0 +1,234 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RTW Report - etpu_pwm.c</title>
+<style> .LN { font-style: italic; color: #888888 } </style>
+<style> .CT { font-style: italic; color: #117755 } </style>
+<style> .PP { font-style: bold;   color: #992211 } </style>
+<style> .KW { font-style: bold;   color: #112266 } </style>
+<style> .DT { font-style: bold;   color: #112266 } </style>
+<link rel="stylesheet" type="text/css" href="rtwreport.css"></link><script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script>
+<SCRIPT type="text/javascript" src="rtwannotate.js"></SCRIPT>
+</head>
+<body bgcolor="#eeeeee" text="#1122aa" onload="try {if (top) { if (top.rtwFileOnLoad) top.rtwFileOnLoad(window.document); else local_onload();}} catch(err) {};if (typeof rtwannotate === 'function') {rtwannotate('etpu_pwm_c_cov.xml');}">
+<p>
+<table border="0" cellspacing="0" cellpadding="6" width="100%%" height="100%%"><tr><td width="100%%" valign="top" bgcolor="#ffffff">
+<h4>File: <a href="../etpu_pwm.c" target="rtwreport_document_frame" id="linkToText_plain">etpu_pwm.c</a></h4>
+<pre id="RTWcode">
+<span><a class="LN" name="1">    1   </a><span class="CT">/*</span>
+</span><span><a class="LN" name="2">    2   </a><span class="CT"> * Code generated for Simulink model FSAC2021_826.</span>
+</span><span><a class="LN" name="3">    3   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="4">    4   </a><span class="CT"> * FILE    : etpu_pwm.c</span>
+</span><span><a class="LN" name="5">    5   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="6">    6   </a><span class="CT"> * VERSION : 1.165</span>
+</span><span><a class="LN" name="7">    7   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="8">    8   </a><span class="CT"> * DATE    : Tue Aug 31 17:30:52 2021</span>
+</span><span><a class="LN" name="9">    9   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="10">   10   </a><span class="CT"> * Copyright 2011-2012 ECUCoder. All Rights Reserved.</span>
+</span><span><a class="LN" name="11">   11   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="12">   12   </a>
+</span><span><a class="LN" name="13">   13   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;etpu_util.h&quot;</font>                 <span class="CT">/* Utility routines for working eTPU */</span>
+</span><span><a class="LN" name="14">   14   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;etpu_pwm.h&quot;</font>                  <span class="CT">/* eTPU PWM API defines */</span>
+</span><span><a class="LN" name="15">   15   </a>
+</span><span><a class="LN" name="16">   16   </a><span class="DT">extern</span> uint32_t fs_etpu_data_ram_start;
+</span><span><a class="LN" name="17">   17   </a>
+</span><span><a class="LN" name="18">   18   </a><font color="#992211">#</font><span class="PP">if</span> 0
+</span><span><a class="LN" name="19">   19   </a>
+</span><span><a class="LN" name="20">   20   </a><span class="CT">/******************************************************************************</span>
+</span><span><a class="LN" name="21">   21   </a><span class="CT">   FUNCTION     : fs_etpu_pwm_init</span>
+</span><span><a class="LN" name="22">   22   </a><span class="CT">   PURPOSE      : To initialize an eTPU channel to generate a PWM output.</span>
+</span><span><a class="LN" name="23">   23   </a><span class="CT">   INPUTS NOTES : This function has 7 parameters:</span>
+</span><span><a class="LN" name="24">   24   </a><span class="CT">   channel - This is the channel number.</span>
+</span><span><a class="LN" name="25">   25   </a><span class="CT">   0-31 for FS_ETPU_A and 64-95 for FS_ETPU_B.</span>
+</span><span><a class="LN" name="26">   26   </a><span class="CT">   freq - This is the frequency of the PWM. This is an unint32_t</span>
+</span><span><a class="LN" name="27">   27   </a><span class="CT">   but the value range is only 24 bits. The range of</span>
+</span><span><a class="LN" name="28">   28   </a><span class="CT">   this parameter is determine by the complete system but</span>
+</span><span><a class="LN" name="29">   29   </a><span class="CT">   normally would be between 1Hz-100kHz.</span>
+</span><span><a class="LN" name="30">   30   </a><span class="CT">   duty - This is the initial duty cycle of the PWM. This is a</span>
+</span><span><a class="LN" name="31">   31   </a><span class="CT">   uint16_t with a range of 0-10000. To represent 0-100%</span>
+</span><span><a class="LN" name="32">   32   </a><span class="CT">   with 0.01% resolution.</span>
+</span><span><a class="LN" name="33">   33   </a><span class="CT">   priority - This is the priority to assign to the channel.</span>
+</span><span><a class="LN" name="34">   34   </a><span class="CT">   This parameter should be assigned a value of:</span>
+</span><span><a class="LN" name="35">   35   </a><span class="CT">   FS_ETPU_PRIORITY_HIGH, FS_ETPU_PRIORITY_MIDDLE or</span>
+</span><span><a class="LN" name="36">   36   </a><span class="CT">   FS_ETPU_PRIORITY_LOW.</span>
+</span><span><a class="LN" name="37">   37   </a><span class="CT">   polarity - This is the polarity of the channel. This parameter</span>
+</span><span><a class="LN" name="38">   38   </a><span class="CT">   should be assigned a value of:</span>
+</span><span><a class="LN" name="39">   39   </a><span class="CT">   FS_ETPU_PWM_ACTIVEHIGH or FS_ETPU_PWM_ACTIVELOW</span>
+</span><span><a class="LN" name="40">   40   </a><span class="CT">   timebase - This is the timer to use as a reference for the PWM</span>
+</span><span><a class="LN" name="41">   41   </a><span class="CT">   signal. This parameter should be assigned to a value</span>
+</span><span><a class="LN" name="42">   42   </a><span class="CT">   of: FS_ETPU_TCR1 or FS_ETPU_TCR2.</span>
+</span><span><a class="LN" name="43">   43   </a><span class="CT">   timebase_freq - This is the frequency of the selected timebase.</span>
+</span><span><a class="LN" name="44">   44   </a><span class="CT">   The range of this is the same as the range of the timebase</span>
+</span><span><a class="LN" name="45">   45   </a><span class="CT">   frequency on the device. This parameter is a uint32_t.</span>
+</span><span><a class="LN" name="46">   46   </a><span class="CT">   RETURNS NOTES: Error code if channel could not be initialized. Error code that</span>
+</span><span><a class="LN" name="47">   47   </a><span class="CT">   can be returned are: FS_ETPU_ERROR_MALLOC ,</span>
+</span><span><a class="LN" name="48">   48   </a><span class="CT">   FS_ETPU_ERROR_FREQ</span>
+</span><span><a class="LN" name="49">   49   </a><span class="CT">   WARNING      : *This function does not configure the pin only the eTPU. In a</span>
+</span><span><a class="LN" name="50">   50   </a><span class="CT">   system a pin may need to be configured to select the eTPU.</span>
+</span><span><a class="LN" name="51">   51   </a><span class="CT"> ******************************************************************************/</span>
+</span><span><a class="LN" name="52">   52   </a>int32_t <a name="fcn_fs_etpu_pwm_init">fs_etpu_pwm_init</a>( uint8_t channel, uint8_t priority, uint32_t freq,
+</span><span><a class="LN" name="53">   53   </a>  uint16_t duty, uint8_t polarity, uint8_t timebase, uint32_t timebase_freq)
+</span><span><a class="LN" name="54">   54   </a><b>{</b>
+</span><span><a class="LN" name="55">   55   </a>  uint32_t *pba;                       <span class="CT">/* parameter base address for channel */</span>
+</span><span><a class="LN" name="56">   56   </a>  uint32_t chan_period;
+</span><span><a class="LN" name="57">   57   </a>
+</span><span><a class="LN" name="58">   58   </a>  <span class="CT">/* Disable channel to assign function safely */</span>
+</span><span><a class="LN" name="59">   59   </a>  fs_etpu_disable( channel );
+</span><span><a class="LN" name="60">   60   </a>  <span class="KW">if</span> (eTPU-&gt;CHAN[channel].CR.B.CPBA == 0 ) <b>{</b>
+</span><span><a class="LN" name="61">   61   </a>    <span class="CT">/* get parameter RAM</span>
+</span><span><a class="LN" name="62">   62   </a><span class="CT">       number of parameters passed from eTPU C code */</span>
+</span><span><a class="LN" name="63">   63   </a>    pba = fs_etpu_malloc(FS_ETPU_PWM_NUM_PARMS);
+</span><span><a class="LN" name="64">   64   </a>    <span class="KW">if</span> (pba == 0) <b>{</b>
+</span><span><a class="LN" name="65">   65   </a>      <span class="KW">return</span> (FS_ETPU_ERROR_MALLOC);
+</span><span><a class="LN" name="66">   66   </a>    <b>}</b>
+</span><span><a class="LN" name="67">   67   </a>  <b>}</b> <span class="KW">else</span>                               <span class="CT">/*set pba to what is in the CR register*/</span>
+</span><span><a class="LN" name="68">   68   </a>  <b>{</b>
+</span><span><a class="LN" name="69">   69   </a>    pba= fs_etpu_data_ram(channel);
+</span><span><a class="LN" name="70">   70   </a>  <b>}</b>
+</span><span><a class="LN" name="71">   71   </a>
+</span><span><a class="LN" name="72">   72   </a>  <span class="CT">/* Determine frequency of output waveform */</span>
+</span><span><a class="LN" name="73">   73   </a>  chan_period = timebase_freq / freq;
+</span><span><a class="LN" name="74">   74   </a>  <span class="KW">if</span> ((chan_period == 0) || (chan_period &gt; 0x007FFFFF ))
+</span><span><a class="LN" name="75">   75   </a>    <span class="KW">return</span>( FS_ETPU_ERROR_FREQ);
+</span><span><a class="LN" name="76">   76   </a>
+</span><span><a class="LN" name="77">   77   </a>  <span class="CT">/* write parameters to data memory */</span>
+</span><span><a class="LN" name="78">   78   </a>  *(pba + ((FS_ETPU_PWM_PERIOD_OFFSET - 1)&gt;&gt;2)) = chan_period;
+</span><span><a class="LN" name="79">   79   </a>  *(pba + ((FS_ETPU_PWM_ACTIVE_OFFSET - 1)&gt;&gt;2)) =
+</span><span><a class="LN" name="80">   80   </a>    (chan_period * duty) / 10000;
+</span><span><a class="LN" name="81">   81   </a>
+</span><span><a class="LN" name="82">   82   </a>  <span class="CT">/* write channel configuration register */</span>
+</span><span><a class="LN" name="83">   83   </a>  eTPU-&gt;CHAN[channel].CR.R = (priority &lt;&lt; 28) +
+</span><span><a class="LN" name="84">   84   </a>    (FS_ETPU_PWM_TABLE_SELECT &lt;&lt; 24) +
+</span><span><a class="LN" name="85">   85   </a>    (FS_ETPU_PWM_FUNCTION_NUMBER &lt;&lt; 16) +
+</span><span><a class="LN" name="86">   86   </a>    (((uint32_t)pba - fs_etpu_data_ram_start)&gt;&gt;3);
+</span><span><a class="LN" name="87">   87   </a>
+</span><span><a class="LN" name="88">   88   </a>  <span class="CT">/* write FM (function mode) bits */</span>
+</span><span><a class="LN" name="89">   89   </a>  eTPU-&gt;CHAN[channel].SCR.R = (timebase &lt;&lt; 1) + polarity;
+</span><span><a class="LN" name="90">   90   </a>
+</span><span><a class="LN" name="91">   91   </a>  <span class="CT">/* write hsr to start channel running */</span>
+</span><span><a class="LN" name="92">   92   </a>  eTPU-&gt;CHAN[channel].HSRR.R = FS_ETPU_PWM_INIT;
+</span><span><a class="LN" name="93">   93   </a>  <span class="KW">return</span>(0);
+</span><span><a class="LN" name="94">   94   </a><b>}</b>
+</span><span><a class="LN" name="95">   95   </a>
+</span><span><a class="LN" name="96">   96   </a><span class="CT">/******************************************************************************</span>
+</span><span><a class="LN" name="97">   97   </a><span class="CT">   FUNCTION     : fs_etpu_pwm_duty</span>
+</span><span><a class="LN" name="98">   98   </a><span class="CT">   PURPOSE      : To update a channel dutycycle using a 16 bit integer value. The</span>
+</span><span><a class="LN" name="99">   99   </a><span class="CT">   ineteger value is the percentage *100, so 20% would be 2000.</span>
+</span><span><a class="LN" name="100">  100   </a><span class="CT">   INPUTS NOTES : This function has 2 parameters:</span>
+</span><span><a class="LN" name="101">  101   </a><span class="CT">   channel - This is the channel number.</span>
+</span><span><a class="LN" name="102">  102   </a><span class="CT">   0-31 for FS_ETPU_A and 64-95 for FS_ETPU_B.</span>
+</span><span><a class="LN" name="103">  103   </a><span class="CT">   duty - This is the duty cycle of the PWM. This is a</span>
+</span><span><a class="LN" name="104">  104   </a><span class="CT">   uint16 with a range of 0-10000. To represent 0-100%</span>
+</span><span><a class="LN" name="105">  105   </a><span class="CT">   with 0.01% resolution.</span>
+</span><span><a class="LN" name="106">  106   </a><span class="CT">   RETURNS NOTES: none</span>
+</span><span><a class="LN" name="107">  107   </a><span class="CT">   WARNING      :</span>
+</span><span><a class="LN" name="108">  108   </a><span class="CT"> ******************************************************************************/</span>
+</span><span><a class="LN" name="109">  109   </a><span class="DT">void</span> <a name="fcn_fs_etpu_pwm_duty">fs_etpu_pwm_duty</a>( uint8_t channel, uint16_t duty)
+</span><span><a class="LN" name="110">  110   </a><b>{</b>
+</span><span><a class="LN" name="111">  111   </a>  uint32_t *pba;
+</span><span><a class="LN" name="112">  112   </a>  uint32_t period;
+</span><span><a class="LN" name="113">  113   </a>  pba = fs_etpu_data_ram (channel);
+</span><span><a class="LN" name="114">  114   </a>  period = *(pba + FS_ETPU_PWM_PERIOD_OFFSET-1);
+</span><span><a class="LN" name="115">  115   </a>  period = period &amp; 0xFFFFFF;
+</span><span><a class="LN" name="116">  116   </a>  pba += ((FS_ETPU_PWM_ACTIVE_OFFSET-1)&gt;&gt;2);
+</span><span><a class="LN" name="117">  117   </a>  *pba = (period * duty) / 10000;
+</span><span><a class="LN" name="118">  118   </a><b>}</b>
+</span><span><a class="LN" name="119">  119   </a>
+</span><span><a class="LN" name="120">  120   </a><span class="CT">/******************************************************************************</span>
+</span><span><a class="LN" name="121">  121   </a><span class="CT">   FUNCTION     : fs_etpu_pwm_duty_immed</span>
+</span><span><a class="LN" name="122">  122   </a><span class="CT">   PURPOSE      : To immedately update a channel dutycycle using a 16 bit integer value.</span>
+</span><span><a class="LN" name="123">  123   </a><span class="CT">   This function will update the dutycycle during the current period</span>
+</span><span><a class="LN" name="124">  124   </a><span class="CT">   if possible. The ineteger value is the percentage *100, so 20% would</span>
+</span><span><a class="LN" name="125">  125   </a><span class="CT">   be 2000.</span>
+</span><span><a class="LN" name="126">  126   </a><span class="CT">   INPUTS NOTES : This function has 2 parameters:</span>
+</span><span><a class="LN" name="127">  127   </a><span class="CT">   channel - This is the channel number.</span>
+</span><span><a class="LN" name="128">  128   </a><span class="CT">   0-31 for FS_ETPU_A and 64-95 for FS_ETPU_B.</span>
+</span><span><a class="LN" name="129">  129   </a><span class="CT">   duty - This is the duty cycle of the PWM. This is a</span>
+</span><span><a class="LN" name="130">  130   </a><span class="CT">   uint16 with a range of 0-10000. To represent 0-100%</span>
+</span><span><a class="LN" name="131">  131   </a><span class="CT">   with 0.01% resolution.</span>
+</span><span><a class="LN" name="132">  132   </a><span class="CT"> ******************************************************************************/</span>
+</span><span><a class="LN" name="133">  133   </a><span class="DT">void</span> <a name="fcn_fs_etpu_pwm_duty_immed">fs_etpu_pwm_duty_immed</a>( uint8_t channel, uint16_t duty)
+</span><span><a class="LN" name="134">  134   </a><b>{</b>
+</span><span><a class="LN" name="135">  135   </a>  uint32_t *pba;
+</span><span><a class="LN" name="136">  136   </a>  uint32_t period;
+</span><span><a class="LN" name="137">  137   </a>  pba = fs_etpu_data_ram (channel);
+</span><span><a class="LN" name="138">  138   </a>  period = *(pba + FS_ETPU_PWM_PERIOD_OFFSET-1);
+</span><span><a class="LN" name="139">  139   </a>  pba += ((FS_ETPU_PWM_ACTIVE_OFFSET-1)&gt;&gt;2);
+</span><span><a class="LN" name="140">  140   </a>  period = period &amp; 0xFFFFFF;
+</span><span><a class="LN" name="141">  141   </a>  *pba = (period * duty) / 10000;
+</span><span><a class="LN" name="142">  142   </a>
+</span><span><a class="LN" name="143">  143   </a>  <span class="CT">/* do immediate update of duty cycle is possible */</span>
+</span><span><a class="LN" name="144">  144   </a>  eTPU-&gt;CHAN[channel].HSRR.R = FS_ETPU_PWM_IMM_UPDATE;
+</span><span><a class="LN" name="145">  145   </a><b>}</b>
+</span><span><a class="LN" name="146">  146   </a>
+</span><span><a class="LN" name="147">  147   </a><span class="CT">/******************************************************************************</span>
+</span><span><a class="LN" name="148">  148   </a><span class="CT">   FUNCTION     : fs_etpu_pwm_update</span>
+</span><span><a class="LN" name="149">  149   </a><span class="CT">   PURPOSE      : To update a PWM output's frequency and dutycycle</span>
+</span><span><a class="LN" name="150">  150   </a><span class="CT">   INPUTS NOTES : This function has 6 parameters:</span>
+</span><span><a class="LN" name="151">  151   </a><span class="CT">   channel - This is the channel number.</span>
+</span><span><a class="LN" name="152">  152   </a><span class="CT">   0-31 for FS_ETPU_A and 64-95 for FS_ETPU_B.</span>
+</span><span><a class="LN" name="153">  153   </a><span class="CT">   freq - This is the frequency of the PWM. This is an unint32_t</span>
+</span><span><a class="LN" name="154">  154   </a><span class="CT">   but the value range is only 24 bits. The range of</span>
+</span><span><a class="LN" name="155">  155   </a><span class="CT">   this parameter is determine by the complete system but</span>
+</span><span><a class="LN" name="156">  156   </a><span class="CT">   normally would be between 1Hz-100kHz.</span>
+</span><span><a class="LN" name="157">  157   </a><span class="CT">   duty - This is the initial duty cycle of the PWM. This is a</span>
+</span><span><a class="LN" name="158">  158   </a><span class="CT">   uint16_t with a range of 0-10000. To represent 0-100%</span>
+</span><span><a class="LN" name="159">  159   </a><span class="CT">   with 0.01% resolution.</span>
+</span><span><a class="LN" name="160">  160   </a><span class="CT">   timebase_freq - This is the frequency of the selected timebase.</span>
+</span><span><a class="LN" name="161">  161   </a><span class="CT">   The range of this is the same as the range of the timebase</span>
+</span><span><a class="LN" name="162">  162   </a><span class="CT">   frequency on the device. This parameter is a uint32_t.</span>
+</span><span><a class="LN" name="163">  163   </a><span class="CT">   RETURNS NOTES: Error code if frequency is out of range: FS_ETPU_ERROR_FREQ</span>
+</span><span><a class="LN" name="164">  164   </a><span class="CT"> ******************************************************************************/</span>
+</span><span><a class="LN" name="165">  165   </a>int32_t <a name="fcn_fs_etpu_pwm_update">fs_etpu_pwm_update</a>( uint8_t channel, uint32_t freq, uint16_t duty,
+</span><span><a class="LN" name="166">  166   </a>  uint32_t timebase_freq)
+</span><span><a class="LN" name="167">  167   </a><b>{</b>
+</span><span><a class="LN" name="168">  168   </a>  uint32_t *pba;
+</span><span><a class="LN" name="169">  169   </a>  uint32_t chan_period;
+</span><span><a class="LN" name="170">  170   </a>  pba = fs_etpu_data_ram (channel);
+</span><span><a class="LN" name="171">  171   </a>
+</span><span><a class="LN" name="172">  172   </a>  <span class="CT">/* Determine frequency of output waveform */</span>
+</span><span><a class="LN" name="173">  173   </a>  chan_period = timebase_freq / freq;
+</span><span><a class="LN" name="174">  174   </a>  <span class="KW">if</span> ((chan_period == 0) || (chan_period &gt; 0x007FFFFF ))
+</span><span><a class="LN" name="175">  175   </a>    <span class="KW">return</span>( FS_ETPU_ERROR_FREQ);
+</span><span><a class="LN" name="176">  176   </a>
+</span><span><a class="LN" name="177">  177   </a>  <span class="CT">/* write parameters to data memory */</span>
+</span><span><a class="LN" name="178">  178   </a>  *(pba + ((FS_ETPU_PWM_CO_PERIOD_OFFSET - 1)&gt;&gt;2)) = chan_period;
+</span><span><a class="LN" name="179">  179   </a>  *(pba + ((FS_ETPU_PWM_CO_ACTIVE_OFFSET - 1)&gt;&gt;2)) = (chan_period * duty) /
+</span><span><a class="LN" name="180">  180   </a>    10000;
+</span><span><a class="LN" name="181">  181   </a>  eTPU-&gt;CHAN[channel].HSRR.R = FS_ETPU_PWM_CO_UPDATE;
+</span><span><a class="LN" name="182">  182   </a><b>}</b>
+</span><span><a class="LN" name="183">  183   </a>
+</span><span><a class="LN" name="184">  184   </a><span class="CT">/******************************************************************************</span>
+</span><span><a class="LN" name="185">  185   </a><span class="CT">   FUNCTION     : fs_etpu_pwm_get_freq</span>
+</span><span><a class="LN" name="186">  186   </a><span class="CT">   PURPOSE      : To determine the actual frequency by the PWM channel.</span>
+</span><span><a class="LN" name="187">  187   </a><span class="CT">   INPUTS NOTES : This function has 1 parameters:</span>
+</span><span><a class="LN" name="188">  188   </a><span class="CT">   channel - This is the channel number.</span>
+</span><span><a class="LN" name="189">  189   </a><span class="CT">   0-31 for FS_ETPU_A and 64-95 for FS_ETPU_B.</span>
+</span><span><a class="LN" name="190">  190   </a><span class="CT">   timebase_freq - This is the frequency of the selected timebase.</span>
+</span><span><a class="LN" name="191">  191   </a><span class="CT">   The range of this is the same as the range of the timebase</span>
+</span><span><a class="LN" name="192">  192   </a><span class="CT">   frequency on the device. This parameter is a uint32_t.</span>
+</span><span><a class="LN" name="193">  193   </a><span class="CT">   RETURNS NOTES: The actual frequency as an integer.</span>
+</span><span><a class="LN" name="194">  194   </a><span class="CT">   WARNING      :</span>
+</span><span><a class="LN" name="195">  195   </a><span class="CT"> ******************************************************************************/</span>
+</span><span><a class="LN" name="196">  196   </a>uint32_t <a name="fcn_fs_etpu_pwm_get_freq">fs_etpu_pwm_get_freq</a>( uint8_t channel, uint32_t timebase_freq)
+</span><span><a class="LN" name="197">  197   </a><b>{</b>
+</span><span><a class="LN" name="198">  198   </a>  uint32_t chan_period;
+</span><span><a class="LN" name="199">  199   </a>  uint32_t *pba;
+</span><span><a class="LN" name="200">  200   </a>  pba = fs_etpu_data_ram (channel);
+</span><span><a class="LN" name="201">  201   </a>  chan_period = *(pba + ((FS_ETPU_PWM_PERIOD_OFFSET - 1)&gt;&gt;2));
+</span><span><a class="LN" name="202">  202   </a>  chan_period = chan_period &amp; 0xFFFFFF;
+</span><span><a class="LN" name="203">  203   </a>  <span class="KW">return</span>( timebase_freq / chan_period );
+</span><span><a class="LN" name="204">  204   </a><b>}</b>
+</span><span><a class="LN" name="205">  205   </a>
+</span><span><a class="LN" name="206">  206   </a><font color="#992211">#</font><span class="PP">endif</span>
+</span><span><a class="LN" name="207">  207   </a>
+</span><span><a class="LN" name="208">  208   </a><span class="CT">/* File trailer for ECUCoder generated file etpu_pwm.c.</span>
+</span><span><a class="LN" name="209">  209   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="210">  210   </a><span class="CT"> * [EOF]</span>
+</span><span><a class="LN" name="211">  211   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="212">  212   </a>
+</span></pre>
+</td></tr></table>
+</p>
+</body>
+</html>

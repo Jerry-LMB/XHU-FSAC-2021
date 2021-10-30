@@ -1,0 +1,140 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RTW Report - adc.h</title>
+<style> .LN { font-style: italic; color: #888888 } </style>
+<style> .CT { font-style: italic; color: #117755 } </style>
+<style> .PP { font-style: bold;   color: #992211 } </style>
+<style> .KW { font-style: bold;   color: #112266 } </style>
+<style> .DT { font-style: bold;   color: #112266 } </style>
+<link rel="stylesheet" type="text/css" href="rtwreport.css"></link><script language="JavaScript" type="text/javascript" src="rtwreport_utils.js"></script>
+<SCRIPT type="text/javascript" src="rtwannotate.js"></SCRIPT>
+</head>
+<body bgcolor="#eeeeee" text="#1122aa" onload="try {if (top) { if (top.rtwFileOnLoad) top.rtwFileOnLoad(window.document); else local_onload();}} catch(err) {};if (typeof rtwannotate === 'function') {rtwannotate('adc_h_cov.xml');}">
+<p>
+<table border="0" cellspacing="0" cellpadding="6" width="100%%" height="100%%"><tr><td width="100%%" valign="top" bgcolor="#ffffff">
+<h4>File: <a href="../adc.h" target="rtwreport_document_frame" id="linkToText_plain">adc.h</a></h4>
+<pre id="RTWcode">
+<span><a class="LN" name="1">    1   </a><span class="CT">/*</span>
+</span><span><a class="LN" name="2">    2   </a><span class="CT"> * Code generated for Simulink model FSAC2021_V1_Running.</span>
+</span><span><a class="LN" name="3">    3   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="4">    4   </a><span class="CT"> * FILE    : adc.h</span>
+</span><span><a class="LN" name="5">    5   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="6">    6   </a><span class="CT"> * VERSION : 1.179</span>
+</span><span><a class="LN" name="7">    7   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="8">    8   </a><span class="CT"> * DATE    : Sun Sep 26 20:42:00 2021</span>
+</span><span><a class="LN" name="9">    9   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="10">   10   </a><span class="CT"> * Copyright 2011-2012 ECUCoder. All Rights Reserved.</span>
+</span><span><a class="LN" name="11">   11   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="12">   12   </a>
+</span><span><a class="LN" name="13">   13   </a><font color="#992211">#</font><span class="PP">ifndef</span> RTW_HEADER_adc_h_
+</span><span><a class="LN" name="14">   14   </a><font color="#992211">#</font><span class="PP">define</span> RTW_HEADER_adc_h_
+</span><span><a class="LN" name="15">   15   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;MPC5554.h&quot;</font>
+</span><span><a class="LN" name="16">   16   </a><font color="#992211">#</font><span class="PP">include</span> <font color="#992211">&quot;Std_Types.h&quot;</font>
+</span><span><a class="LN" name="17">   17   </a><font color="#992211">#</font><span class="PP">define</span> SystemCLK_8                    0b00011
+</span><span><a class="LN" name="18">   18   </a><font color="#992211">#</font><span class="PP">define</span> SystemCLK_10                   0b00100
+</span><span><a class="LN" name="19">   19   </a><font color="#992211">#</font><span class="PP">define</span> SystemCLK_16                   0b00111
+</span><span><a class="LN" name="20">   20   </a><font color="#992211">#</font><span class="PP">define</span> SystemCLK_20                   0b01001
+</span><span><a class="LN" name="21">   21   </a><font color="#992211">#</font><span class="PP">define</span> SystemCLK_30                   0b01110
+</span><span><a class="LN" name="22">   22   </a><font color="#992211">#</font><span class="PP">define</span> SystemCLK_32                   0b01111
+</span><span><a class="LN" name="23">   23   </a><font color="#992211">#</font><span class="PP">define</span> SystemCLK_40                   0b10011
+</span><span><a class="LN" name="24">   24   </a><font color="#992211">#</font><span class="PP">define</span> LST2                           0b00
+</span><span><a class="LN" name="25">   25   </a><font color="#992211">#</font><span class="PP">define</span> LST8                           0b01
+</span><span><a class="LN" name="26">   26   </a><font color="#992211">#</font><span class="PP">define</span> LST64                          0b10
+</span><span><a class="LN" name="27">   27   </a><font color="#992211">#</font><span class="PP">define</span> LST128                         0b11
+</span><span><a class="LN" name="28">   28   </a><font color="#992211">#</font><span class="PP">define</span> SWT_SS                         0b0001
+</span><span><a class="LN" name="29">   29   </a><font color="#992211">#</font><span class="PP">define</span> SWT_CS                         0b1001
+</span><span><a class="LN" name="30">   30   </a><font color="#992211">#</font><span class="PP">define</span> SS_ENABLE                      0b1
+</span><span><a class="LN" name="31">   31   </a><font color="#992211">#</font><span class="PP">define</span> SS_DISABLE                     0b0
+</span><span><a class="LN" name="32">   32   </a>
+</span><span><a class="LN" name="33">   33   </a>float32 <a name="var_ADC0_GCC_f">ADC0_GCC_f</a> = 0;
+</span><span><a class="LN" name="34">   34   </a>float32 <a name="var_ADC0_OCC_f">ADC0_OCC_f</a> = 0;
+</span><span><a class="LN" name="35">   35   </a><span class="KW">typedef</span> <span class="KW">union</span>
+</span><span><a class="LN" name="36">   36   </a><b>{</b>
+</span><span><a class="LN" name="37">   37   </a>  uint16 R;
+</span><span><a class="LN" name="38">   38   </a>  <span class="KW">struct</span> <b>{</b>
+</span><span><a class="LN" name="39">   39   </a>    uint16 ADC_EN:1;
+</span><span><a class="LN" name="40">   40   </a>    uint16 reserved1:3;
+</span><span><a class="LN" name="41">   41   </a>    uint16 ADC_EMUX:1;
+</span><span><a class="LN" name="42">   42   </a>    uint16 reserved2:6;
+</span><span><a class="LN" name="43">   43   </a>    uint16 ADC_CLK_PS:5;
+</span><span><a class="LN" name="44">   44   </a>  <b>}</b> B;
+</span><span><a class="LN" name="45">   45   </a><b>}</b> <a name="type_ADC_CR">ADC_CR</a>;
+</span><span><a class="LN" name="46">   46   </a>
+</span><span><a class="LN" name="47">   47   </a><span class="KW">typedef</span> <span class="KW">union</span>
+</span><span><a class="LN" name="48">   48   </a><b>{</b>
+</span><span><a class="LN" name="49">   49   </a>  uint16 R;
+</span><span><a class="LN" name="50">   50   </a>  <span class="KW">struct</span> <b>{</b>
+</span><span><a class="LN" name="51">   51   </a>    uint16 reserved1:1;
+</span><span><a class="LN" name="52">   52   </a>    uint16 GCCn:15;
+</span><span><a class="LN" name="53">   53   </a>  <b>}</b> B;
+</span><span><a class="LN" name="54">   54   </a><b>}</b> <a name="type_ADC_GCCR">ADC_GCCR</a>;
+</span><span><a class="LN" name="55">   55   </a>
+</span><span><a class="LN" name="56">   56   </a><span class="KW">typedef</span> <span class="KW">union</span>
+</span><span><a class="LN" name="57">   57   </a><b>{</b>
+</span><span><a class="LN" name="58">   58   </a>  uint16 R;
+</span><span><a class="LN" name="59">   59   </a>  <span class="KW">struct</span> <b>{</b>
+</span><span><a class="LN" name="60">   60   </a>    uint16 reserved1:2;
+</span><span><a class="LN" name="61">   61   </a>    uint16 OCCn:14;
+</span><span><a class="LN" name="62">   62   </a>  <b>}</b> B;
+</span><span><a class="LN" name="63">   63   </a><b>}</b> <a name="type_ADC_OCCR">ADC_OCCR</a>;
+</span><span><a class="LN" name="64">   64   </a>
+</span><span><a class="LN" name="65">   65   </a><span class="KW">typedef</span> <span class="KW">union</span>
+</span><span><a class="LN" name="66">   66   </a><b>{</b>
+</span><span><a class="LN" name="67">   67   </a>  uint32 Word;
+</span><span><a class="LN" name="68">   68   </a>  <span class="KW">struct</span> <b>{</b>
+</span><span><a class="LN" name="69">   69   </a>    uint32 EOQ:1;
+</span><span><a class="LN" name="70">   70   </a>    uint32 PAUSE:1;
+</span><span><a class="LN" name="71">   71   </a>    uint32 reserved1:3;
+</span><span><a class="LN" name="72">   72   </a>    uint32 EB:1;                       <span class="CT">/* EB=0, on-chip ADC */</span>
+</span><span><a class="LN" name="73">   73   </a>    uint32 BN:1;                       <span class="CT">/* BN =0, ADC0; BN=1, ADC1 */</span>
+</span><span><a class="LN" name="74">   74   </a>    uint32 CAL:1;                      <span class="CT">/* CAL=0, no calibration; CAL=1, calibration */</span>
+</span><span><a class="LN" name="75">   75   </a>    uint32 MSG_TAG:4;                  <span class="CT">/* MSG_TAG=0b0000, result is sent to RFIFO0</span>
+</span><span><a class="LN" name="76">   76   </a><span class="CT">                                          MSG_TAG=0b0001, result is sent to RFIFO1</span>
+</span><span><a class="LN" name="77">   77   </a><span class="CT">                                          MSG_TAG=0b0010, result is sent to RFIFO2</span>
+</span><span><a class="LN" name="78">   78   </a><span class="CT">                                          MSG_TAG=0b0011, result is sent to RFIFO3</span>
+</span><span><a class="LN" name="79">   79   </a><span class="CT">                                          MSG_TAG=0b0100, result is sent to RFIFO4</span>
+</span><span><a class="LN" name="80">   80   </a><span class="CT">                                          MSG_TAG=0b0101, result is sent to RFIFO5 */</span>
+</span><span><a class="LN" name="81">   81   </a>    uint32 LST:2;                      <span class="CT">/* Long sample time,LST=0b00, Sampling cycle=2 ADC CLK</span>
+</span><span><a class="LN" name="82">   82   </a><span class="CT">                                          LST=0b01, Sampling cycle=8 ADC CLK</span>
+</span><span><a class="LN" name="83">   83   </a><span class="CT">                                          LST=0b10, Sampling cycle=64 ADC CLK</span>
+</span><span><a class="LN" name="84">   84   </a><span class="CT">                                          LST=0b11, Sampling cycle=128 ADC CLK */</span>
+</span><span><a class="LN" name="85">   85   </a>    uint32 TSR:1;                      <span class="CT">/* TSR=0, return conversion result only;</span>
+</span><span><a class="LN" name="86">   86   </a><span class="CT">                                          TSR=1, return conversion time stamp after the conversion result */</span>
+</span><span><a class="LN" name="87">   87   </a>    uint32 FMT:1;                      <span class="CT">/* FMT=0, right justified unsigned; FMT=1, right justified signed */</span>
+</span><span><a class="LN" name="88">   88   </a>    uint32 CHANNEL_NO:8;               <span class="CT">/* 0~39 */</span>
+</span><span><a class="LN" name="89">   89   </a>    uint32 reserved2:8;
+</span><span><a class="LN" name="90">   90   </a>  <b>}</b> B;
+</span><span><a class="LN" name="91">   91   </a><b>}</b> <a name="type_ADC_CC">ADC_CC</a>;
+</span><span><a class="LN" name="92">   92   </a>
+</span><span><a class="LN" name="93">   93   </a><span class="KW">typedef</span> <span class="KW">union</span>
+</span><span><a class="LN" name="94">   94   </a><b>{</b>
+</span><span><a class="LN" name="95">   95   </a>  uint32 Word;
+</span><span><a class="LN" name="96">   96   </a>  <span class="KW">struct</span> <b>{</b>
+</span><span><a class="LN" name="97">   97   </a>    uint32 EOQ:1;
+</span><span><a class="LN" name="98">   98   </a>    uint32 PAUSE:1;
+</span><span><a class="LN" name="99">   99   </a>    uint32 reserved1:3;
+</span><span><a class="LN" name="100">  100   </a>    uint32 EB:1;                       <span class="CT">/* EB=0, on-chip ADC */</span>
+</span><span><a class="LN" name="101">  101   </a>    uint32 BN:1;                       <span class="CT">/* BN =0, ADC0; BN=1, ADC1 */</span>
+</span><span><a class="LN" name="102">  102   </a>    uint32 RW:1;                       <span class="CT">/* RW=0, write; RW=1, read */</span>
+</span><span><a class="LN" name="103">  103   </a>    uint32 ADC_REG_HByte:8;            <span class="CT">/* ADC register high byte */</span>
+</span><span><a class="LN" name="104">  104   </a>    uint32 ADC_REG_LByte:8;            <span class="CT">/* ADC register low byte */</span>
+</span><span><a class="LN" name="105">  105   </a>    uint32 ADC_REG_ADDRESS:8;          <span class="CT">/* ADC register address */</span>
+</span><span><a class="LN" name="106">  106   </a>  <b>}</b> B;
+</span><span><a class="LN" name="107">  107   </a><b>}</b> <a name="type_ADC_WC">ADC_WC</a>;
+</span><span><a class="LN" name="108">  108   </a>
+</span><span><a class="LN" name="109">  109   </a><span class="DT">extern</span> <span class="DT">void</span> <a href="adc_c.html#fcn_ec_adc_init" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_adc_init');" target="_self"><font color="#1122aa">ec_adc_init</font></a>(<span class="DT">void</span>);
+</span><span><a class="LN" name="110">  110   </a><span class="DT">extern</span> uint32 <a href="adc_c.html#fcn_ec_adc_readresult" onclick="if (top) if (top.docHiliteMe) top.docHiliteMe(window, 'fcn_ec_adc_readresult');" target="_self"><font color="#1122aa">ec_adc_readresult</font></a>(uint8 Chn);
+</span><span><a class="LN" name="111">  111   </a>
+</span><span><a class="LN" name="112">  112   </a><font color="#992211">#</font><span class="PP">endif</span>                                 <span class="CT">/* RTW_HEADER_adc_h_ */</span>
+</span><span><a class="LN" name="113">  113   </a>
+</span><span><a class="LN" name="114">  114   </a><span class="CT">/* File trailer for ECUCoder generated file adc.h.</span>
+</span><span><a class="LN" name="115">  115   </a><span class="CT"> *</span>
+</span><span><a class="LN" name="116">  116   </a><span class="CT"> * [EOF]</span>
+</span><span><a class="LN" name="117">  117   </a><span class="CT"> */</span>
+</span><span><a class="LN" name="118">  118   </a>
+</span></pre>
+</td></tr></table>
+</p>
+</body>
+</html>

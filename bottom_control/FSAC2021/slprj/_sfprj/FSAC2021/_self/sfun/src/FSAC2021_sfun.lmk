@@ -1,0 +1,98 @@
+CC     = "E:\MATLAB2014a\sys\lcc\bin\lcc.exe"
+LD     = "E:\MATLAB2014a\sys\lcc\bin\lcclnk.exe"
+LIBCMD = "E:\MATLAB2014a\sys\lcc\bin\lcclib.exe"
+CFLAGS = -c -Zp8 -DMATLAB_MEX_FILE -noregistrylookup 
+LDFLAGS = -s -dll -L"E:\MATLAB2014a\sys\lcc\lib" 
+LIBFLAGS = 
+
+OBJECTS = \
+	"FSAC2021_sfun.obj"\
+	"c2_FSAC2021.obj"\
+	"c3_FSAC2021.obj"\
+	"c4_FSAC2021.obj"\
+	"c5_FSAC2021.obj"\
+	"c6_FSAC2021.obj"\
+	"c7_FSAC2021.obj"\
+	"c8_FSAC2021.obj"\
+	"c9_FSAC2021.obj"\
+	"c10_FSAC2021.obj"\
+	"c11_FSAC2021.obj"\
+	"c12_FSAC2021.obj"\
+	"c13_FSAC2021.obj"\
+	"c14_FSAC2021.obj"\
+	"c15_FSAC2021.obj"\
+	"c16_FSAC2021.obj"\
+	"c17_FSAC2021.obj"\
+	"c18_FSAC2021.obj"\
+	"c19_FSAC2021.obj"\
+	"c20_FSAC2021.obj"\
+	"c21_FSAC2021.obj"\
+	"c22_FSAC2021.obj"\
+	"FSAC2021_sfun_registry.obj"\
+	"lccstub.obj"\
+	"E:\MATLAB2014a\sys\lcc\mex\lccdef.def"\
+	"E:\MATLAB2014a\extern\lib\win32\lcc\sf_runtime.lib"\
+	"E:\MATLAB2014a\extern\lib\win32\lcc\libmwblas.lib"\
+	"E:\MATLAB2014a\extern\lib\win32\lcc\libmx.lib"\
+	"E:\MATLAB2014a\extern\lib\win32\lcc\libmex.lib"\
+	"E:\MATLAB2014a\extern\lib\win32\lcc\libmat.lib"\
+	"E:\MATLAB2014a\extern\lib\win32\lcc\libfixedpoint.lib"\
+	"E:\MATLAB2014a\extern\lib\win32\lcc\libut.lib"\
+	"E:\MATLAB2014a\extern\lib\win32\lcc\libmwmathutil.lib"\
+	"E:\MATLAB2014a\extern\lib\win32\lcc\libemlrt.lib"\
+	"E:\MATLAB2014a\extern\lib\win32\lcc\libmwsl_log_load_blocks.lib"\
+	"E:\MATLAB2014a\lib\win32\libippmwipt.lib"\
+
+INCLUDE_PATH= -I"E:\MATLAB2014a\sys\lcc\include"  -I"E:\MATLAB2014a\extern\include"  -I"E:\MATLAB2014a\simulink\include"  -I"E:\MATLAB2014a\stateflow\c\mex\include"  -I"E:\MATLAB2014a\rtw\c\src"  -I"C:\Users\zxj\Desktop\³µ¶Ó\FSAC2021\slprj\_sfprj\FSAC2021\_self\sfun\src" 
+ 
+
+FSAC2021_sfun.mexw32 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o FSAC2021_sfun.mexw32 @FSAC2021_sfun.lmko
+FSAC2021_sfun.obj :	"FSAC2021_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "FSAC2021_sfun.c"
+c2_FSAC2021.obj :	"c2_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_FSAC2021.c"
+c3_FSAC2021.obj :	"c3_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_FSAC2021.c"
+c4_FSAC2021.obj :	"c4_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c4_FSAC2021.c"
+c5_FSAC2021.obj :	"c5_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c5_FSAC2021.c"
+c6_FSAC2021.obj :	"c6_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_FSAC2021.c"
+c7_FSAC2021.obj :	"c7_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c7_FSAC2021.c"
+c8_FSAC2021.obj :	"c8_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c8_FSAC2021.c"
+c9_FSAC2021.obj :	"c9_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c9_FSAC2021.c"
+c10_FSAC2021.obj :	"c10_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c10_FSAC2021.c"
+c11_FSAC2021.obj :	"c11_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c11_FSAC2021.c"
+c12_FSAC2021.obj :	"c12_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c12_FSAC2021.c"
+c13_FSAC2021.obj :	"c13_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c13_FSAC2021.c"
+c14_FSAC2021.obj :	"c14_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c14_FSAC2021.c"
+c15_FSAC2021.obj :	"c15_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c15_FSAC2021.c"
+c16_FSAC2021.obj :	"c16_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c16_FSAC2021.c"
+c17_FSAC2021.obj :	"c17_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c17_FSAC2021.c"
+c18_FSAC2021.obj :	"c18_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c18_FSAC2021.c"
+c19_FSAC2021.obj :	"c19_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c19_FSAC2021.c"
+c20_FSAC2021.obj :	"c20_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c20_FSAC2021.c"
+c21_FSAC2021.obj :	"c21_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c21_FSAC2021.c"
+c22_FSAC2021.obj :	"c22_FSAC2021.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c22_FSAC2021.c"
+FSAC2021_sfun_registry.obj :	"FSAC2021_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "FSAC2021_sfun_registry.c"
+lccstub.obj :	"E:\MATLAB2014a\sys\lcc\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "E:\MATLAB2014a\sys\lcc\mex\lccstub.c"
